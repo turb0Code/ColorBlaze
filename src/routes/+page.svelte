@@ -1,7 +1,22 @@
-<script>
+<script lang="js">
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import { writable } from 'svelte/store';
+	import { onMount } from 'svelte';
+
+	let picker1;
+	let picker;
+	onMount(() => {
+		picker1.opened = true;
+		picker = writable(picker1)
+		console.log(picker1.state.isPopupVisible)
+		picker.subscribe(() => { console.log(picker1) })
+	})
+
+
+	//import '/node_modules/toolcool-color-picker/dist/toolcool-color-picker.min.js';
+	import '$lib/scripts/toolcool-color-picker.min.js';
 </script>
 
 <svelte:head>
@@ -10,6 +25,10 @@
 </svelte:head>
 
 <section>
+
+	<toolcool-color-picker bind:this={picker1} id="color-picker-1" color="rgb(90, 60, 90)" button-width="0rem" button-height="0rem"></toolcool-color-picker>
+	<toolcool-color-picker-popup style="display: block;"></toolcool-color-picker-popup>
+
 	<h1>
 		<span class="welcome">
 			<picture>
@@ -29,6 +48,19 @@
 </section>
 
 <style>
+
+	:root {
+		--tool-cool-color-picker-btn-bg: rgba(0, 0, 0, 0);
+		--tool-cool-color-picker-btn-border-color: rgba(0, 0, 0, 0);
+		--tool-cool-color-picker-btn-border-color-inner: rgba(0, 0, 0, 0);
+		--tool-cool-color-picker-btn-border-radius: 0rem;
+		--tool-cool-color-picker-btn-border-radius-inner: 0rem;
+	}
+
+	toool-cool-color-picker {
+		display: block !important;
+	}
+
 	section {
 		display: flex;
 		flex-direction: column;
