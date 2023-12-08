@@ -27,7 +27,6 @@
 <section>
 
 	<toolcool-color-picker bind:this={picker1} id="color-picker-1" color="rgb(90, 60, 90)" button-width="0rem" button-height="0rem"></toolcool-color-picker>
-	<toolcool-color-picker-popup style="display: block;"></toolcool-color-picker-popup>
 
 	<h1>
 		<span class="welcome">
