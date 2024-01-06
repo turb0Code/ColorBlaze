@@ -14,8 +14,6 @@
 		picker.subscribe(() => { console.log(picker1) })
 	})
 
-
-	//import '/node_modules/toolcool-color-picker/dist/toolcool-color-picker.min.js';
 	import '$lib/scripts/toolcool-color-picker.min.js';
 </script>
 
