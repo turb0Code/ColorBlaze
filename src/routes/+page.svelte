@@ -1,5 +1,6 @@
 <script lang="js">
   import ColorPicker from "../lib/components/color-picker.svelte";
+  import { DarkMode } from "flowbite-svelte";
 </script>
 
 <svelte:head>

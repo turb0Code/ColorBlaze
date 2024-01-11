@@ -3,7 +3,7 @@
   import "./styles.css";
 </script>
 
-<div class="app">
+<div class="app dark">
   <Header />
 
   <main>
@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #0e0e0f;
+    /* background-color: #0e0e0f; */
   }
 
   main {

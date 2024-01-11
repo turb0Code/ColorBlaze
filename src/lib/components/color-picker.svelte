@@ -1,7 +1,7 @@
 <script lang="js">
   import { writable } from "svelte/store";
   import { onMount } from "svelte";
-  import { Button } from "flowbite-svelte";
+  import ColorSpace from "$lib/components/color-space.svelte";
 
   let picker1;
   let picker;
@@ -23,7 +23,7 @@
   color="rgb(90, 60, 90)"
   button-width="0rem"
   button-height="0rem"
-  class="z-1"
+  class="z-1 w-10"
 ></toolcool-color-picker>
 
-<Button color="alternative" class="mt-60">R</Button>
+<ColorSpace></ColorSpace>
