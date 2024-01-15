@@ -24,12 +24,18 @@ html {
 		color: black;
 		background-color: #efefef;
 	}
+	:root{
+		--tool-cool-color-picker-popup-bg: #efefef;
+	}
 }
 
 html.dark {
 	body {
 		color: #ffffff;
 		background-color: #0e0e0f;
+	}
+	:root {
+		--tool-cool-color-picker-popup-bg: #0e0e0f;
 	}
 }
 

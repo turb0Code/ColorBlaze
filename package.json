@@ -14,7 +14,6 @@
 		"autoprefixer": "^10.4.16",
 		"flowbite": "^2.2.0",
 		"flowbite-svelte": "^0.44.20",
-		"flowbite-svelte-icons": "^1.0.2",
 		"postcss": "^8.4.31",
 		"svelte": "^4.2.7",
 		"tailwindcss": "^3.3.5",
@@ -23,6 +22,7 @@
 	"type": "module",
 	"dependencies": {
 		"@thednp/color-picker": "^2.0.0-alpha10",
+		"flowbite-svelte-icons": "^1.0.2",
 		"toolcool-color-picker": "^1.0.15"
 	}
 }
