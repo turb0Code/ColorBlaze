@@ -1,6 +1,7 @@
 <script lang="js">
   import ColorPicker from "../lib/components/color-picker.svelte";
   import { DarkMode } from "flowbite-svelte";
+  import ColorHarmony from "../lib/components/color-harmony.svelte";
 </script>
 
 <svelte:head>
@@ -13,7 +14,9 @@
     <ColorPicker></ColorPicker>
   </div>
 
-  <div></div>
+  <div>
+    <ColorHarmony></ColorHarmony>
+  </div>
 </div>
 
 <style>
