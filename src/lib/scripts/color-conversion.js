@@ -69,7 +69,7 @@ export const HslToCmy = (h, s, l) => {
 
 //--------------
 
-const HslToCmyk = (h, s, l) => {
+export const HslToCmyk = (h, s, l) => {
     let rgb = HslToRgb(h, s, l);
     let r = rgb["R"] / 255;
     let g = rgb["G"] / 255;
@@ -105,7 +105,7 @@ export const HslToYuv = (h, s, l) => {
 
 //--------------
 
-const HslToYiq = (h, s, l) => {
+export const HslToYiq = (h, s, l) => {
     let rgb = HslToRgb(h, s, l)
     let r = rgb["R"];
     let g = rgb["G"];
@@ -120,7 +120,7 @@ const HslToYiq = (h, s, l) => {
 
 //--------------
 
-const HslToXyz = (h, s, l) => {
+export const HslToXyz = (h, s, l) => {
     let rgb = HslToRgb(h, s, l)
     let r = rgb["R"] / 255;
     let g = rgb["G"] / 255;
@@ -153,7 +153,7 @@ const HslToXyz = (h, s, l) => {
 
 //--------------
 
-const HslToLab = (h, s, l) => {
+export const HslToLab = (h, s, l) => {
     let xyz = HslToXyz(h, s, l)
     let x = xyz["X"]
     let y= xyz["Y"]
@@ -172,7 +172,7 @@ const HslToLab = (h, s, l) => {
 
 //--------------
 
-const HslToLuv = (h, s, l) => {
+export const HslToLuv = (h, s, l) => {
     let L;
     let xyz = HslToXyz(h, s, l);
     let x = xyz["X"];

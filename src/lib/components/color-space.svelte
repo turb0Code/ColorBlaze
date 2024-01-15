@@ -4,6 +4,10 @@
     HslToRgb,
     HslToCmy,
     HslToYuv,
+    HslToYiq,
+    HslToXyz,
+    HslToLab,
+    HslToLuv,
   } from "$lib/scripts/color-conversion.js";
   import { writable, derived } from "svelte/store";
   import { h, s, l } from "$lib/scripts/stores.js";
@@ -13,14 +17,14 @@
     { value: "yuv", name: "YUV" },
     { value: "yiq", name: "YIQ" },
     { value: "xyz", name: "XYZ" },
-    { value: "xyz", name: "LAB" },
-    { value: "xyz", name: "LUV" },
-    { value: "xyz", name: "XYZ" },
+    { value: "lab", name: "LAB" },
+    { value: "luv", name: "LUV" },
   ];
 
   let rgb = writable({});
   let cmy = writable({});
   let yuv = writable({});
+  let result = writable({});
 
   let hsl = derived([h, s, l], ([$h, $s, $l]) => {
     return { h: $h, s: $s, l: $l };
@@ -30,6 +34,24 @@
     rgb.set(HslToRgb(h, s, l));
     cmy.set(HslToCmy(h, s, l));
     yuv.set(HslToYuv(h, s, l));
+
+    switch (selected) {
+      case "yuv":
+        result.set(HslToYuv(h, s, l));
+        break;
+      case "yiq":
+        result.set(HslToYiq(h, s, l));
+        break;
+      case "xyz":
+        result.set(HslToXyz(h, s, l));
+        break;
+      case "lab":
+        result.set(HslToLab(h, s, l));
+        break;
+      case "luv":
+        result.set(HslToLuv(h, s, l));
+        break;
+    }
   });
 </script>
 
@@ -69,7 +91,7 @@
 </Select>
 
 <div class="w-[14.5rem] flex flex-row mt-4 justify-evenly">
-  <Button color="alternative" class="w-16">{$yuv["Y"]}</Button>
-  <Button color="alternative" class="w-16">{$yuv["U"]}</Button>
-  <Button color="alternative" class="w-16">{$yuv["V"]}</Button>
+  <Button color="alternative" class="w-16">{$result["Y"]}</Button>
+  <Button color="alternative" class="w-16">{$result["U"]}</Button>
+  <Button color="alternative" class="w-16">{$result["V"]}</Button>
 </div>
