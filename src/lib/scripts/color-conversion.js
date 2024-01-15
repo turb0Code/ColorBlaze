@@ -1,4 +1,30 @@
-let HslToRgb = (h, s, l) => {
+export const RgbToHsl = (r, g, b) => {
+    r /= 255;
+    g /= 255;
+    b /= 255;
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+
+    if (max === min) {
+        h = s = 0; // achromatic
+    } else {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+            case g: h = (b - r) / d + 2; break;
+            case b: h = (r - g) / d + 4; break;
+        }
+        h /= 6;
+    }
+
+    return {"H": Math.round(h * 360), "S": Math.round(s * 100), "L": Math.round(l * 100)};
+}
+
+//--------------
+
+export let HslToRgb = (h, s, l) => {
     h /= 360;
     s /= 100;
     l /= 100;
@@ -28,7 +54,7 @@ let HslToRgb = (h, s, l) => {
 
 //--------------
 
-const HslToCmy = (h, s, l) => {
+export const HslToCmy = (h, s, l) => {
     let rgb = HslToRgb(h, s, l);
     let r = rgb["R"] / 255;
     let g = rgb["G"] / 255;
@@ -64,7 +90,7 @@ const HslToCmyk = (h, s, l) => {
 
 //--------------
 
-const HslToYuv = (h, s, l) => {
+export const HslToYuv = (h, s, l) => {
     const rgb = HslToRgb(h, s, l);
     let r = rgb["R"];
     let g = rgb["G"];
@@ -74,7 +100,7 @@ const HslToYuv = (h, s, l) => {
     let u = (-0.14713 * r) + (-0.28886 * g) + (0.436 * b)
     let v =  (0.615 * r) + (-0.51499 * g) + (-0.10001 * b)
 
-    return {"Y" : y, "U" : u, "V" : v};
+    return {"Y" : Math.round(y), "U" : Math.round(u), "V" : Math.round(v)};
 }
 
 //--------------
