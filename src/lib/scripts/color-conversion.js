@@ -85,7 +85,7 @@ export const HslToCmyk = (h, s, l) => {
     y = (y - k) / (1 - k) * 100;
     k = k * 100;
 
-    return {"C": c, "M": m, "Y": y, "K": Math.round(k)};
+    return {"C": Math.round(c), "M": Math.round(m), "Y": Math.round(y), "K": Math.round(k)};
 }
 
 //--------------
@@ -115,7 +115,7 @@ export const HslToYiq = (h, s, l) => {
     let i = 0.596*r - 0.274*g - 0.322*b;
     let q = 0.211*r - 0.523*g + 0.312*b;
 
-    return {"Y" : y, "I" : i, "Q" : q};
+    return {"Y" : Math.round(y), "I" : Math.round(i), "Q" : Math.round(q)};
 }
 
 //--------------
@@ -148,7 +148,7 @@ export const HslToXyz = (h, s, l) => {
     g *= 100;
     b *= 100;
 
-    return {"X": r * 0.4124 + g * 0.3576 + b * 0.1805, "Y" : r * 0.2126 + g * 0.7152 + b * 0.0722, "Z": r * 0.0193 + g * 0.1192 + b * 0.9505};
+    return {"X": Math.round(r * 0.4124 + g * 0.3576 + b * 0.1805), "Y" : Math.round(r * 0.2126 + g * 0.7152 + b * 0.0722), "Z": Math.round(r * 0.0193 + g * 0.1192 + b * 0.9505)};
 }
 
 //--------------
@@ -167,7 +167,7 @@ export const HslToLab = (h, s, l) => {
     const L = 116 * y - 16;
     const a = 500 * (x - y);
     const B = 200 * (y - z);
-    return {"L": L, "A" : a, "B": B};
+    return {"L": Math.round(L), "A" : Math.round(a), "B": Math.round(B)};
 }
 
 //--------------
@@ -197,5 +197,5 @@ export const HslToLuv = (h, s, l) => {
     let U = 13 * L * (u_prime - 0.1978);
     let V = 13 * L * (v_prime - 0.4682);
 
-    return {"L": L, "U": U, "V": V};
+    return {"L": Math.round(L), "U": Math.round(U), "V": Math.round(V)};
 }

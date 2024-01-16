@@ -24,34 +24,45 @@
   let rgb = writable({});
   let cmy = writable({});
   let yuv = writable({});
-  let result = writable({});
+  let result = writable({ A: 0, B: 0, C: 0 });
+
+  let tmp;
 
   let hsl = derived([h, s, l], ([$h, $s, $l]) => {
     return { h: $h, s: $s, l: $l };
   });
+
+  const updateColorSpaces = (h, s, l) => {
+    switch (selected) {
+      case "yuv":
+        tmp = HslToYuv(h, s, l);
+        result.set({ A: tmp["Y"], B: tmp["U"], C: tmp["V"] });
+        break;
+      case "yiq":
+        tmp = HslToYiq(h, s, l);
+        result.set({ A: tmp["Y"], B: tmp["I"], C: tmp["Q"] });
+        break;
+      case "xyz":
+        tmp = HslToXyz(h, s, l);
+        result.set({ A: tmp["X"], B: tmp["Y"], C: tmp["Z"] });
+        break;
+      case "lab":
+        tmp = HslToLab(h, s, l);
+        result.set({ A: tmp["L"], B: tmp["A"], C: tmp["B"] });
+        break;
+      case "luv":
+        tmp = HslToLuv(h, s, l);
+        result.set({ A: tmp["L"], B: tmp["U"], C: tmp["V"] });
+        break;
+    }
+  };
 
   hsl.subscribe(({ h, s, l }) => {
     rgb.set(HslToRgb(h, s, l));
     cmy.set(HslToCmy(h, s, l));
     yuv.set(HslToYuv(h, s, l));
 
-    switch (selected) {
-      case "yuv":
-        result.set(HslToYuv(h, s, l));
-        break;
-      case "yiq":
-        result.set(HslToYiq(h, s, l));
-        break;
-      case "xyz":
-        result.set(HslToXyz(h, s, l));
-        break;
-      case "lab":
-        result.set(HslToLab(h, s, l));
-        break;
-      case "luv":
-        result.set(HslToLuv(h, s, l));
-        break;
-    }
+    updateColorSpaces(h, s, l);
   });
 </script>
 
@@ -78,6 +89,7 @@
   id="countries"
   class="mt-2 w-[14.5rem]"
   bind:value={selected}
+  on:change={updateColorSpaces($h, $s, $l)}
   placeholder=""
 >
   {#each countries as { value, name }}
@@ -91,7 +103,7 @@
 </Select>
 
 <div class="w-[14.5rem] flex flex-row mt-4 justify-evenly">
-  <Button color="alternative" class="w-16">{$result["Y"]}</Button>
-  <Button color="alternative" class="w-16">{$result["U"]}</Button>
-  <Button color="alternative" class="w-16">{$result["V"]}</Button>
+  <Button color="alternative" class="w-16">{$result["A"]}</Button>
+  <Button color="alternative" class="w-16">{$result["B"]}</Button>
+  <Button color="alternative" class="w-16">{$result["C"]}</Button>
 </div>
