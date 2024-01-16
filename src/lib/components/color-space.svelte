@@ -66,7 +66,7 @@
   });
 </script>
 
-<div class="w-[14.5rem] flex flex-row mt-[12.5rem] justify-evenly">
+<div class="w-[14.5rem] flex flex-row mt-[11.5rem] justify-evenly">
   <Button color="alternative" class="w-16">{$rgb["R"]}</Button>
   <Button color="alternative" class="w-16">{$rgb["G"]}</Button>
   <Button color="alternative" class="w-16">{$rgb["B"]}</Button>
