@@ -20,22 +20,16 @@
 }
 
 html {
-	body{
-		color: black;
-		background-color: #efefef;
-	}
-	:root{
-		--tool-cool-color-picker-popup-bg: #efefef;
-	}
-}
+	color: black;
+	background-color: #efefef;
+	--tool-cool-color-picker-popup-bg: #efefef;
+	--tool-cool-color-picker-popup-border-color: #efefef;
 
-html.dark {
-	body {
+	.app.dark {
 		color: #ffffff;
 		background-color: #0e0e0f;
-	}
-	:root {
 		--tool-cool-color-picker-popup-bg: #0e0e0f;
+		--tool-cool-color-picker-popup-border-color: #0e0e0f;
 	}
 }
 

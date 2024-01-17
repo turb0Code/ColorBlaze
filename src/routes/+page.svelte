@@ -18,15 +18,3 @@
     <ColorHarmony></ColorHarmony>
   </div>
 </div>
-
-<style>
-  :root {
-    --tool-cool-color-picker-btn-bg: rgba(0, 0, 0, 0);
-    --tool-cool-color-picker-btn-border-color: rgba(0, 0, 0, 0);
-    --tool-cool-color-picker-btn-border-color-inner: rgba(0, 0, 0, 0);
-    --tool-cool-color-picker-btn-border-radius: 0rem;
-    --tool-cool-color-picker-btn-border-radius-inner: 0rem;
-    --tool-cool-color-picker-popup-bg: #0e0e0f;
-    --tool-cool-color-picker-popup-border-color: #0e0e0f;
-  }
-</style>

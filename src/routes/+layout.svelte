@@ -1,9 +1,10 @@
 <script>
   import Header from "./Header.svelte";
   import "./styles.css";
+  import { darkMode } from "$lib/scripts/theme-preferences.js";
 </script>
 
-<div class="app dark">
+<div class={`app ${$darkMode ? "dark" : "light"}`}>
   <Header />
 
   <main>

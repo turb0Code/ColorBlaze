@@ -176,11 +176,16 @@ export const HslToLuv = (h, s, l) => {
     let L;
     let xyz = HslToXyz(h, s, l);
     let x = xyz["X"];
-    let y= xyz["Y"];
+    let y = xyz["Y"];
     let z = xyz["Z"];
+    let u_prime = 0;
+    let v_prime = 0;
 
-    let u_prime = (4*x)/(x + 15*y + 3*z);
-    let v_prime = (9*y)/(x + 15*y + 3*z);
+    if (x+y+z != 0)
+    {
+        u_prime = (4*x)/(x + 15*y + 3*z);
+        v_prime = (9*y)/(x + 15*y + 3*z);
+    }
 
     let X = x / 95.047;
     let Y = y / 100;
@@ -188,10 +193,8 @@ export const HslToLuv = (h, s, l) => {
 
     if (Y > 0.0086458791978) {
         L = (116 * (Y**(1/3))) - 16;
-        console.log("BIGGER");
     } else {
         L = 903.2962962963 * Y;
-        console.log("SMALLER");
     }
 
     let U = 13 * L * (u_prime - 0.1978);

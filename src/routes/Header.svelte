@@ -1,9 +1,7 @@
 <script>
-  import { page } from "$app/stores";
-  import logo from "$lib/images/svelte-logo.svg";
-  import github from "$lib/images/github.svg";
-  import { DarkMode } from "flowbite-svelte";
-
+  import { Button } from "flowbite-svelte";
+  import { SunSolid, MoonSolid } from "flowbite-svelte-icons";
+  import { darkMode } from "$lib/scripts/theme-preferences.js";
   import {
     Navbar,
     NavBrand,
@@ -13,6 +11,7 @@
     MegaMenu,
   } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
+
   let menu = [
     { name: "About us", href: "/about" },
     { name: "Blog", href: "/blog" },
@@ -26,6 +25,10 @@
     { name: "Pro Version", href: "/pro" },
     { name: "License", href: "/license" },
   ];
+
+  const updateTheme = (e) => {
+    darkMode.set(!$darkMode);
+  };
 </script>
 
 <Navbar let:hidden let:toggle>
@@ -56,6 +59,12 @@
       >
     </MegaMenu>
     <NavLi href="/services">Contact</NavLi>
-    <DarkMode size="md"></DarkMode>
+    <Button on:click={updateTheme}>
+      {#if $darkMode}
+        <SunSolid />
+      {:else}
+        <MoonSolid />
+      {/if}
+    </Button>
   </NavUl>
 </Navbar>
