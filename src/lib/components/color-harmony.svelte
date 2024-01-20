@@ -1,5 +1,6 @@
 <script>
   import { Select, Label, Input, Helper } from "flowbite-svelte";
+  
   let selected;
   let countries = [
     { value: "mono", name: "Monochromatic" },
@@ -7,11 +8,11 @@
     { value: "soft", name: "Soft Contrast" },
     { value: "dbct", name: "Double Contrast" },
     { value: "anlg", name: "Analogous" },
-  ];
+  ]; 
 </script>
 
 <div class="flex felx-row">
-  <div>
+  <div class="mr-1">
     <Label for="countries" class="w-[14.5rem]">Select an option</Label>
     <Select
       id="countries"
@@ -27,7 +28,7 @@
     </Select>
   </div>
 
-  <div>
+  <div class="ml-1">
     <Label class="space-y-2 w-24">
       <span>Distance</span>
     </Label>

@@ -25,10 +25,6 @@
     { name: "Pro Version", href: "/pro" },
     { name: "License", href: "/license" },
   ];
-
-  const updateTheme = (e) => {
-    darkMode.set(!$darkMode);
-  };
 </script>
 
 <Navbar let:hidden let:toggle>
@@ -38,10 +34,7 @@
       class="me-3 h-6 sm:h-9"
       alt="Flowbite Logo"
     />
-    <span
-      class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
-      >Flowbite</span
-    >
+    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
@@ -52,14 +45,10 @@
       />
     </NavLi>
     <MegaMenu items={menu} let:item>
-      <a
-        href={item.href}
-        class="hover:text-primary-600 dark:hover:text-primary-500"
-        >{item.name}</a
-      >
+      <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
     </MegaMenu>
     <NavLi href="/services">Contact</NavLi>
-    <Button on:click={updateTheme}>
+    <Button on:click={() => darkMode.set(!$darkMode) }>
       {#if $darkMode}
         <SunSolid />
       {:else}
