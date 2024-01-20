@@ -3,7 +3,7 @@
   import { onMount } from "svelte";
   import ColorSpace from "$lib/components/color-space.svelte";
   import { RgbToHsl } from "$lib/scripts/color-conversion.js";
-  import { h, s, l } from "$lib/scripts/stores.js";
+  import { h, s, l, hex } from "$lib/scripts/stores.js";
 
   let picker1;
   let picker;
@@ -12,7 +12,6 @@
     picker = writable(picker1);
 
     picker1.addEventListener("change", (e) => {
-      console.log(picker1.hex);
       let hsl = RgbToHsl(
         Math.round(picker1.color.r),
         Math.round(picker1.color.g),
@@ -21,6 +20,7 @@
       h.set(hsl["H"]);
       s.set(hsl["S"]);
       l.set(hsl["L"]);
+      hex.set(picker1.hex);
     });
   });
 

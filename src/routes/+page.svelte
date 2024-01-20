@@ -2,6 +2,7 @@
   import ColorPicker from "../lib/components/color-picker.svelte";
   import ColorHarmony from "../lib/components/color-harmony.svelte";
   import ColorField from "../lib/components/color-field.svelte";
+  import { hex } from "$lib/scripts/stores.js";
 </script>
 
 <svelte:head>
@@ -21,7 +22,7 @@
   <div>
     <ColorHarmony></ColorHarmony>
 
-    <ColorField></ColorField>
+    <ColorField hex={$hex}></ColorField>
   </div>
   
 

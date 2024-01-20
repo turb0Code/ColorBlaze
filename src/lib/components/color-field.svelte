@@ -1,9 +1,7 @@
 <script>
-
-export let hex = "";
-    
+export let hex = "#0e483c";
 </script>
 
-<div class="border-4 border-[#0e0e0f] dark:border-[#efefef] text-center bg-teal-800 h-56 w-56 ml-10 mt-8 rounded-md">
-    <button class="bg-yellow-200 mt-48 p-0" >Lorem Ipsum</button>
+<div class="border-2 border-dark dark:border-light text-center h-40 w-40 rounded-md flex align-middle items-center justify-center mt-4" style="background-color: {hex};">
+    <button class="p-0" >{hex}</button>
 </div>

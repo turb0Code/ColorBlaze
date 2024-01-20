@@ -14,7 +14,6 @@ export const darkMode = writable(dark);
 
 darkMode.subscribe((arg) => {
     if (browser) {
-        console.log(arg);
         if (arg!==null) arg ? localStorage.dark = "true" : localStorage.dark = "false";
     }
 });
