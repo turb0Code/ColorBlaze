@@ -12,6 +12,7 @@
     picker = writable(picker1);
 
     picker1.addEventListener("change", (e) => {
+      console.log(picker1.hex);
       let hsl = RgbToHsl(
         Math.round(picker1.color.r),
         Math.round(picker1.color.g),

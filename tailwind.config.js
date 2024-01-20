@@ -20,7 +20,11 @@ const config = {
           700: '#EB4F27',
           800: '#CC4522',
           900: '#A5371B'
-        }
+        },
+        dark: '#0e0e0f',
+        light: '#efefef',
+        main: '#1086e0',
+        accent: "#094C80"
       }
     }
   }

@@ -8,7 +8,15 @@
     { value: "soft", name: "Soft Contrast" },
     { value: "dbct", name: "Double Contrast" },
     { value: "anlg", name: "Analogous" },
-  ]; 
+  ];
+
+  const distanceLimit = (event) => {
+    let value = parseInt(event.target.value);
+    if (value < 0 || isNaN(value)) { value = 0; } 
+    else if (value > 360) { value = 360; }
+    event.target.value = value;
+  }
+
 </script>
 
 <div class="flex felx-row">
@@ -32,6 +40,6 @@
     <Label class="space-y-2 w-24">
       <span>Distance</span>
     </Label>
-    <Input type="number" placeholder="Distance" size="md" class="w-24" />
+    <Input type="number" placeholder="Distance" size="md" class="w-24" max="360" on:input={distanceLimit}/>
   </div>
 </div>

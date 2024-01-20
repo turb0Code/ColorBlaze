@@ -9,16 +9,21 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
+<!-- main -->
 <div class="grid-box">
+
+  <!-- lewa strona -->
   <div>
     <ColorPicker></ColorPicker>
   </div>
 
+  <!-- prawa strona -->
   <div>
     <ColorHarmony></ColorHarmony>
 
     <ColorField></ColorField>
   </div>
+  
 
 </div>
 

@@ -91,8 +91,7 @@
   class="mt-2 w-[14.5rem]"
   bind:value={selected}
   on:change={updateColorSpaces($h, $s, $l)}
-  placeholder=""
->
+  placeholder="">
   {#each countries as { value, name }}
     <option {value} class="h-8">
       {name}

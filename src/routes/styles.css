@@ -33,9 +33,7 @@ html {
 	}
 }
 
-h1,
-h2,
-p {
+h1, h2, p {
 	font-weight: 400;
 }
 
@@ -81,8 +79,7 @@ pre {
 	margin: 0 auto;
 }
 
-input,
-button {
+input, button {
 	font-size: inherit;
 	font-family: inherit;
 }
