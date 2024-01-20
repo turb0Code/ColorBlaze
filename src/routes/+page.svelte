@@ -1,6 +1,7 @@
 <script lang="js">
   import ColorPicker from "../lib/components/color-picker.svelte";
   import ColorHarmony from "../lib/components/color-harmony.svelte";
+  import ColorField from "../lib/components/color-field.svelte";
 </script>
 
 <svelte:head>
@@ -15,8 +16,12 @@
 
   <div>
     <ColorHarmony></ColorHarmony>
+
+    <ColorField></ColorField>
   </div>
+
 </div>
+
 
 <style>
   .grid-box {
