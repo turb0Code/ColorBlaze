@@ -67,23 +67,63 @@
   });
 </script>
 
-<div class="w-[14.5rem] flex flex-row mt-[11.5rem] justify-evenly">
-  <Button color="alternative" class="w-16">{$rgb["R"]}</Button>
-  <Button color="alternative" class="w-16">{$rgb["G"]}</Button>
-  <Button color="alternative" class="w-16">{$rgb["B"]}</Button>
+<div class="w-[14.5rem] flex flex-row mt-[11.5rem] justify-evenly border border-dark dark:border-light rounded-md">
+
+  <div class="text-center">
+    <div>R</div>
+    <Button color="alternative" class="w-16">{$rgb["R"]}</Button>
+  </div>
+
+  <div class="text-center">
+    <div>G</div>
+    <Button color="alternative" class="w-16">{$rgb["G"]}</Button>
+  </div>
+
+  <div class="text-center">
+    <div>B</div>
+    <Button color="alternative" class="w-16">{$rgb["B"]}</Button>
+  </div>
+
 </div>
 
-<div class="w-[14.5rem] flex flex-row mt-4 justify-evenly">
-  <Button color="alternative" class="w-16">{$cmy["C"]}</Button>
-  <Button color="alternative" class="w-16">{$cmy["M"]}</Button>
-  <Button color="alternative" class="w-16">{$cmy["Y"]}</Button>
+<div class="w-[14.5rem] flex flex-row mt-4 justify-evenly border border-dark dark:border-light rounded-md">
+
+  <div class="text-center">
+    <div>H</div>
+    <Button color="alternative" class="w-16">{$h}</Button>
+  </div>
+
+  <div class="text-center">
+    <div>S</div>
+    <Button color="alternative" class="w-16">{$s}</Button>
+  </div>
+
+  <div class="text-center">
+    <div>L</div>
+    <Button color="alternative" class="w-16">{$l}</Button>
+  </div>
+
 </div>
 
-<div class="w-[14.5rem] flex flex-row mt-4 justify-evenly">
-  <Button color="alternative" class="w-16">{$h}</Button>
-  <Button color="alternative" class="w-16">{$s}</Button>
-  <Button color="alternative" class="w-16">{$l}</Button>
+<div class="w-[14.5rem] flex flex-row mt-4 justify-evenly border border-dark dark:border-light rounded-md">
+
+  <div class="text-center">
+    <div>C</div>
+    <Button color="alternative" class="w-16">{$cmy["C"]}</Button>
+  </div>
+
+  <div class="text-center">
+    <div>M</div>
+    <Button color="alternative" class="w-16">{$cmy["M"]}</Button>
+  </div>
+
+  <div class="text-center">
+    <div>Y</div>
+    <Button color="alternative" class="w-16">{$cmy["Y"]}</Button>
+  </div>
+
 </div>
+
 
 <Label for="countries" class="w-[14.5rem] mt-4">Select an option</Label>
 <Select
