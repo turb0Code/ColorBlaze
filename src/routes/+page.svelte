@@ -12,7 +12,6 @@
 
 <!-- main -->
 <div class="grid-box">
-
   <!-- lewa strona -->
   <div>
     <ColorPicker></ColorPicker>
@@ -24,10 +23,7 @@
 
     <ColorField hex={$hex}></ColorField>
   </div>
-  
-
 </div>
-
 
 <style>
   .grid-box {
