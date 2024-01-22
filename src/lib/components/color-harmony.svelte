@@ -1,6 +1,7 @@
 <script>
   import { Select, Label, Input, Helper } from "flowbite-svelte";
-  
+  import { writable } from "svelte/store";
+
   let selected;
   let countries = [
     { value: "mono", name: "Monochromatic" },
@@ -9,14 +10,23 @@
     { value: "dbct", name: "Double Contrast" },
     { value: "anlg", name: "Analogous" },
   ];
+  let opened = false;
 
   const distanceLimit = (event) => {
     let value = parseInt(event.target.value);
-    if (value < 0 || isNaN(value)) { value = 0; } 
-    else if (value > 360) { value = 360; }
+    if (value < 0 || isNaN(value)) {
+      value = 0;
+    } else if (value > 360) {
+      value = 360;
+    }
     event.target.value = value;
-  }
+  };
 
+  const updateColorHarmony = () => {
+    if (selected == "soft" || selected == "dbct" || selected == "anlg")
+      opened = true;
+    else opened = false;
+  };
 </script>
 
 <div class="flex felx-row">
@@ -27,6 +37,7 @@
       class="w-[14.5rem]"
       bind:value={selected}
       placeholder=""
+      on:change={updateColorHarmony}
     >
       {#each countries as { value, name }}
         <option {value} class="h-8">
@@ -36,10 +47,32 @@
     </Select>
   </div>
 
-  <div class="ml-1">
-    <Label class="space-y-2 w-24">
-      <span>Distance</span>
-    </Label>
-    <Input type="number" placeholder="Distance" size="md" class="w-24" max="360" on:input={distanceLimit}/>
-  </div>
+  {#if opened}
+    <div class="ml-1">
+      <Label class="space-y-2 w-24">
+        <span>Distance</span>
+      </Label>
+      <Input
+        type="number"
+        placeholder="Distance"
+        size="md"
+        class="w-24"
+        max="360"
+        on:input={distanceLimit}
+      />
+    </div>
+  {:else}
+    <div class="ml-1">
+      <Label class="space-y-2 w-24 text-slate-500">
+        <span>Distance</span>
+      </Label>
+      <Input
+        disabled
+        type="number"
+        placeholder="Distance"
+        size="md"
+        class="w-24"
+      />
+    </div>
+  {/if}
 </div>

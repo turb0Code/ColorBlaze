@@ -1,19 +1,23 @@
 <script>
-import { l } from "$lib/scripts/stores.js";
+    import { l } from "$lib/scripts/stores.js";
 
-export let hex = "#0e483c";
+    export let hex = "#0e483c";
 
-let textColor = "#efefef";
+    let textColor = "#efefef";
 
-l.subscribe(() => { textColor = $l > 50 ? "#0e0e0f" : "#efefef"; });
+    l.subscribe(() => {
+        textColor = $l >= 50 ? "#0e0e0f" : "#efefef";
+    });
 
-function CopyColor(){
-
-    navigator.clipboard.writeText(hex);
-    alert("Copied the text: " + hex);
-}
+    const copyColor = () => {
+        navigator.clipboard.writeText(hex);
+        alert("Copied the text: " + hex);
+    }
 </script>
 
-<div class="border-2 border-dark dark:border-light text-center h-40 w-40 rounded-md flex align-middle items-center justify-center mt-4" style="background-color: {hex};">
-    <button class="p-0" on:click={CopyColor} style="color: {textColor}">{hex}</button>
+<div
+    class="border-2 border-dark dark:border-light text-center h-40 w-40 rounded-md flex align-middle items-center justify-center mt-4"
+    style="background-color: {hex};"
+>
+    <button class="p-0" style="color: {textColor}" on:click={copyColor}>{hex}</button>
 </div>

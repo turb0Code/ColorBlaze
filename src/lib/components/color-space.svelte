@@ -89,7 +89,7 @@
 <div class="w-[14.5rem] flex flex-row mt-4 justify-evenly border border-dark dark:border-light rounded-md pb-1">
 
   <div class="text-center">
-    <div>H</div>
+    <div class="text-sm">H</div>
     <Button color="alternative" class="w-16">{$h}</Button>
   </div>
 
