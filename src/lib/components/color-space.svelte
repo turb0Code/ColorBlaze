@@ -67,7 +67,7 @@
   });
 </script>
 
-<div class="w-[14.5rem] flex flex-row mt-[11.5rem] justify-evenly border border-dark dark:border-light rounded-md">
+<div class="w-[14.5rem] flex flex-row mt-[11.5rem] justify-evenly border border-dark dark:border-light rounded-md pb-1">
 
   <div class="text-center">
     <div>R</div>
@@ -86,7 +86,7 @@
 
 </div>
 
-<div class="w-[14.5rem] flex flex-row mt-4 justify-evenly border border-dark dark:border-light rounded-md">
+<div class="w-[14.5rem] flex flex-row mt-4 justify-evenly border border-dark dark:border-light rounded-md pb-1">
 
   <div class="text-center">
     <div>H</div>
@@ -105,7 +105,7 @@
 
 </div>
 
-<div class="w-[14.5rem] flex flex-row mt-4 justify-evenly border border-dark dark:border-light rounded-md">
+<div class="w-[14.5rem] flex flex-row mt-4 justify-evenly border border-dark dark:border-light rounded-md pb-1">
 
   <div class="text-center">
     <div>C</div>
