@@ -3,6 +3,7 @@
   import ColorHarmony from "../lib/components/color-harmony.svelte";
   import ColorField from "../lib/components/color-field.svelte";
   import { hex } from "$lib/scripts/stores.js";
+  import FileExport from "$lib/components/file-export.svelte";
 </script>
 
 <svelte:head>
@@ -20,6 +21,8 @@
   <!-- prawa strona -->
   <div>
     <ColorHarmony></ColorHarmony>
+
+    <FileExport></FileExport>
 
     <ColorField hex={$hex}></ColorField>
   </div>

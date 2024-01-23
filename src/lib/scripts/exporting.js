@@ -1,6 +1,6 @@
 let colorsData = [];
 
-const handleFileSelect = (e) => {
+export const handleFileSelect = (e) => {
     const file = e.target.files[0];
     if (!file) return;
     const reader = new FileReader();
@@ -18,12 +18,12 @@ const handleFileSelect = (e) => {
     reader.readAsText(file);
 }
 
-const downloadJSON = (colorsArray) => {
-    const jsonContent = JSON.stringify({ kolory: colorsArray }, null, 2);
+export const saveJson = (colorsArray) => {
+    const jsonContent = JSON.stringify({ colors: colorsArray }, null, 2);
     const encodedUri = encodeURI('data:text/json;charset=utf-8,' + jsonContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', 'paleta_barw.json');
+    link.setAttribute('download', 'color-pallete.json');
     document.body.appendChild(link);
     link.click();
 }
