@@ -68,7 +68,7 @@
 </script>
 
 <div
-  class="w-[14.5rem] flex flex-row mt-[11.5rem] justify-evenly border border-gray-300 dark:border-gray-500 rounded-md pb-1"
+  class="w-[14.5rem] flex flex-row mt-[11.5rem] justify-evenly border border-gray-400 dark:border-gray-500 rounded-md pb-1"
 >
   <div class="text-center">
     <div class="text-[0.8rem] font-bold">R</div>
@@ -87,7 +87,7 @@
 </div>
 
 <div
-  class="w-[14.5rem] flex flex-row mt-4 justify-evenly border border-dark dark:border-light rounded-md pb-1"
+  class="w-[14.5rem] flex flex-row mt-4 justify-evenly border border-gray-400 dark:border-gray-500 rounded-md pb-1"
 >
   <div class="text-center">
     <div class="text-[0.8rem] font-bold">H</div>
@@ -106,7 +106,7 @@
 </div>
 
 <div
-  class="w-[14.5rem] flex flex-row mt-4 justify-evenly border border-dark dark:border-light rounded-md pb-1"
+  class="w-[14.5rem] flex flex-row mt-4 justify-evenly border border-gray-400 dark:border-gray-500 rounded-md pb-1"
 >
   <div class="text-center">
     <div class="text-[0.8rem] font-bold">C</div>
