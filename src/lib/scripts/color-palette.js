@@ -1,11 +1,11 @@
-const HslContrast = (h, s, l) => {
+export const HslContrast = (h, s, l) => {
     let hue = (h + 180) % 360;
     return {"H": hue, "S": s, "L": l}
 }
 
 //--------------
 
-const HslSoftContrast = (h, s, l, distance) => {
+export const HslSoftContrast = (h, s, l, distance) => {
     let contrast = HslContrast(h, s, l);
     let hue1 = (contrast["H"] + distance/2) % 360;
     let hue2 = (contrast["H"] - distance/2) % 360;
@@ -14,7 +14,7 @@ const HslSoftContrast = (h, s, l, distance) => {
 
 //--------------
 
-const HslDoubleContrast = (h, s, l, distance) => {
+export const HslDoubleContrast = (h, s, l, distance) => {
     let mainColor = {"H": h, "S": s, "L": l};
     let hue1 = (h + distance) % 360;
     let secondColor = {"H": hue1, "S": s, "L": l};
@@ -25,7 +25,7 @@ const HslDoubleContrast = (h, s, l, distance) => {
 
 //--------------
 
-const HslAnalogous = (h, s, l, distance, contrast) => {
+export const HslAnalogous = (h, s, l, distance, contrast) => {
     let mainColor = {"H": h, "S": s, "L": l};
     let hue1 = (h + distance) % 360;
     let hue2 = (h - distance) % 360;
