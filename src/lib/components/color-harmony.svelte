@@ -16,6 +16,11 @@
 
   const distanceLimit = (event) => {
     let value = parseInt(event.target.value);
+    switch (selected) {
+      case "soft": 
+        value < 0 ? 0 : value;
+        value > 60 ? 60 : value;
+    }
     if (value < 0 || isNaN(value)) {
       value = 0;
     } else if (value > 360) {

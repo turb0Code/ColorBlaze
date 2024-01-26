@@ -67,58 +67,52 @@
   });
 </script>
 
-<div
-  class="w-[14.5rem] flex flex-row mt-[11.5rem] justify-evenly border border-gray-400 dark:border-gray-500 rounded-md pb-1"
->
-  <div class="text-center">
+<div class="w-[14.5rem] flex flex-row mt-[12.3rem] justify-evenly glass rounded-md pb-1">
+  <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">R</div>
     <Button color="alternative" class="w-16">{$rgb["R"]}</Button>
   </div>
 
-  <div class="text-center">
+  <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">G</div>
     <Button color="alternative" class="w-16">{$rgb["G"]}</Button>
   </div>
 
-  <div class="text-center">
+  <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">B</div>
     <Button color="alternative" class="w-16">{$rgb["B"]}</Button>
   </div>
 </div>
 
-<div
-  class="w-[14.5rem] flex flex-row mt-4 justify-evenly border border-gray-400 dark:border-gray-500 rounded-md pb-1"
->
-  <div class="text-center">
+<div class="w-[14.5rem] flex flex-row mt-4 justify-evenly glass rounded-md pb-1">
+  <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">H</div>
     <Button color="alternative" class="w-16">{$h}</Button>
   </div>
 
-  <div class="text-center">
+  <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">S</div>
     <Button color="alternative" class="w-16">{$s}</Button>
   </div>
 
-  <div class="text-center">
+  <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">L</div>
     <Button color="alternative" class="w-16">{$l}</Button>
   </div>
 </div>
 
-<div
-  class="w-[14.5rem] flex flex-row mt-4 justify-evenly border border-gray-400 dark:border-gray-500 rounded-md pb-1"
->
-  <div class="text-center">
+<div class="w-[14.5rem] flex flex-row mt-4 justify-evenly glass rounded-md pb-1">
+  <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">C</div>
     <Button color="alternative" class="w-16">{$cmy["C"]}</Button>
   </div>
 
-  <div class="text-center">
+  <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">M</div>
     <Button color="alternative" class="w-16">{$cmy["M"]}</Button>
   </div>
 
-  <div class="text-center">
+  <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">Y</div>
     <Button color="alternative" class="w-16">{$cmy["Y"]}</Button>
   </div>
