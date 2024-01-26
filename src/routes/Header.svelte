@@ -36,7 +36,7 @@
     />
     <span
       class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
-      >Flowbite</span
+      >ColorBlaze</span
     >
   </NavBrand>
   <NavHamburger on:click={toggle} />
@@ -50,7 +50,7 @@
     <MegaMenu items={menu} let:item>
       <a
         href={item.href}
-        class="hover:text-primary-600 dark:hover:text-primary-500"
+        class=" hover:text-accent dark:hover:text-accent2"
         >{item.name}</a
       >
     </MegaMenu>

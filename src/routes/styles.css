@@ -60,12 +60,8 @@ p {
 }
 
 a {
-	color: var(--color-theme-1);
+	color: #8441C7;
 	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
 }
 
 h1 {

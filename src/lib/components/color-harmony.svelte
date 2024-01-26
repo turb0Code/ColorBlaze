@@ -49,13 +49,13 @@
     <Label for="countries" class="w-[14.5rem]">Select an option</Label>
     <Select
       id="countries"
-      class="w-[14.5rem]"
+      class="w-[14.5rem] glass"
       bind:value={selected}
       placeholder=""
       on:change={updateColorHarmony}
     >
       {#each colors as { value, name }}
-        <option {value} class="h-8">
+        <option {value} class="h-8 glass">
           {name}
         </option>
       {/each}
@@ -71,7 +71,7 @@
         type="number"
         placeholder="Distance"
         size="md"
-        class="w-24"
+        class="w-24 glass"
         max="360"
         on:input={distanceLimit}
         bind:value={distance}
