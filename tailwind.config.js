@@ -38,7 +38,8 @@ const config = {
         light: '#efefef',
         main: '#8441C7',
         accent: "#370870",
-        accent2: "#DCC7E9"
+        accent2: "#DCC7E9",
+        accent3: "#14033A"
       }
     }
   }

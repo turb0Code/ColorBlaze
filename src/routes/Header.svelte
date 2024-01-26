@@ -50,7 +50,7 @@
     <MegaMenu items={menu} let:item>
       <a
         href={item.href}
-        class=" hover:text-accent dark:hover:text-accent2"
+        class=" hover:text-accent3 dark:hover:text-accent2"
         >{item.name}</a
       >
     </MegaMenu>
