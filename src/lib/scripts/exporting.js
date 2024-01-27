@@ -20,7 +20,7 @@ export const handleFileSelect = (e) => {
 
 export const saveJson = (colorsArray) => {
     const jsonContent = JSON.stringify({ colors: colorsArray }, null, 2);
-    const encodedUri = encodeURI('data:text/json;charset=utf-8,' + jsonContent);
+    const encodedUri = 'data:text/json;charset=utf-8,' + encodeURIComponent(jsonContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
     link.setAttribute('download', 'color-pallete.json');
