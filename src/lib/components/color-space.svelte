@@ -127,17 +127,14 @@
   placeholder=""
 >
   {#each countries as { value, name }}
-    <option {value} class="h-8">
+    <option {value} class="h-8 bg-light dark:bg-dark">
       {name}
-      <div class="h-4 flex glass"></div>
-      <div></div>
-      <div></div>
     </option>
   {/each}
 </Select>
 
 <div class="w-[14.5rem] flex flex-row mt-4 justify-evenly">
-  <Button color="alternative" class="w-16">{$result["A"]}</Button>
-  <Button color="alternative" class="w-16">{$result["B"]}</Button>
-  <Button color="alternative" class="w-16">{$result["C"]}</Button>
+  <Button color="alternative" class="w-16 glass">{$result["A"]}</Button>
+  <Button color="alternative" class="w-16 glass">{$result["B"]}</Button>
+  <Button color="alternative" class="w-16 glass">{$result["C"]}</Button>
 </div>

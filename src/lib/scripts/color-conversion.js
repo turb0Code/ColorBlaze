@@ -202,3 +202,18 @@ export const HslToLuv = (h, s, l) => {
 
     return {"L": Math.round(L), "U": Math.round(U), "V": Math.round(V)};
 }
+
+//--------------
+
+export const HslToHex = (h, s, l) => {
+    let rgb = HslToRgb(h, s, l);
+    let r = rgb["R"];
+    let g = rgb["G"];
+    let b = rgb["B"];
+    const toHex = (x) => {
+        var hex = x.toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+    };
+    let hex = '#' + toHex(r) + toHex(g) + toHex(b);
+    return hex.toUpperCase();
+}

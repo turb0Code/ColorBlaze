@@ -5,9 +5,7 @@
 
     let textColor = "#efefef";
 
-    l.subscribe(() => {
-        textColor = $l >= 50 ? "#0e0e0f" : "#efefef";
-    });
+    l.subscribe(() => { textColor = $l >= 50 ? "#0e0e0f" : "#efefef"; });
 
     const copyColor = () => {
         navigator.clipboard.writeText(hex);
@@ -16,7 +14,7 @@
 </script>
 
 <div
-    class="border-2 border-dark dark:border-light text-center h-40 w-40 rounded-md flex items-center justify-center mt-4 clear-left"
+    class="mx-2 border-2 border-dark dark:border-light text-center h-40 w-40 rounded-md flex align-middle items-center justify-center mt-4 clear-left"
     style="background-color: {hex};"
 >
     <button class="p-0" style="color: {textColor}" on:click={copyColor}>{hex}</button>

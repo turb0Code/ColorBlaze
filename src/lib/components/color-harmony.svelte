@@ -1,12 +1,11 @@
 <script>
-  import { Select, Label, Input } from "flowbite-svelte";
-  import { HslContrast, HslSoftContrast, HslDoubleContrast, HslAnalogous } from "$lib/scripts/color-palette.js";
-  import { h, s, l } from "$lib/scripts/stores.js";
+  import { Select, Label, Input, Checkbox } from "flowbite-svelte";
+  import { distance, harmony, complement } from "$lib/scripts/stores.js";
 
   let selected;
-  let distance = 0;
+  let localDistance = 0;
   let opened = false;
-  let colors = [
+  let colorTypes = [
     { value: "mono", name: "Monochromatic" },
     { value: "cont", name: "Contrast" },
     { value: "soft", name: "Soft Contrast" },
@@ -17,7 +16,7 @@
   const distanceLimit = (event) => {
     let value = parseInt(event.target.value);
     switch (selected) {
-      case "soft": 
+      case "soft":
         value < 0 ? 0 : value;
         value > 60 ? 60 : value;
     }
@@ -27,6 +26,7 @@
       value = 360;
     }
     event.target.value = value;
+    distance.set(value);
     updateColorHarmony();
   };
 
@@ -34,14 +34,8 @@
     if (selected == "soft" || selected == "dbct" || selected == "anlg")
       opened = true;
     else opened = false;
-
-    switch (selected) {
-      case "cont": console.log(HslContrast($h, $s, $l)); break;
-      case "soft": console.log(HslSoftContrast($h, $s, $l, distance)); break;
-      case "dbct": console.log(HslDoubleContrast($h, $s, $l, distance)); break;
-      case "anlg": console.log(HslAnalogous($h, $s, $l, distance, true)); break;
-    }
-  };
+    harmony.set(selected);
+  }
 </script>
 
 <div class="flex felx-row float-left">
@@ -54,8 +48,8 @@
       placeholder=""
       on:change={updateColorHarmony}
     >
-      {#each colors as { value, name }}
-        <option {value} class="h-8 glass">
+      {#each colorTypes as { value, name }}
+        <option {value} class="h-8 bg-light dark:bg-dark hover:bg-main">
           {name}
         </option>
       {/each}
@@ -74,7 +68,7 @@
         class="w-24 glass"
         max="360"
         on:input={distanceLimit}
-        bind:value={distance}
+        bind:value={localDistance}
       />
     </div>
   {:else}
@@ -90,5 +84,9 @@
         class="w-24"
       />
     </div>
+  {/if}
+
+  {#if selected=="anlg"}
+    <Checkbox class="h-9 w-9 mt-[0.9rem] ml-1 mr-1" bind:checked={$complement}></Checkbox>
   {/if}
 </div>

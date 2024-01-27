@@ -32,6 +32,13 @@ html {
 		--tool-cool-color-picker-popup-bg: #0e0e0f;
 		--tool-cool-color-picker-popup-border-color: #0e0e0f;
 		background-image: url("../lib/images/wiggle.svg");
+
+		.glass {
+			background: rgba(255, 255, 255, 0.03);
+			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+			backdrop-filter: blur(2.4px);
+			-webkit-backdrop-filter: blur(2.4px);
+		}
 	}
 }
 
@@ -43,9 +50,7 @@ html {
 } */
 
 .glass {
-	/* From https://css.glass */
 	background: rgba(255, 255, 255, 0.03);
-	border-radius: 16px;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	backdrop-filter: blur(2.4px);
 	-webkit-backdrop-filter: blur(2.4px);

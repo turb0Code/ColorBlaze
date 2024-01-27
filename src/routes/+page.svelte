@@ -1,9 +1,8 @@
 <script lang="js">
   import ColorPicker from "../lib/components/color-picker.svelte";
   import ColorHarmony from "../lib/components/color-harmony.svelte";
-  import ColorField from "../lib/components/color-field.svelte";
-  import { hex } from "$lib/scripts/stores.js";
   import FileExport from "$lib/components/file-export.svelte";
+  import ColorPreview from "../lib/components/color-preview.svelte";
 </script>
 
 <svelte:head>
@@ -24,7 +23,8 @@
 
     <FileExport></FileExport>
 
-    <ColorField hex={$hex}></ColorField>
+    <ColorPreview></ColorPreview>
+
   </div>
 </div>
 

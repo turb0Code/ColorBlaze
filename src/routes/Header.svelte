@@ -12,6 +12,7 @@
   } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 
+  let src = "$lib/images/logo.svg";
   let menu = [
     { name: "Website", href: "/example" },
     { name: "Blog", href: "/blog" },
@@ -29,30 +30,18 @@
 
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
-    <img
-      src="/images/flowbite-svelte-icon-logo.svg"
-      class="me-3 h-6 sm:h-9"
-      alt="Flowbite Logo"
-    />
-    <span
-      class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
-      >ColorBlaze</span
-    >
+    <div class="w-14 h-14">
+      <img src="src/lib/images/logo.svg" alt="ColorBlaze logo"/>
+    </div>
+    <span class="self-center whitespace-nowrap text-2xl font-semibold dark:text-main">ColorBlaze</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer"
-      >More Examples<ChevronDownOutline
-        class="w-3 h-3 ms-2 text-primary-800 dark:text-white inline"
-      /></NavLi
-    >
+    <NavLi class="cursor-pointer"> More Examples <ChevronDownOutline class="w-3 h-3 ms-2 text-primary-800 dark:text-white inline"/>
+    </NavLi>
     <MegaMenu items={menu} let:item>
-      <a
-        href={item.href}
-        class=" hover:text-accent3 dark:hover:text-accent2"
-        >{item.name}</a
-      >
+      <a href={item.href} class=" hover:text-accent3 dark:hover:text-accent2">{item.name}</a>
     </MegaMenu>
     <NavLi href="/services">Contact</NavLi>
     <Button on:click={() => darkMode.set(!$darkMode)}>
