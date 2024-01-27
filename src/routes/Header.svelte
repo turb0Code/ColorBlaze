@@ -13,7 +13,7 @@
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 
   let menu = [
-    { name: "About us", href: "/about" },
+    { name: "Website", href: "/example" },
     { name: "Blog", href: "/blog" },
     { name: "Contact us", href: "/contact" },
     { name: "Library", href: "/library" },
