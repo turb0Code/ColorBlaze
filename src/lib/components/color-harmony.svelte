@@ -17,8 +17,17 @@
     let value = parseInt(event.target.value);
     switch (selected) {
       case "soft":
-        value < 0 ? 0 : value;
-        value > 60 ? 60 : value;
+        value = value < 0 ? 0 : value;
+        value = value > 60 ? 60 : value;
+        break;
+      case "dbct":
+        value = value < 0 ? 0 : value;
+        value = value > 90 ? 90 : value;
+        break;
+      case "anlg":
+        value = value < 0 ? 0 : value;
+        value = value > 60 ? 60 : value;
+        break;
     }
     if (value < 0 || isNaN(value)) {
       value = 0;
