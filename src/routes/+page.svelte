@@ -13,6 +13,7 @@
 
 <!-- main -->
 <div class="grid-box">
+
   <!-- lewa strona -->
   <div>
     <ColorPicker></ColorPicker>
@@ -25,8 +26,8 @@
     <FileExport></FileExport>
 
     <ColorPreview></ColorPreview>
-
   </div>
+
 </div>
 
 <style>
