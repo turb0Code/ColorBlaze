@@ -19,12 +19,6 @@
     { name: "Contact us", href: "/contact" },
     { name: "Library", href: "/library" },
     { name: "Newsletter", href: "/news" },
-    { name: "Support Center", href: "/support" },
-    { name: "Resources", href: "/resource" },
-    { name: "Playground", href: "/play" },
-    { name: "Terms", href: "/terms" },
-    { name: "Pro Version", href: "/pro" },
-    { name: "License", href: "/license" },
   ];
 </script>
 
