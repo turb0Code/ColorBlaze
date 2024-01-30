@@ -59,9 +59,6 @@
     harmony.subscribe(() => { generateColors(); });
     distance.subscribe(() => { generateColors(); });
 
-    colors.subscribe(() => {
-        console.log($colors);
-    });
 </script>
 
 

@@ -4,13 +4,6 @@
   import FileExport from "$lib/components/file-export.svelte";
   import ColorPreview from "../lib/components/color-preview.svelte";
   import ColorConverter from 'simple-color-converter';
-
-  let fasterColor = new ColorConverter({
-    rgb: {r: 10, g: 200, b: 50},
-    to: 'ral'
-  })
-
-  console.log(fasterColor);
 </script>
 
 <svelte:head>
