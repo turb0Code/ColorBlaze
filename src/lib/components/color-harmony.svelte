@@ -1,6 +1,6 @@
 <script>
   import { Select, Label, Input, Checkbox } from "flowbite-svelte";
-  import { distance, harmony, complement } from "$lib/scripts/stores.js";
+  import { distance, harmony, complement, h } from "$lib/scripts/stores.js";
 
   let selected;
   let localDistance = 0;
@@ -13,8 +13,17 @@
     { value: "anlg", name: "Analogous" },
   ];
 
-  const distanceLimit = (event) => {
+  const distanceLimit = async (event) => {
     let value = parseInt(event.target.value);
+    if (value == 420)
+    {
+      $h = 0;
+      for (let i = 0; i < 1080; i++)
+      {
+        if (i %3 == 0) { $h++; }
+        await new Promise(resolve => setTimeout(resolve, 0.1));
+      }
+    }
     switch (selected) {
       case "soft":
         value = value < 0 ? 0 : value;
@@ -58,7 +67,7 @@
       on:change={updateColorHarmony}
     >
       {#each colorTypes as { value, name }}
-        <option {value} class="h-8 bg-light dark:bg-dark hover:bg-main">
+        <option {value} class="h-8 bg-light hover:bg-main dark:bg-dark">
           {name}
         </option>
       {/each}
