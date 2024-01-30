@@ -1,8 +1,8 @@
 <script>
 
-  import { Alert, Button, Indicator, Badge, BottomNav, BottomNavItem, Skeleton, ImagePlaceholder, Tooltip, Breadcrumb, BreadcrumbItem, ButtonGroup, GradientButton, Spinner, Card, Toggle, Label, Input, Checkbox, Rating,DeviceMockup,  Drawer, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper, A,  Dropdown, DropdownItem, Popover, SpeedDial, SpeedDialButton, BottomNavHeader, BottomNavHeaderItem} from 'flowbite-svelte';
+  import { Alert, Button, Indicator, Badge, BottomNav, BottomNavItem, Skeleton, ImagePlaceholder, Tooltip, Breadcrumb, BreadcrumbItem, ButtonGroup, GradientButton, Spinner, Card, Toggle, Label, Input, Checkbox, Rating,DeviceMockup,  Drawer, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper, A,  Dropdown, DropdownItem, Popover, SpeedDial, SpeedDialButton, BottomNavHeader, BottomNavHeaderItem, Gallery, Listgroup, ListgroupItem, Progressbar, Toast} from 'flowbite-svelte';
 
-  import { InfoCircleSolid, EnvelopeSolid, HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid, PlusSolid, HomeOutline, ChevronDoubleRightOutline, ThumbsUpSolid, ArrowRightOutline,  GiftBoxSolid, ArrowUpRightFromSquareOutline, CheckCircleSolid, ChartPieSolid, ShoppingCartSolid, GridSolid, MailBoxSolid, UsersSolid, BagSolid, ArrowRightToBracketSolid, FileEditSolid, ChevronDownSolid, ChevronRightSolid, DatabaseSolid, ChevronRightOutline, ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid, BookmarkSolid, SearchOutline,} from 'flowbite-svelte-icons';
+  import { InfoCircleSolid, EnvelopeSolid, HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid, PlusSolid, HomeOutline, ChevronDoubleRightOutline, ThumbsUpSolid, ArrowRightOutline,  GiftBoxSolid, ArrowUpRightFromSquareOutline, CheckCircleSolid, ChartPieSolid, ShoppingCartSolid, GridSolid, MailBoxSolid, UsersSolid, BagSolid, ArrowRightToBracketSolid, FileEditSolid, ChevronDownSolid, ChevronRightSolid, DatabaseSolid, ChevronRightOutline, ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid, BookmarkSolid, SearchOutline, AdjustmentsHorizontalSolid, MessagesSolid,  PapperPlaneOutline} from 'flowbite-svelte-icons';
 
   import { sineIn } from 'svelte/easing';
   let hidden2 = true;
@@ -21,6 +21,14 @@
   };
   import { page } from '$app/stores';
   $: activeUrl = $page.url.pathname;
+
+
+  let icons = [
+    { name: 'Profile', icon: UserCircleSolid },
+    { name: 'Settings', icon: AdjustmentsHorizontalSolid },
+    { name: 'Messages', icon: MessagesSolid },
+    { name: 'Download', icon: DownloadSolid }
+  ];
 
 </script>
 
@@ -138,6 +146,7 @@
     <!-- prawa -->
     <div>
 
+      <!-- dropdowny -->
       <div class="ml-12 mt-4">
         <Button class="w-36">Dropdown button<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
         <Dropdown {activeUrl}>
@@ -189,6 +198,84 @@
         </Dropdown>
       </div>
 
+      <!-- pullovery i galeria -->
+      <div class="flex flex-row">
+
+        <!-- zdjecia -->
+        <div class="mt-8 ml-16">
+
+          <div class="flex flex-row">
+            <div class="pr-2">
+              <img src="src/lib/images/phone1.jpg" alt="shoas" class="h-32 w-32 rounded-lg mb-2" />
+              <div class="h-32 w-32 rounded-lg flex items-center justify-center text-3xl font-extrabold bg-red-300">Sale</div>
+            </div>
+  
+            <div>
+              <div class="h-32 w-32 rounded-lg flex items-center justify-center text-3xl font-extrabold bg-blue-300 mb-2">Sale</div>
+              <img alt="plants" src="src/lib/images/image2.jpg" class="h-32 w-32 rounded-lg" />
+            </div>
+          </div>
+  
+  
+        </div>
+
+        <!-- pullovery -->
+        <div class="mt-12">
+
+          <!-- click i hover -->
+          <div class="ml-8">
+          <Button id="hover" class="mr-2">Hover popover</Button>
+        <Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#hover" trigger="hover">And here's some amazing content. It's very engaging. Right?</Popover>
+        
+        <Button id="click">Click popover</Button>
+        <Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#click" trigger="click">And here's some amazing content. It's very engaging. Right?</Popover>
+          </div>
+
+          <!-- storage i checbox -->
+          <div class="flex flex-col ml-10 mt-4 mb-2">
+
+        <Button id="progress" class="mr-2 mb-4 w-64">
+          <DatabaseSolid class="me-2 w-4 h-4 text-white dark:text-white" /> Storage status
+        </Button>
+        <Popover triggeredBy="#progress" class="text-sm w-64 font-light">
+          <div class="space-y-2">
+            <h3 class="font-semibold text-gray-900 dark:text-white">Available storage</h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              This server has <span class="font-semibold text-gray-900 dark:text-white">30</span>
+              of
+              <span class="font-semibold text-gray-900 dark:text-white">150 GB</span>
+              of block storage remaining.
+            </p>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+              <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%" />
+            </div>
+            <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
+              Upgrade now <ChevronRightOutline class="w-2 h-2 ms-1.5 text-primary-600 dark:text-primary-500" />
+            </a>
+          </div>
+        </Popover>
+
+          <div class="ml-16">
+            <Checkbox>Default checkbox</Checkbox>
+            <Checkbox checked>Checked state</Checkbox>
+          </div>
+
+          </div>
+
+
+
+          <Toast dismissable={false} contentClass="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700" class="ml-10 w-64">
+            <PapperPlaneOutline class="w-5 h-5 text-primary-600 dark:text-primary-500 rotate-45" />
+            <div class="ps-4 text-sm font-normal">Message sent successfully.</div>
+          </Toast>
+  
+
+        </div>
+
+
+      </div>
+
+      <!-- navigations -->
       <div class="absolute bottom-0 flex flex-row ml-52">
         <div class="text-center mr-2">
           <Button on:click={() => (hidden2 = false)}>Show navigation</Button>
