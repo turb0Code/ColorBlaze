@@ -129,7 +129,7 @@
   </div>
 </div>
 
-<Label for="countries" class="w-[14.5rem] mt-4">Select an option</Label>
+<Label for="countries" class="w-[14.5rem] mt-4">Color space</Label>
 <Select
   id="countries"
   class="mt-2 w-[14.5rem] glass"

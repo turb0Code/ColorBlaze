@@ -49,7 +49,7 @@
 
 <div class="flex felx-row float-left">
   <div class="mr-1">
-    <Label for="countries" class="w-[14.5rem]">Select an option</Label>
+    <Label for="countries" class="w-[14.5rem]">Select color harmony</Label>
     <Select
       id="countries"
       class="w-[14.5rem] glass"
