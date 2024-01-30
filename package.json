@@ -23,6 +23,7 @@
 	"dependencies": {
 		"@thednp/color-picker": "^2.0.0-alpha10",
 		"flowbite-svelte-icons": "^1.0.2",
+		"simple-color-converter": "^2.1.13",
 		"toolcool-color-picker": "^1.0.15"
 	}
 }

@@ -12,6 +12,7 @@
   import { writable, derived } from "svelte/store";
   import { h, s, l } from "$lib/scripts/stores.js";
   import { Select, Label } from "flowbite-svelte";
+  import ColorConverter from 'simple-color-converter';
 
   let selected;
   let countries = [
@@ -20,12 +21,14 @@
     { value: "xyz", name: "XYZ" },
     { value: "lab", name: "LAB" },
     { value: "luv", name: "LUV" },
+    { value: "ral", name: "RAL" },
   ];
 
   let rgb = writable({});
   let cmy = writable({});
   let yuv = writable({});
   let result = writable({ A: 0, B: 0, C: 0 });
+  let ral, ralCode, ralName;
 
   let tmp;
 
@@ -54,6 +57,14 @@
       case "luv":
         tmp = HslToLuv(h, s, l);
         result.set({ A: tmp["L"], B: tmp["U"], C: tmp["V"] });
+        break;
+      case "ral":
+        ral = new ColorConverter({
+          hsl: {h: h, s: s, l: l},
+          to: 'ral'
+        });
+        ralCode = ral.color.ral;
+        ralName = ral.color.name;
         break;
     }
   };
@@ -133,8 +144,16 @@
   {/each}
 </Select>
 
-<div class="w-[14.5rem] flex flex-row mt-4 justify-evenly">
-  <Button color="alternative" class="w-16 glass">{$result["A"]}</Button>
-  <Button color="alternative" class="w-16 glass">{$result["B"]}</Button>
-  <Button color="alternative" class="w-16 glass">{$result["C"]}</Button>
-</div>
+
+{#if selected!="ral"}
+  <div class="w-[14.5rem] flex flex-row mt-4 justify-evenly">
+    <Button color="alternative" class="w-16 glass">{$result["A"]}</Button>
+    <Button color="alternative" class="w-16 glass">{$result["B"]}</Button>
+    <Button color="alternative" class="w-16 glass">{$result["C"]}</Button>
+  </div>
+{:else}
+  <div class="w-[14.5rem] flex flex-row mt-4 justify-evenly glass h-10 items-center rounded-md">
+    <div>{ralCode}</div>
+    <div>{ralName}</div>
+  </div>
+{/if}
