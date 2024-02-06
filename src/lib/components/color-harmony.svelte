@@ -2,8 +2,6 @@
   import { Select, Label, Input, Checkbox } from "flowbite-svelte";
   import { distance, harmony, complement, h } from "$lib/scripts/stores.js";
 
-  let selected;
-  let localDistance = 0;
   let opened = false;
   let colorTypes = [
     { value: "mono", name: "Monochromatic" },
@@ -24,7 +22,7 @@
         await new Promise(resolve => setTimeout(resolve, 0.1));
       }
     }
-    switch (selected) {
+    switch ($harmony) {
       case "soft":
         value = value < 0 ? 0 : value;
         value = value > 60 ? 60 : value;
@@ -49,11 +47,12 @@
   };
 
   const updateColorHarmony = () => {
-    if (selected == "soft" || selected == "dbct" || selected == "anlg")
+    if ($harmony == "soft" || $harmony == "dbct" || $harmony == "anlg")
       opened = true;
     else opened = false;
-    harmony.set(selected);
   }
+
+  distance.subscribe(() => updateColorHarmony());
 </script>
 
 <div class="flex felx-row float-left">
@@ -62,7 +61,7 @@
     <Select
       id="countries"
       class="w-[14.5rem] glass"
-      bind:value={selected}
+      bind:value={$harmony}
       placeholder=""
       on:change={updateColorHarmony}
     >
@@ -86,7 +85,7 @@
         class="w-24 glass"
         max="360"
         on:input={distanceLimit}
-        bind:value={localDistance}
+        bind:value={$distance}
       />
     </div>
   {:else}
@@ -104,7 +103,7 @@
     </div>
   {/if}
 
-  {#if selected=="anlg"}
+  {#if $harmony=="anlg"}
     <Checkbox class="h-9 w-9 mt-[0.9rem] ml-1 mr-1" bind:checked={$complement}></Checkbox>
   {/if}
 </div>

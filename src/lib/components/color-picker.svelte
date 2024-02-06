@@ -7,8 +7,16 @@
 
   let picker1;
   let picker;
+
+  export const updatePosition = () => {
+    picker1.onColorChange();
+  }
+
   onMount(() => {
     picker1.opened = true;
+
+    console.log(picker1);  // I HAVE NO IDEA HOW TO DO THIS... (refering to position changing)
+                           // ALL MY IDEAS ARE BAD OR FUCKING HARD
     picker = writable(picker1);
 
     picker1.addEventListener("change", (e) => {

@@ -3,12 +3,54 @@
     import { Button } from "flowbite-svelte";
     import { ArrowDownToBraketSolid, ArrowUpFromBracketSolid } from "flowbite-svelte-icons";
     import { colors } from "$lib/scripts/color-stores.js";
+    import { h, s, l, distance, complement, harmony} from "$lib/scripts/stores.js";
+
+    let files;
+
+    const readJson = (file) => {
+        if (!file) return;
+        const reader = new FileReader();
+
+        reader.onload = (event) => {
+            const content = event.target.result;
+
+            try {
+                const jsonData = JSON.parse(content);
+                let colorsData = jsonData.colors;
+                console.log(colorsData);
+                h.set(jsonData.main.h);
+                s.set(jsonData.main.s);
+                l.set(jsonData.main.l);
+                harmony.set(jsonData.harmony);
+                complement.set(jsonData.complement);
+                distance.set(jsonData.distance);
+                updatePosition();
+            } catch (error) { console.error('Error while reading JSON:', error); }
+        };
+        reader.readAsText(file);
+    }
+
+    $: if(files) {
+        for (const file of files) {
+            console.log(file);
+            readJson(file);
+        }
+        files = null;
+    }
+
+    export const assignValues = (H, S, L) => {
+        h.set(H);
+        s.set(S);
+        l.set(L);
+    }
 </script>
 
 <Button on:click={saveJson($colors)} class="clear-left mt-[1.25rem] ml-2 mr-0">
     <ArrowDownToBraketSolid />
 </Button>
 
-<Button class="clear-left mt-[1.25rem] ml-1">
+<Button class="clear-left mt-[1.25rem] ml-1 w-[4rem] h-[2.5rem] p-0" on:click={() => document.getElementById("file-picker").click()}>
     <ArrowUpFromBracketSolid />
 </Button>
+
+<input type="file" style="display: none;" id="file-picker" bind:files/>
