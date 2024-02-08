@@ -32,8 +32,8 @@
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer"> More Examples <ChevronDownOutline class="w-3 h-3 ms-2 text-primary-800 dark:text-white inline"/>
-    </NavLi>
+    <NavLi href="/example">Website</NavLi>
+    <NavLi href="/presentation">Presentation</NavLi>
     <MegaMenu items={menu} let:item class="z-50">
       <a href={item.href} class=" hover:text-accent3 dark:hover:text-accent2">{item.name}</a>
     </MegaMenu>
