@@ -289,8 +289,8 @@
     </div>
 
     <div class="mt-4 flex flex-row">
-      <Button style={`background-color: ${accent3Color};`} class="flex-1 mr-2">Button</Button>
-      <Button style={`background-color: ${accent2Color};`} class="flex-1">Button</Button>
+      <Button style={`background: linear-gradient(45deg, ${mainColor}, ${accent3Color});`} class="flex-1 mr-2">Button</Button>
+      <Button style={`background: linear-gradient(45deg, ${accent2Color}, ${accentColor});`} class="flex-1">Button</Button>
     </div>
 
     <!-- loadings -->
