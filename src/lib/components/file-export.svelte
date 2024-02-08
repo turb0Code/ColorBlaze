@@ -16,8 +16,8 @@
 
             try {
                 const jsonData = JSON.parse(content);
-                let colorsData = jsonData.colors;
-                console.log(colorsData);
+                $colors = jsonData.colors;
+                console.log($colors);
                 h.set(jsonData.main.h);
                 s.set(jsonData.main.s);
                 l.set(jsonData.main.l);

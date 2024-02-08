@@ -1,8 +1,28 @@
 <script>
 
-  import { Alert, Button, Indicator, Badge, BottomNav, BottomNavItem, Skeleton, ImagePlaceholder, Tooltip, Breadcrumb, BreadcrumbItem, ButtonGroup, GradientButton, Spinner, Card, Toggle, Label, Input, Checkbox, Rating,DeviceMockup,  Drawer, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper, A,  Dropdown, DropdownItem, Popover, SpeedDial, SpeedDialButton, BottomNavHeader, BottomNavHeaderItem, Gallery, Listgroup, ListgroupItem, Progressbar, Toast} from 'flowbite-svelte';
+  import { Alert, Button, Indicator, Badge, BottomNav, BottomNavItem, Skeleton, ImagePlaceholder, Tooltip, Breadcrumb, BreadcrumbItem, ButtonGroup, GradientButton, Spinner, Card, Toggle, Label, Input, Checkbox, Rating,DeviceMockup,  Drawer, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper, A,  Dropdown, DropdownItem, Popover, SpeedDial, SpeedDialButton, BottomNavHeader, BottomNavHeaderItem, Gallery, Listgroup, ListgroupItem, Progressbar, Toast, Radio, Range} from 'flowbite-svelte';
 
   import { InfoCircleSolid, EnvelopeSolid, HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid, PlusSolid, HomeOutline, ChevronDoubleRightOutline, ThumbsUpSolid, ArrowRightOutline,  GiftBoxSolid, ArrowUpRightFromSquareOutline, CheckCircleSolid, ChartPieSolid, ShoppingCartSolid, GridSolid, MailBoxSolid, UsersSolid, BagSolid, ArrowRightToBracketSolid, FileEditSolid, ChevronDownSolid, ChevronRightSolid, DatabaseSolid, ChevronRightOutline, ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid, BookmarkSolid, SearchOutline, AdjustmentsHorizontalSolid, MessagesSolid,  PapperPlaneOutline} from 'flowbite-svelte-icons';
+
+  import { colors } from "$lib/scripts/color-stores.js";
+  import { onMount } from 'svelte';
+  import { writable } from 'svelte/store';
+
+  console.log($colors[0]);
+
+  let mainColor = "#000000";
+  let accentColor = "#000000";
+  let accent2Color = "#000000";
+  let accent3Color = "#000000";
+
+  colors.subscribe(() => {
+    mainColor = $colors[0];
+    accentColor = $colors[1];
+    accent2Color = $colors[2];
+    accent3Color = $colors[3];
+    console.log(`page: ${mainColor}`);
+    console.log(`page: ${accentColor}`);
+  });
 
   import { sineIn } from 'svelte/easing';
   let hidden2 = true;
@@ -33,13 +53,13 @@
 </script>
 
 <!-- main -->
-<div class="grid grid-rows-1 grid-cols-2">
+<div class="grid grid-rows-1 grid-cols-2 gap-6">
 
   <!-- left -->
   <div>
 
     <!-- path -->
-    <Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
+    <Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900 mb-4" style={`color: ${mainColor};`}>
       <BreadcrumbItem href="/" home>
         <svelte:fragment slot="icon">
           <HomeOutline class="w-4 h-4 me-2" />
@@ -47,69 +67,69 @@
       </BreadcrumbItem>
       <BreadcrumbItem href="/">
         <svelte:fragment slot="icon">
-          <ChevronDoubleRightOutline class="w-3 h-3 mx-2 dark:text-white" />
+          <ChevronDoubleRightOutline class="w-3 h-3 mx-2" />
         </svelte:fragment>
         Projects
       </BreadcrumbItem>
       <BreadcrumbItem>
         <svelte:fragment slot="icon">
-          <ChevronDoubleRightOutline class="w-3 h-3 mx-2 dark:text-white" />
+          <ChevronDoubleRightOutline class="w-3 h-3 mx-2" />
         </svelte:fragment>
         Flowbite Svelte
       </BreadcrumbItem>
     </Breadcrumb>
 
     <!-- alert -->
-    <Alert dismissable class="">
-      <InfoCircleSolid slot="icon" class="w-4 h-4" />
+    <Alert dismissable class="mb-4" style={`color: ${mainColor};`}>
+      <InfoCircleSolid slot="icon" class="w-4 h-4"/>
       A simple default alert with an
-      <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>
+      <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900" style={`color: ${mainColor};`}>example link</a>
     </Alert>
 
     <!-- panele -->
     <div class="flex flex-row">
 
       <!-- paid plan -->
-      <div class="mr-14">
-        <Card padding="xl">
-          <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
+      <div class="mr-4">
+        <Card padding="xl" class="h-full">
+          <h5 class="mb-4 text-xl font-medium" style={`color: ${mainColor};`}>Standard plan</h5>
           <div class="flex items-baseline text-gray-900 dark:text-white">
-            <span class="text-3xl font-semibold">$</span>
-            <span class="text-5xl font-extrabold tracking-tight">49</span>
-            <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+            <span class="text-3xl font-semibold" style={`color: ${mainColor};`}>$</span>
+            <span class="text-5xl font-extrabold tracking-tight" style={`color: ${mainColor};`}>49</span>
+            <span class="ms-1 text-xl font-normal" style={`color: ${accent2Color};`}>/month</span>
           </div>
           <!-- List -->
           <ul class="my-2 space-y-4">
             <li class="flex space-x-2 rtl:space-x-reverse">
-              <CheckCircleSolid class="w-4 h-4 text-primary-600 dark:text-primary-500" />
-              <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"> 2 team members </span>
+              <CheckCircleSolid class="w-4 h-4" style={`color: ${accentColor};`}/>
+              <span class="text-base font-normal leading-tight" style={`color: ${accent2Color};`}> 2 team members </span>
             </li>
             <li class="flex space-x-2 rtl:space-x-reverse">
-              <CheckCircleSolid class="w-4 h-4 text-primary-600 dark:text-primary-500" />
-              <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"> 20GB Cloud storage </span>
+              <CheckCircleSolid class="w-4 h-4" style={`color: ${accentColor};`}/>
+              <span class="text-base font-normal leading-tight" style={`color: ${accent2Color};`}> 20GB Cloud storage </span>
             </li>
             <li class="flex space-x-2 rtl:space-x-reverse">
-              <CheckCircleSolid class="w-4 h-4 text-primary-600 dark:text-primary-500" />
-              <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"> Integration help </span>
+              <CheckCircleSolid class="w-4 h-4" style={`color: ${accentColor};`}/>
+              <span class="text-base font-normal leading-tight" style={`color: ${accent2Color};`}> Integration help </span>
             </li>
             <li class="flex space-x-2 rtl:space-x-reverse line-through decoration-gray-500">
-              <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
-              <span class="text-base font-normal leading-tight text-gray-500">Sketch Files</span>
+              <CheckCircleSolid class="w-4 h-4" style={`color: ${accent3Color};`}/>
+              <span class="text-base font-normal leading-tight" style={`color: ${accent3Color};`}>Sketch Files</span>
             </li>
             <li class="flex space-x-2 rtl:space-x-reverse line-through decoration-gray-500">
-              <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
-              <span class="text-base font-normal leading-tight text-gray-500">API Access</span>
+              <CheckCircleSolid class="w-4 h-4" style={`color: ${accent3Color};`}/>
+              <span class="text-base font-normal leading-tight" style={`color: ${accent3Color};`}>API Access</span>
             </li>
             <li class="flex space-x-2 rtl:space-x-reverse line-through decoration-gray-500">
-              <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
-              <span class="text-base font-normal leading-tight text-gray-500">Complete documentation</span>
+              <CheckCircleSolid class="w-4 h-4" style={`color: ${accent3Color};`}/>
+              <span class="text-base font-normal leading-tight" style={`color: ${accent3Color};`}>Complete documentation</span>
             </li>
             <li class="flex space-x-2 rtl:space-x-reverse line-through decoration-gray-500">
-              <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
-              <span class="text-base font-normal leading-tight text-gray-500">24×7 phone & email support</span>
+              <CheckCircleSolid class="w-4 h-4" style={`color: ${accent3Color};`}/>
+              <span class="text-base font-normal leading-tight" style={`color: ${accent3Color};`}>24×7 phone & email support</span>
             </li>
           </ul>
-          <Button class="w-full">Choose plan</Button>
+          <Button class="w-full" style={`background-color: ${mainColor};`}>Choose plan</Button>
         </Card>
       </div>
 
@@ -117,22 +137,22 @@
       <div>
         <Card class="h-full">
           <form class="flex flex-col space-y-6" action="/">
-            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
+            <h3 class="text-xl font-medium" style={`color: ${mainColor};`}>Sign in to our platform</h3>
             <Label class="space-y-2">
-              <span>Email</span>
+              <span style={`color: ${accent2Color};`}>Email</span>
               <Input type="email" name="email" placeholder="name@company.com" required />
             </Label>
             <Label class="space-y-2">
-              <span>Your password</span>
+              <span style={`color: ${accent2Color};`}>Your password</span>
               <Input type="password" name="password" placeholder="•••••" required />
             </Label>
             <div class="flex items-start">
-              <Checkbox>Remember me</Checkbox>
-              <a href="/" class="ms-auto text-sm text-primary-700 hover:underline dark:text-primary-500"> Lost password? </a>
+              <Checkbox><span style={`color: ${accent2Color};`}>Remember me</span></Checkbox>
+              <a href="/" class="ms-auto text-sm" style={`color: ${accent3Color};`}> Lost password? </a>
             </div>
-            <Button type="submit" class="w-full">Login to your account</Button>
-            <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-              Not registered? <a href="/" class="text-primary-700 hover:underline dark:text-primary-500"> Create account </a>
+            <Button type="submit" class="w-full" style={`background-color: ${mainColor};`}>Login to your account</Button>
+            <div class="text-sm font-medium text-gray-500 dark:text-gray-300" style={`color: ${accentColor};`}>
+              Not registered? <a href="/" class="hover:underline" style={`color: ${accent3Color};`}> Create account </a>
             </div>
           </form>
         </Card>
@@ -146,9 +166,7 @@
 
     <!-- navigations -->
     <div class="flex flex-row">
-      <div class="text-center mr-2">
-        <Button on:click={() => (hidden2 = false)}>Show navigation</Button>
-      </div>
+      <Button on:click={() => (hidden2 = false)} class="text-center mr-2 flex-1" style={`background-color: ${mainColor};`}>Show navigation</Button>
 
       <Drawer transitionType="fly" {transitionParams} bind:hidden={hidden2} id="sidebar2">
         <div class="flex items-center">
@@ -212,9 +230,7 @@
         </Sidebar>
       </Drawer>
 
-      <div class="text-center">
-        <Button on:click={() => (hidden8 = false)}>Show drawer</Button>
-      </div>
+      <Button on:click={() => (hidden8 = false)} class="text-center flex-1" style={`background-color: ${accentColor};`}>Show drawer</Button>
 
       <Drawer placement="bottom" width="w-full" transitionType="fly" transitionParams={transitionParamsBottom} bind:hidden={hidden8} id="sidebar8">
         <div class="flex items-center">
@@ -233,9 +249,9 @@
     </div>
 
     <!-- dropdowns -->
-    <div class="mt-4">
+    <div class="mt-4 flex">
 
-      <Button class="w-36">Dropdown button<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
+      <Button class="w-36 flex-1 mr-2" style={`background-color: ${accent3Color};`}>Dropdown button<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
       <Dropdown>
         <DropdownItem>Dashboard</DropdownItem>
         <DropdownItem class="flex items-center justify-between">
@@ -250,7 +266,7 @@
         <DropdownItem slot="footer">Sign out</DropdownItem>
       </Dropdown>
 
-      <Button class="w-36">Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
+      <Button class="w-36 flex-1" style={`background-color: ${accent2Color};`}>Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
       <Dropdown class="w-48 p-3 space-y-1 text-sm">
         <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
           <Checkbox>Default checkbox</Checkbox>
@@ -266,27 +282,32 @@
     </div>
 
     <!-- buttons -->
-    <div class="mt-4">
-      <Button color="red" class="bg-main">Button</Button>
-      <Button color="red" class="bg-main">Button</Button>
+    <div class="mt-4 flex flex-row">
+      <Button style={`background-color: ${mainColor};`} class="flex-1 mr-2">Button</Button>
+      <Button style={`background-color: ${accentColor};`} class="flex-1">Button</Button>
+    </div>
+
+    <div class="mt-4 flex flex-row">
+      <Button style={`background-color: ${accent3Color};`} class="flex-1 mr-2">Button</Button>
+      <Button style={`background-color: ${accent2Color};`} class="flex-1">Button</Button>
     </div>
 
     <!-- loadings -->
-    <div class="flex flex-row mr-6 mt-4">
-      <Button class="w-36">
+    <div class="flex flex-row mt-4">
+      <Button class="flex-1 mr-2" style={`background-color: ${mainColor};`}>
         <Spinner class="me-3" size="4" color="white" />Loading ...
       </Button>
-      <Button color="alternative" class="w-36">
+      <Button color="alternative" class="flex-1" style={`background-color: ${accentColor};`}>
         <Spinner class="me-3" size="4" />Loading ...
       </Button>
     </div>
 
     <!-- popover and storage -->
     <div class="flex flex-row mt-4">
-      <Button id="hover" class="mr-2">Hover popover</Button>
-      <Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#hover" trigger="hover">And here's some amazing content. It's very engaging. Right?</Popover>
+      <Button id="hover" class="mr-2 flex-1 h-10" style={`background-color: ${accent3Color};`}>Hover popover</Button>
+      <Popover class="w-64 text-sm font-light" title="Popover title" triggeredBy="#hover" trigger="hover">And here's some amazing content. It's very engaging. Right?</Popover>
 
-      <Button id="progress" class="mr-2 mb-4 w-64">
+      <Button id="progress" class="mb-4 w-64 flex-1" style={`background-color: ${accent2Color};`}>
         <DatabaseSolid class="me-2 w-4 h-4 text-white dark:text-white" /> Storage status
       </Button>
       <Popover triggeredBy="#progress" class="text-sm w-64 font-light">
@@ -308,24 +329,50 @@
       </Popover>
     </div>
 
-    <!-- checkboxes and toggles -->
+    <!-- inputs -->
+    <div class="flex flex-row mb-4">
+      <Input style={`background-color: ${mainColor}; color: ${accentColor};`} placeholder="Default input"/>
+      <Input style={`background-color: ${accentColor}; color: ${mainColor};`} placeholder="Disabled input" disabled/>
+    </div>
+
+    <!-- range -->
+    <div>
+      <Range style={`background-color: ${accentColor};`}></Range>
+    </div>
+
+    <!-- checkboxes and toggles-->
     <div class="flex flex-row mt-4">
 
       <!-- checkboxes -->
-      <div class="">
-        <Checkbox>Default checkbox</Checkbox>
-        <Checkbox checked>Checked state</Checkbox>
+      <div class="flex-1 mr-2">
+        <Checkbox style={`background-color: ${mainColor};`} class="mb-4">Default checkbox</Checkbox>
+        <Checkbox checked style={`background-color: ${accentColor};`}>Checked state</Checkbox>
       </div>
 
       <!-- toggles -->
-      <div class="">
-        <Toggle>Default toggle</Toggle>
+      <div class="flex-1">
+        <Toggle style={`background-color: ${accent3Color};`} class="mb-4">Default toggle</Toggle>
         <Toggle checked>Toggled toggle</Toggle>
       </div>
 
     </div>
 
+    <!-- radios -->
+    <div class="flex flex-row mt-4">
+      <Radio class="flex-1 mr-2">Default radio</Radio>
+      <Radio class="flex-1" disabled>Disabled radio</Radio>
+    </div>
 
   </div>
 
 </div>
+
+<style>
+  .main {
+    background-color: var(--main-color);
+  }
+
+  .accent {
+    background-color: var(--accent-color);
+  }
+</style>

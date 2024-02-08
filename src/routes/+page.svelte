@@ -9,6 +9,7 @@
 <svelte:head>
   <title>Home</title>
   <meta name="description" content="Svelte demo app" />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </svelte:head>
 
 <!-- main -->
