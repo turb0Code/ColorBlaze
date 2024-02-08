@@ -39,7 +39,14 @@ const config = {
         main: '#8441C7',
         accent: "#370870",
         accent2: "#DCC7E9",
-        accent3: "#14033A"
+        accent3: "#14033A",
+        accent4: "#A26EC9",
+
+
+        pres1: "#8441C7",
+        pres2: "#DCC7E9",
+        pres3: "#A26EC9",
+        pres4: "#370870",
       }
     }
   }

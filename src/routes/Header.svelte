@@ -15,7 +15,7 @@
   let src = "$lib/images/logo.svg";
   let menu = [
     { name: "Website", href: "/example" },
-    { name: "Blog", href: "/blog" },
+    { name: "Presentation", href: "/presentation" },
     { name: "Contact us", href: "/contact" },
     { name: "Library", href: "/library" },
     { name: "Newsletter", href: "/news" },
