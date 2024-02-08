@@ -13,7 +13,13 @@
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 
   let src = "$lib/images/logo.svg";
- 
+  let menu = [
+    { name: "Website", href: "/example" },
+    { name: "Presentation", href: "/presentation" },
+    { name: "Contact us", href: "/contact" },
+    { name: "Library", href: "/library" },
+    { name: "Newsletter", href: "/news" },
+  ];
 </script>
 
 <Navbar let:hidden let:toggle>
@@ -28,9 +34,6 @@
     <NavLi href="/">Home</NavLi>
     <NavLi href="/example">Website</NavLi>
     <NavLi href="/presentation">Presentation</NavLi>
-    <MegaMenu items={menu} let:item class="z-50">
-      <a href={item.href} class=" hover:text-accent3 dark:hover:text-accent2">{item.name}</a>
-    </MegaMenu>
     <NavLi href="/services">Contact</NavLi>
     <Button on:click={() => darkMode.set(!$darkMode)}>
       {#if $darkMode}
