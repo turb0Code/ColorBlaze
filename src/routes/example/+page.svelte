@@ -1,14 +1,10 @@
 <script>
 
-  import { Alert, Button, Indicator, Badge, BottomNav, BottomNavItem, Skeleton, ImagePlaceholder, Tooltip, Breadcrumb, BreadcrumbItem, ButtonGroup, GradientButton, Spinner, Card, Toggle, Label, Input, Checkbox, Rating,DeviceMockup,  Drawer, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper, A,  Dropdown, DropdownItem, Popover, SpeedDial, SpeedDialButton, BottomNavHeader, BottomNavHeaderItem, Gallery, Listgroup, ListgroupItem, Progressbar, Toast, Radio, Range} from 'flowbite-svelte';
-
-  import { InfoCircleSolid, EnvelopeSolid, HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid, PlusSolid, HomeOutline, ChevronDoubleRightOutline, ThumbsUpSolid, ArrowRightOutline,  GiftBoxSolid, ArrowUpRightFromSquareOutline, CheckCircleSolid, ChartPieSolid, ShoppingCartSolid, GridSolid, MailBoxSolid, UsersSolid, BagSolid, ArrowRightToBracketSolid, FileEditSolid, ChevronDownSolid, ChevronRightSolid, DatabaseSolid, ChevronRightOutline, ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid, BookmarkSolid, SearchOutline, AdjustmentsHorizontalSolid, MessagesSolid,  PapperPlaneOutline} from 'flowbite-svelte-icons';
-
+  import { Alert, Button, Breadcrumb, BreadcrumbItem, Spinner, Card, Toggle, Label, Input, Checkbox, Drawer, CloseButton, Sidebar, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper, Dropdown, DropdownItem, Popover, Radio, Range } from 'flowbite-svelte';
+  import { InfoCircleSolid, UserCircleSolid, HomeOutline, ChevronDoubleRightOutline, ArrowRightOutline, CheckCircleSolid, ChartPieSolid, ShoppingCartSolid, GridSolid, MailBoxSolid, UsersSolid, BagSolid, ArrowRightToBracketSolid, FileEditSolid, ChevronDownSolid, ChevronRightSolid, DatabaseSolid, ChevronRightOutline, DownloadSolid, AdjustmentsHorizontalSolid, MessagesSolid } from 'flowbite-svelte-icons';
   import { colors } from "$lib/scripts/color-stores.js";
-  import { onMount } from 'svelte';
-  import { writable } from 'svelte/store';
-
-  console.log($colors[0]);
+  import { sineIn } from 'svelte/easing';
+  import { page } from '$app/stores';
 
   let mainColor = "#000000";
   let accentColor = "#000000";
@@ -17,14 +13,28 @@
 
   colors.subscribe(() => {
     mainColor = $colors[0];
-    accentColor = $colors[1];
-    accent2Color = $colors[2];
-    accent3Color = $colors[3];
-    console.log(`page: ${mainColor}`);
-    console.log(`page: ${accentColor}`);
+    if (!$colors[1]) {
+      accentColor = mainColor;
+      accent2Color = mainColor;
+      accent3Color = mainColor;
+    }
+    else if (!$colors[2]) {
+      accentColor = $colors[1];
+      accent2Color = mainColor;
+      accent3Color = $colors[1];
+    }
+    else if (!$colors[3]) {
+      accentColor = $colors[1];
+      accent2Color = $colors[2];
+      accent3Color = $colors[1];
+    }
+    else {
+      accentColor = $colors[1];
+      accent2Color = $colors[2];
+      accent3Color = $colors[3];
+    }
   });
 
-  import { sineIn } from 'svelte/easing';
   let hidden2 = true;
   let spanClass = 'flex-1 ms-3 whitespace-nowrap';
   let transitionParams = {
@@ -39,16 +49,7 @@
     duration: 200,
     easing: sineIn
   };
-  import { page } from '$app/stores';
   $: activeUrl = $page.url.pathname;
-
-
-  let icons = [
-    { name: 'Profile', icon: UserCircleSolid },
-    { name: 'Settings', icon: AdjustmentsHorizontalSolid },
-    { name: 'Messages', icon: MessagesSolid },
-    { name: 'Download', icon: DownloadSolid }
-  ];
 
 </script>
 
@@ -331,7 +332,7 @@
 
     <!-- inputs -->
     <div class="flex flex-row mb-4">
-      <Input style={`background-color: ${mainColor}; color: ${accentColor};`} placeholder="Default input"/>
+      <Input style={`background-color: ${mainColor}; color: ${accentColor};`} placeholder="Default input" class="mr-2"/>
       <Input style={`background-color: ${accentColor}; color: ${mainColor};`} placeholder="Disabled input" disabled/>
     </div>
 
@@ -366,13 +367,3 @@
   </div>
 
 </div>
-
-<style>
-  .main {
-    background-color: var(--main-color);
-  }
-
-  .accent {
-    background-color: var(--accent-color);
-  }
-</style>
