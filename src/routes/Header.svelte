@@ -13,13 +13,7 @@
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 
   let src = "$lib/images/logo.svg";
-  let menu = [
-    { name: "Website", href: "/example" },
-    { name: "Presentation", href: "/presentation" },
-    { name: "Contact us", href: "/contact" },
-    { name: "Library", href: "/library" },
-    { name: "Newsletter", href: "/news" },
-  ];
+ 
 </script>
 
 <Navbar let:hidden let:toggle>
