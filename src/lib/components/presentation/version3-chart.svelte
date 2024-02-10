@@ -1,10 +1,3 @@
-<<<<<<< Updated upstream
-<div id="tlo" class="flex w-[22rem] lg:w-96 h-56">
-
-  <div class="absolute w-56 ml-16 lg:ml-20 text-center text-3xl mt-2 bg-white" style={`border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color}; color: ${mainColor};`}>TITLE</div>
-
-    <div class="pie w-40 h-40 ml-24 lg:ml-28 mt-14 border-l-4 border-b-4 border-b-pres4 border-l-pres3"></div>
-=======
 <script>
   import { colors } from "$lib/scripts/color-stores.js";
   import { onMount } from "svelte";
@@ -51,12 +44,11 @@
 
 </script>
 
-<div id="tlo" class="flex w-96 h-56" style={`background-color: ${accent3Color};`}>
+<div id="tlo" class="flex w-[22rem] lg:w-96 h-56" style={`background-color: ${accent3Color};`}>
 
-  <div class="absolute w-56 ml-20 text-center text-3xl mt-2 bg-white" style={`border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color}; color: ${mainColor};`}>TITLE</div>
+  <div class="absolute w-56 ml-16 lg:ml-20 text-center text-3xl mt-2 bg-white" style={`border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color}; color: ${mainColor};`}>TITLE</div>
 
-  <div class="pie w-40 h-40 ml-28 mt-14 border-l-4 border-b-4 border-b-pres4 border-l-pres3" style={`background-image: conic-gradient(${mainColor} 64%, ${accentColor} 64%, ${accentColor} 81%, ${accent2Color} 81%); border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color};`}></div>
->>>>>>> Stashed changes
+  <div class="pie w-40 h-40 ml-24 lg:ml-28 mt-14" style={`background-image: conic-gradient(${mainColor} 64%, ${accentColor} 64%, ${accentColor} 81%, ${accent2Color} 81%); border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color};`}></div>
 
 </div>
 
