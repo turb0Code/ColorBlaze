@@ -1,10 +1,10 @@
 
 
-<div class="flex w-96 h-56 bg-white">
+<div class="flex w-[22rem] lg:w-96 h-56 bg-white">
 
-    <div class="absolute w-96 text-center text-3xl mt-2">TITLE</div>
+    <div class="absolute w-[22rem] lg:w-96 text-center text-3xl mt-2">TITLE</div>
 
-    <div class="pie w-40 h-40 ml-28 mt-12"></div>
+    <div class="pie w-40 h-40 ml-24 lg:ml-28 mt-12"></div>
 
 </div>
 

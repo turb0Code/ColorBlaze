@@ -1,8 +1,8 @@
-<div id="tlo" class="flex w-96 h-56">
+<div id="tlo" class="flex w-[22rem] lg:w-96 h-56">
 
-    <div class="absolute w-56 ml-20 text-center text-3xl mt-2 bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3">TITLE</div>
+    <div class="absolute w-56 ml-16 lg:ml-20 text-center text-3xl mt-2 bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3">TITLE</div>
 
-    <table class="w-72 h-36 ml-12 mt-14 text-sm text-center bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres1">
+    <table class="w-72 h-36 lg:ml-12 ml-8 mt-14 text-sm text-center bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres1">
 
         <tr class="bg-pres3">
           <th>Header 1</th>

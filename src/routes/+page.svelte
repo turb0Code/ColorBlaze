@@ -13,7 +13,7 @@
 </svelte:head>
 
 <!-- main -->
-<div class="grid-box">
+<div class=" grid grid-cols-1 grid-rows-1 lg:grid-box lg:grid-cols-4 lg:grid-rows-2 lg:gap-0">
 
   <!-- lewa strona -->
   <div>

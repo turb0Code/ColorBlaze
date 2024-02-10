@@ -1,8 +1,8 @@
-<div id="tlo" class="flex w-96 h-56">
+<div id="tlo" class="flex w-[22rem] lg:w-96 h-56">
 
-    <div class="absolute w-56 ml-20 text-center text-3xl mt-2 bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3">TITLE</div>
+    <div class="absolute w-56 ml-16 lg:ml-20 text-center text-3xl mt-2 bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3">TITLE</div>
 
-    <div class="pie w-40 h-40 ml-28 mt-14 border-l-4 border-b-4 border-b-pres4 border-l-pres3"></div>
+    <div class="pie w-40 h-40 ml-24 lg:ml-28 mt-14 border-l-4 border-b-4 border-b-pres4 border-l-pres3"></div>
 
 </div>
 

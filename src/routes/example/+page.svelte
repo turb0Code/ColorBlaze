@@ -54,13 +54,13 @@
 </script>
 
 <!-- main -->
-<div class="grid grid-rows-1 grid-cols-2 gap-6">
+<div class="grid grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 lg:gap-6">
 
   <!-- left -->
   <div>
 
     <!-- path -->
-    <Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900 mb-4" style={`color: ${mainColor};`}>
+    <Breadcrumb aria-label="Solid background breadc rumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900 mb-4" style={`color: ${mainColor};`}>
       <BreadcrumbItem href="/" home>
         <svelte:fragment slot="icon">
           <HomeOutline class="w-4 h-4 me-2" />
@@ -91,7 +91,7 @@
     <div class="flex flex-row">
 
       <!-- paid plan -->
-      <div class="mr-4">
+      <div class="mr-0 lg:mr-4 mb-4 lg:mb-0">
         <Card padding="xl" class="h-full">
           <h5 class="mb-4 text-xl font-medium" style={`color: ${mainColor};`}>Standard plan</h5>
           <div class="flex items-baseline text-gray-900 dark:text-white">
@@ -136,7 +136,7 @@
 
       <!-- sign in card -->
       <div>
-        <Card class="h-full">
+        <Card class="h-full w-40 lg:w-auto">
           <form class="flex flex-col space-y-6" action="/">
             <h3 class="text-xl font-medium" style={`color: ${mainColor};`}>Sign in to our platform</h3>
             <Label class="space-y-2">

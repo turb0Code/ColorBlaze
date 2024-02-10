@@ -1,4 +1,4 @@
-<div id="tlo" class="flex flex-col w-96 h-56 justify-center items-center ">
+<div id="tlo" class="flex flex-col w-[22rem] lg:w-96 h-56 justify-center items-center ">
 
     <div class="text-5xl bg-white border-l-8 border-b-8 border-pres4">TITLE</div>
 

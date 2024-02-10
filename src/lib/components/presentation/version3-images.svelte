@@ -1,6 +1,6 @@
-<div id="tlo" class="flex w-96 h-56">
+<div id="tlo" class="flex w-[22rem] lg:w-96 h-56">
 
-    <div class="absolute w-56 ml-20 text-center text-3xl mt-2 bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3">TITLE</div>
+    <div class="absolute w-56 ml-16 lg:ml-20 text-center text-3xl mt-2 bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3">TITLE</div>
 
     <div class="h-56 w-96 ml-2 mt-20 ">
         <img src="src/lib/images/phone1.jpg" alt="" class=" bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3">
@@ -10,7 +10,7 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fames ac turpis egestas sed tempus urna et pharetra. Ridiculus mus mauris vitae ultricies leo integer malesuada.
     </div>
  
-    <div class="h-56 w-96 mr-2 mt-8 ">
+    <div class="h-56 w-96 mr-2 lg:mt-8 mt-12 ">
         <img src="src/lib/images/image2.jpg" alt="" class="mb-4  bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3">
         <img src="src/lib/images/phone3.jpg" alt="" class=" bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3">
     </div>

@@ -108,9 +108,9 @@
   ];
 </script>
 
-<div class="">
+<div class=" absolute left-0 min-[370px]:left-4 min-[380px]:left-8 lg:none lg:left-1/4 lg:right-1/4">
 
-  <div class="grid grid-rows-2 grid-cols-2 gap-20 ">
+  <div class=" grid grid-rows-1 grid-cols-1 lg:grid-rows-2 lg:grid-cols-2 gap-20">
     
     <div class="flex">
 
@@ -118,7 +118,7 @@
       <div class="carousel">
 
         <div class="z-0 h-56 absolute">
-          <button id="nextButton" class="bg-gray-200 w-8 h-56 flex right-0 ml-[22rem] opacity-5 hover:opacity-30" on:click={nextSlide1}><ArrowKeyRight class="h-24 mt-16"></ArrowKeyRight></button>
+          <button id="nextButton" class="bg-gray-200 w-8 h-56 flex right-0 ml-[20rem] lg:ml-[22rem] opacity-5 hover:opacity-30" on:click={nextSlide1}><ArrowKeyRight class="h-24 mt-16"></ArrowKeyRight></button>
         </div>
 
         <div class="z-0 h-56 absolute">
@@ -144,7 +144,7 @@
       <div class="carousel">
 
         <div class="z-0 h-56 absolute">
-          <button id="nextButton" class="bg-gray-200 w-8 h-56 flex right-0 ml-[22rem] opacity-5 hover:opacity-30" on:click={nextSlide2}><ArrowKeyRight class="h-24 mt-16"></ArrowKeyRight></button>
+          <button id="nextButton" class="bg-gray-200 w-8 h-56 flex right-0 ml-[20rem] lg:ml-[22rem] opacity-5 hover:opacity-30" on:click={nextSlide2}><ArrowKeyRight class="h-24 mt-16"></ArrowKeyRight></button>
         </div>
 
         <div class="z-0 h-56 absolute">
@@ -170,7 +170,7 @@
       <div class="carousel">
 
         <div class="z-0 h-56 absolute">
-          <button id="nextButton" class="bg-gray-200 w-8 h-56 flex right-0 ml-[22rem] opacity-5 hover:opacity-30" on:click={nextSlide3}><ArrowKeyRight class="h-24 mt-16"></ArrowKeyRight></button>
+          <button id="nextButton" class="bg-gray-200 w-8 h-56 flex right-0 ml-[20rem] lg:ml-[22rem] opacity-5 hover:opacity-30" on:click={nextSlide3}><ArrowKeyRight class="h-24 mt-16"></ArrowKeyRight></button>
         </div>
 
         <div class="z-0 h-56 absolute">
@@ -196,7 +196,7 @@
       <div class="carousel">
 
         <div class="z-0 h-56 absolute">
-          <button id="nextButton" class="bg-gray-200 w-8 h-56 flex right-0 ml-[22rem] opacity-5 hover:opacity-30" on:click={nextSlide4}><ArrowKeyRight class="h-24 mt-16"></ArrowKeyRight></button>
+          <button id="nextButton" class="bg-gray-200 w-8 h-56 flex right-0 ml-[20rem] lg:ml-[22rem] opacity-5 hover:opacity-30" on:click={nextSlide4}><ArrowKeyRight class="h-24 mt-16"></ArrowKeyRight></button>
         </div>
 
         <div class="z-0 h-56 absolute">

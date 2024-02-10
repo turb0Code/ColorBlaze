@@ -1,10 +1,10 @@
 
 
-<div class="flex w-96 h-56 bg-gradient-to-r from-accent from-3% main via-40% to-accent2 to-90% ">
+<div class="flex w-[22rem] lg:w-96 h-56 bg-gradient-to-r from-accent from-3% main via-40% to-accent2 to-90% ">
 
-    <div class="absolute w-56 ml-20 text-center text-3xl mt-2 bg-white px-1 rounded-lg border-2 border-accent">TITLE</div>
+    <div class="absolute w-56 ml-16 lg:ml-20 text-center text-3xl mt-2 bg-white px-1 rounded-lg border-2 border-accent">TITLE</div>
 
-    <div class="pie w-40 h-40 ml-28 mt-14 border-2 border-accent rounded-lg"></div>
+    <div class="pie w-40 h-40 ml-24 lg:ml-28 mt-14 border-2 border-accent rounded-lg"></div>
         
 
 </div>
