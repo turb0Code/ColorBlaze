@@ -1,30 +1,63 @@
-<div class="flex w-[22rem] lg:w-96 h-56  bg-main border-8 border-accent">
+<script>
+  import { colors } from "$lib/scripts/color-stores.js";
 
-    <div class="absolute w-28 ml-[7rem] lg:ml-32 text-center text-3xl mt-2 bg-accent2 border-4 border-pres4 shadow-2xl shadow-accent">TITLE</div>
+  let mainColor = "#000000";
+  let accentColor = "#000000";
+  let accent2Color = "#000000";
+  let accent3Color = "#000000";
 
-    <table class="w-72 h-36 border-4 border-accent ml-6 lg:ml-10 mt-14 text-sm text-center shadow-2xl shadow-pres4">
+  colors.subscribe(() => {
+    mainColor = $colors[0];
+    if (!$colors[1]) {
+      accentColor = mainColor;
+      accent2Color = mainColor;
+      accent3Color = mainColor;
+    }
+    else if (!$colors[2]) {
+      accentColor = $colors[1];
+      accent2Color = mainColor;
+      accent3Color = $colors[1];
+    }
+    else if (!$colors[3]) {
+      accentColor = $colors[1];
+      accent2Color = $colors[2];
+      accent3Color = $colors[1];
+    }
+    else {
+      accentColor = $colors[1];
+      accent2Color = $colors[2];
+      accent3Color = $colors[3];
+    }
+  });
+</script>
 
-        <tr class="border-4  border-accent bg-main">
+<div class="flex w-[22rem] lg:w-96 h-56" style={`background-color: ${accentColor}; border: solid 8px ${accent2Color};`}>
+
+    <div class="absolute w-28 ml-[7rem] lg:ml-32 text-center text-3xl mt-2" style={`border: solid 4px ${mainColor}; color: ${mainColor};`}>TITLE</div>
+
+    <table class="w-72 h-36 border-4 border-accent ml-6 lg:ml-10 mt-14 text-sm text-center shadow-2xl shadow-pres4" style={`border: solid 4px ${mainColor};`}>
+
+        <tr style={`border: solid 4px ${mainColor}; background-color: ${accentColor}; color: ${mainColor};`}>
           <th>Header 1</th>
-          <th class="border-4 border-accent">Header 2</th>
+          <th style={`border: solid 4px ${mainColor};`}>Header 2</th>
           <th>Header 3</th>
         </tr>
 
-        <tr class="border-4 border-accent bg-accent2">
+        <tr class="border-4 border-accent bg-accent2" style={`border: solid 4px ${mainColor}; background-color: ${accent3Color}; color: ${accentColor};`}>
           <td>Lorem ipsum</td>
-          <td class="border-4 border-accent">Lorem ipsum</td>
-          <td>Lorem ipsum</td>
-        </tr>
-
-        <tr class=" bg-accent4 ">
-          <td>Lorem ipsum</td>
-          <td class="border-4 border-accent">Lorem ipsum</td>
+          <td style={`border: solid 4px ${mainColor};`}>Lorem ipsum</td>
           <td>Lorem ipsum</td>
         </tr>
 
-        <tr class="border-4 border-accent bg-accent2">
+        <tr class=" bg-accent4 " style={`border: solid 4px ${mainColor}; background-color: ${mainColor}; color: ${accentColor};`}>
+          <td>Lorem ipsum</td>
+          <td style={`border: solid 4px ${mainColor};`}>Lorem ipsum</td>
+          <td>Lorem ipsum</td>
+        </tr>
+
+        <tr class="border-4 border-accent bg-accent2" style={`border: solid 4px ${mainColor}; background-color: ${accent3Color}; color: ${accentColor};`}>
             <td>Lorem ipsum</td>
-            <td class="border-4 border-accent">Lorem ipsum</td>
+            <td style={`border: solid 4px ${mainColor};`}>Lorem ipsum</td>
             <td>Lorem ipsum</td>
         </tr>
 
