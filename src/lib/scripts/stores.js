@@ -21,3 +21,7 @@ export { distance };
 let complement = writable(false);
 
 export { complement };
+
+let callUpdatePosition = writable(false);
+
+export { callUpdatePosition };

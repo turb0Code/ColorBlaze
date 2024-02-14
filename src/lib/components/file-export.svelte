@@ -3,7 +3,7 @@
     import { Button } from "flowbite-svelte";
     import { ArrowDownToBraketSolid, ArrowUpFromBracketSolid } from "flowbite-svelte-icons";
     import { colors } from "$lib/scripts/color-stores.js";
-    import { h, s, l, distance, complement, harmony} from "$lib/scripts/stores.js";
+    import { h, s, l, distance, complement, harmony, callUpdatePosition } from "$lib/scripts/stores.js";
 
     let files;
 
@@ -24,7 +24,7 @@
                 harmony.set(jsonData.harmony);
                 complement.set(jsonData.complement);
                 distance.set(jsonData.distance);
-                updatePosition();
+                callUpdatePosition.set(!$callUpdatePosition);
             } catch (error) { console.error('Error while reading JSON:', error); }
         };
         reader.readAsText(file);

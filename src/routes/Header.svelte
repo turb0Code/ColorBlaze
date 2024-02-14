@@ -22,7 +22,7 @@
   ];
 </script>
 
-<Navbar let:hidden let:toggle>
+<Navbar let:hidden let:toggle class="opacity-75 rounded-b-xl bg-accent2/70 dark:bg-accent3/40">
   <NavBrand href="/">
     <div class="w-14 h-14">
       <img src="src/lib/images/logo.svg" alt="ColorBlaze logo"/>

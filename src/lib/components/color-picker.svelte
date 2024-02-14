@@ -3,21 +3,21 @@
   import { onMount } from "svelte";
   import ColorSpace from "$lib/components/color-space.svelte";
   import { RgbToHsl } from "$lib/scripts/color-conversion.js";
-  import { h, s, l, hex } from "$lib/scripts/stores.js";
+  import { h, s, l, hex, callUpdatePosition } from "$lib/scripts/stores.js";
+  import "$lib/scripts/toolcool-color-picker.min.js";
 
   let picker1;
-  let picker;
-
-  export const updatePosition = () => {
-    picker1.onColorChange();
-  }
 
   onMount(() => {
+    picker1 = document.getElementById("color-picker-1");
+
+    picker1.color = "rgb(20, 15, 43)";
     picker1.opened = true;
 
-    console.log(picker1);  // I HAVE NO IDEA HOW TO DO THIS... (refering to position changing)
-                           // ALL MY IDEAS ARE BAD OR FUCKING HARD
-    picker = writable(picker1);
+    console.log(picker1);                 // I HAVE NO IDEA HOW TO DO THIS... (refering to position changing)
+                                          // ALL MY IDEAS ARE BAD OR FUCKING HARD
+    picker1.color = "hsl(40, 42, 10)";    // NOW I HAVE IDEA
+    picker1.opened = true;                // STUPID BUT WORKS... (YEYYY) [ACUTALLY 4 HOURS FOR 2 LINES OF CODE - FUCK ME!!!]
 
     picker1.addEventListener("change", (e) => {
       let hsl = RgbToHsl(
@@ -30,15 +30,16 @@
       l.set(hsl["L"]);
       hex.set(picker1.hex);
     });
-  });
 
-  import "$lib/scripts/toolcool-color-picker.min.js";
+    callUpdatePosition.subscribe(() => {
+        picker1.color = `hsl(${$h}, ${$s}, ${$l})`;
+        picker1.opened = true;
+      })
+  });
 </script>
 
 <toolcool-color-picker
-  bind:this={picker1}
   id="color-picker-1"
-  color="rgb(90, 60, 90)"
   button-width="0rem"
   button-height="0rem"
   class="z-1 w-10"

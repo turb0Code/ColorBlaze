@@ -13,7 +13,7 @@
 </svelte:head>
 
 <!-- main -->
-<div class=" grid grid-cols-1 grid-rows-1 lg:grid-box lg:grid-cols-4 lg:grid-rows-2 lg:gap-0">
+<div class="grid-box grid grid-cols-1 grid-rows-1">
 
   <!-- lewa strona -->
   <div>
@@ -36,5 +36,11 @@
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr;
+  }
+
+  @media (max-width: 779px) {
+    .grid-box {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

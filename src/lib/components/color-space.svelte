@@ -13,9 +13,11 @@
   import { h, s, l } from "$lib/scripts/stores.js";
   import { Select, Label } from "flowbite-svelte";
   import ColorConverter from 'simple-color-converter';
+  import { onMount } from "svelte";
 
+  let isMobile = false;
   let selected;
-  let countries = [
+  let options = [
     { value: "yuv", name: "YUV" },
     { value: "yiq", name: "YIQ" },
     { value: "xyz", name: "XYZ" },
@@ -23,6 +25,25 @@
     { value: "luv", name: "LUV" },
     { value: "ral", name: "RAL" },
   ];
+
+  onMount(() => {
+    const userAgent = window.navigator.userAgent;
+    isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+
+    if (isMobile) {
+      options = [
+        { value: "hsl", name: "HSL" },
+        { value: "cmy", name: "CMY" },
+        { value: "yuv", name: "YUV" },
+        { value: "yiq", name: "YIQ" },
+        { value: "xyz", name: "XYZ" },
+        { value: "lab", name: "LAB" },
+        { value: "luv", name: "LUV" },
+        { value: "ral", name: "RAL" },
+      ];
+    }
+  });
+
 
   let rgb = writable({});
   let cmy = writable({});
@@ -66,6 +87,13 @@
         ralCode = ral.color.ral;
         ralName = ral.color.name;
         break;
+      case "hsl":
+        tmp = HslToCmy(h, s, l);
+        result.set({ A: tmp["C"], B: tmp["M"], C: tmp["Y"] });
+        break;
+      case "cmy":
+        result.set({ A: h, B: s, C: l });
+        break;
     }
   };
 
@@ -95,39 +123,41 @@
   </div>
 </div>
 
-<div class="w-[14.5rem] flex flex-row mt-4 justify-evenly glass rounded-md pb-1">
-  <div class="text-center p-1">
-    <div class="text-[0.8rem] font-bold">H</div>
-    <Button color="alternative" class="w-16">{$h}</Button>
+{#if !isMobile}
+  <div class="w-[14.5rem] flex flex-row mt-4 justify-evenly glass rounded-md pb-1">
+    <div class="text-center p-1">
+      <div class="text-[0.8rem] font-bold">H</div>
+      <Button color="alternative" class="w-16">{$h}</Button>
+    </div>
+
+    <div class="text-center p-1">
+      <div class="text-[0.8rem] font-bold">S</div>
+      <Button color="alternative" class="w-16">{$s}</Button>
+    </div>
+
+    <div class="text-center p-1">
+      <div class="text-[0.8rem] font-bold">L</div>
+      <Button color="alternative" class="w-16">{$l}</Button>
+    </div>
   </div>
 
-  <div class="text-center p-1">
-    <div class="text-[0.8rem] font-bold">S</div>
-    <Button color="alternative" class="w-16">{$s}</Button>
-  </div>
+  <div class="w-[14.5rem] flex flex-row mt-4 justify-evenly glass rounded-md pb-1">
+    <div class="text-center p-1">
+      <div class="text-[0.8rem] font-bold">C</div>
+      <Button color="alternative" class="w-16">{$cmy["C"]}</Button>
+    </div>
 
-  <div class="text-center p-1">
-    <div class="text-[0.8rem] font-bold">L</div>
-    <Button color="alternative" class="w-16">{$l}</Button>
-  </div>
-</div>
+    <div class="text-center p-1">
+      <div class="text-[0.8rem] font-bold">M</div>
+      <Button color="alternative" class="w-16">{$cmy["M"]}</Button>
+    </div>
 
-<div class="w-[14.5rem] flex flex-row mt-4 justify-evenly glass rounded-md pb-1">
-  <div class="text-center p-1">
-    <div class="text-[0.8rem] font-bold">C</div>
-    <Button color="alternative" class="w-16">{$cmy["C"]}</Button>
+    <div class="text-center p-1">
+      <div class="text-[0.8rem] font-bold">Y</div>
+      <Button color="alternative" class="w-16">{$cmy["Y"]}</Button>
+    </div>
   </div>
-
-  <div class="text-center p-1">
-    <div class="text-[0.8rem] font-bold">M</div>
-    <Button color="alternative" class="w-16">{$cmy["M"]}</Button>
-  </div>
-
-  <div class="text-center p-1">
-    <div class="text-[0.8rem] font-bold">Y</div>
-    <Button color="alternative" class="w-16">{$cmy["Y"]}</Button>
-  </div>
-</div>
+{/if}
 
 <Label for="countries" class="w-[14.5rem] mt-4">Color space</Label>
 <Select
@@ -137,7 +167,7 @@
   on:change={updateColorSpaces($h, $s, $l)}
   placeholder=""
 >
-  {#each countries as { value, name }}
+  {#each options as { value, name }}
     <option {value} class="h-8 bg-light dark:bg-dark">
       {name}
     </option>
