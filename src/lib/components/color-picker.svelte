@@ -42,7 +42,19 @@
   id="color-picker-1"
   button-width="0rem"
   button-height="0rem"
-  class="z-1 w-10"
+  class="z-1"
 ></toolcool-color-picker>
 
 <ColorSpace></ColorSpace>
+
+<style>
+  #color-picker-1 {
+    --tool-cool-color-picker-popup-width: 14rem;
+  }
+
+  @media (max-width: 779px) {
+    #color-picker-1 {
+      --tool-cool-color-picker-popup-width: 20.3rem;
+    }
+  }
+</style>

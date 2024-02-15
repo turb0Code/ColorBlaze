@@ -60,7 +60,7 @@
     <Label for="countries" class="w-[14.5rem]">Select color harmony</Label>
     <Select
       id="countries"
-      class="w-[14.5rem] glass"
+      class="w-[14.5rem] lg:w-[14.5rem] glass"
       bind:value={$harmony}
       placeholder=""
       on:change={updateColorHarmony}

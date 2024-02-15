@@ -106,7 +106,26 @@
   });
 </script>
 
-<div class="w-[14.5rem] flex flex-row mt-[12.3rem] justify-evenly glass rounded-md pb-1">
+{#if !isMobile}
+
+  <Label for="countries" class="w-[21.3rem] lg:w-[14.5rem] mt-4">Color space</Label>
+  <Select
+    id="countries"
+    class="mt-2 w-[21.3rem] lg:w-[14.5rem] glass"
+    bind:value={selected}
+    on:change={updateColorSpaces($h, $s, $l)}
+    placeholder=""
+  >
+    {#each options as { value, name }}
+      <option {value} class="h-8 bg-light dark:bg-dark">
+        {name}
+      </option>
+    {/each}
+  </Select>
+
+{/if}
+
+<div class="w-[21.3rem] lg:w-[14.5rem] flex flex-row mt-[12.3rem] justify-evenly glass rounded-md pb-1">
   <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">R</div>
     <Button color="alternative" class="w-16">{$rgb["R"]}</Button>
@@ -159,30 +178,34 @@
   </div>
 {/if}
 
-<Label for="countries" class="w-[14.5rem] mt-4">Color space</Label>
-<Select
-  id="countries"
-  class="mt-2 w-[14.5rem] glass"
-  bind:value={selected}
-  on:change={updateColorSpaces($h, $s, $l)}
-  placeholder=""
->
-  {#each options as { value, name }}
-    <option {value} class="h-8 bg-light dark:bg-dark">
-      {name}
-    </option>
-  {/each}
-</Select>
+{#if isMobile}
+
+  <Label for="countries" class="w-[21.3rem] lg:w-[14.5rem] mt-4">Color space</Label>
+  <Select
+    id="countries"
+    class="mt-2 w-[21.3rem] lg:w-[14.5rem] glass"
+    bind:value={selected}
+    on:change={updateColorSpaces($h, $s, $l)}
+    placeholder=""
+  >
+    {#each options as { value, name }}
+      <option {value} class="h-8 bg-light dark:bg-dark">
+        {name}
+      </option>
+    {/each}
+  </Select>
+
+{/if}
 
 
 {#if selected!="ral"}
-  <div class="w-[14.5rem] flex flex-row mt-4 justify-evenly">
+  <div class="w-[21.3rem] lg:w-[14.5rem] flex flex-row mt-4 justify-evenly">
     <Button color="alternative" class="w-16 glass">{$result["A"]}</Button>
     <Button color="alternative" class="w-16 glass">{$result["B"]}</Button>
     <Button color="alternative" class="w-16 glass">{$result["C"]}</Button>
   </div>
 {:else}
-  <div class="w-[14.5rem] flex flex-row mt-4 justify-evenly glass h-10 items-center rounded-md">
+  <div class="w-[21.3rem] lg:w-[14.5rem] flex flex-row mt-4 justify-evenly glass h-10 items-center rounded-md">
     <div>{ralCode}</div>
     <div>{ralName}</div>
   </div>
