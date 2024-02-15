@@ -34,6 +34,7 @@
     <NavLi href="/">Home</NavLi>
     <NavLi href="/example">Website</NavLi>
     <NavLi href="/presentation">Presentation</NavLi>
+    <NavLi href="/images">Images</NavLi>
     <NavLi href="/services">Contact</NavLi>
     <Button on:click={() => darkMode.set(!$darkMode)}>
       {#if $darkMode}
