@@ -4,6 +4,7 @@
   import FileExport from "$lib/components/file-export.svelte";
   import ColorPreview from "../lib/components/color-preview.svelte";
   import ColorConverter from 'simple-color-converter';
+  import ImagesPreview from "../lib/components/images-preview.svelte";
 </script>
 
 <svelte:head>
@@ -27,6 +28,8 @@
     <FileExport></FileExport>
 
     <ColorPreview></ColorPreview>
+
+    <ImagesPreview></ImagesPreview>
   </div>
 
 </div>

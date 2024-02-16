@@ -1,19 +1,12 @@
 <script>
   import { Button } from "flowbite-svelte";
-  import {
-    HslToRgb,
-    HslToCmy,
-    HslToYuv,
-    HslToYiq,
-    HslToXyz,
-    HslToLab,
-    HslToLuv,
-  } from "$lib/scripts/color-conversion.js";
+  import { HslToRgb, HslToCmy, HslToYuv, HslToYiq, HslToXyz, HslToLab, HslToLuv } from "$lib/scripts/color-conversion.js";
   import { writable, derived } from "svelte/store";
   import { h, s, l } from "$lib/scripts/stores.js";
   import { Select, Label } from "flowbite-svelte";
   import ColorConverter from 'simple-color-converter';
   import { onMount } from "svelte";
+  import { callHslToNcs } from "$lib/scripts/ncs.js";
 
   let isMobile = false;
   let selected;
@@ -24,6 +17,7 @@
     { value: "lab", name: "LAB" },
     { value: "luv", name: "LUV" },
     { value: "ral", name: "RAL" },
+    { value: "ncs", name: "NCS" },
   ];
 
   onMount(() => {
@@ -40,6 +34,7 @@
         { value: "lab", name: "LAB" },
         { value: "luv", name: "LUV" },
         { value: "ral", name: "RAL" },
+        { value: "ncs", name: "NCS" },
       ];
     }
   });
@@ -49,15 +44,28 @@
   let cmy = writable({});
   let yuv = writable({});
   let result = writable({ A: 0, B: 0, C: 0 });
-  let ral, ralCode, ralName;
-
-  let tmp;
+  let ral, ralCode, ralName, tmp;
+  let ncs = "NCS COLOR"
+  let currentDate = new Date();
+  let time = currentDate.getTime();
 
   let hsl = derived([h, s, l], ([$h, $s, $l]) => {
     return { h: $h, s: $s, l: $l };
   });
 
-  const updateColorSpaces = (h, s, l) => {
+  const checkDelay = (h, s, l) => {
+    currentDate = new Date();
+    let diff = currentDate.getTime() - time;
+    time = currentDate.getTime();
+    if (diff >= 700) {
+      updateColorSpaces(h, s, l, true);
+    }
+    else {
+      updateColorSpaces(h, s, l, false);
+    }
+  }
+
+  const updateColorSpaces = async (h, s, l, calcNcs) => {
     switch (selected) {
       case "yuv":
         tmp = HslToYuv(h, s, l);
@@ -94,6 +102,11 @@
       case "cmy":
         result.set({ A: h, B: s, C: l });
         break;
+      case "ncs":
+        if (calcNcs) {
+          ncs = await callHslToNcs(h, s, l);
+        }
+        break;
     }
   };
 
@@ -101,31 +114,11 @@
     rgb.set(HslToRgb(h, s, l));
     cmy.set(HslToCmy(h, s, l));
     yuv.set(HslToYuv(h, s, l));
-
-    updateColorSpaces(h, s, l);
+    checkDelay(h, s, l);
   });
 </script>
 
-{#if !isMobile}
-
-  <Label for="countries" class="w-[21.3rem] lg:w-[14.5rem] mt-4">Color space</Label>
-  <Select
-    id="countries"
-    class="mt-2 w-[21.3rem] lg:w-[14.5rem] glass"
-    bind:value={selected}
-    on:change={updateColorSpaces($h, $s, $l)}
-    placeholder=""
-  >
-    {#each options as { value, name }}
-      <option {value} class="h-8 bg-light dark:bg-dark">
-        {name}
-      </option>
-    {/each}
-  </Select>
-
-{/if}
-
-<div class="w-[21.3rem] lg:w-[14.5rem] flex flex-row mt-[12.3rem] justify-evenly glass rounded-md pb-1">
+<div class="w-[21.3rem] lg:w-[14.5rem] flex flex-row mt-[12.3rem] lg:mt-[12.3rem] justify-evenly glass rounded-md pb-1">
   <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">R</div>
     <Button color="alternative" class="w-16">{$rgb["R"]}</Button>
@@ -178,35 +171,36 @@
   </div>
 {/if}
 
-{#if isMobile}
-
-  <Label for="countries" class="w-[21.3rem] lg:w-[14.5rem] mt-4">Color space</Label>
-  <Select
-    id="countries"
-    class="mt-2 w-[21.3rem] lg:w-[14.5rem] glass"
-    bind:value={selected}
-    on:change={updateColorSpaces($h, $s, $l)}
-    placeholder=""
-  >
-    {#each options as { value, name }}
-      <option {value} class="h-8 bg-light dark:bg-dark">
-        {name}
-      </option>
-    {/each}
-  </Select>
-
-{/if}
+<Label for="countries" class="w-[21.3rem] lg:w-[14.5rem] mt-4">Color space</Label>
+<Select
+  id="countries"
+  class="mt-2 w-[21.3rem] lg:w-[14.5rem] glass"
+  bind:value={selected}
+  on:change={updateColorSpaces($h, $s, $l)}
+  placeholder=""
+>
+  {#each options as { value, name }}
+    <option {value} class="h-8 bg-light dark:bg-dark">
+      {name}
+    </option>
+  {/each}
+</Select>
 
 
-{#if selected!="ral"}
+
+{#if selected!="ral" && selected!="ncs"}
   <div class="w-[21.3rem] lg:w-[14.5rem] flex flex-row mt-4 justify-evenly">
     <Button color="alternative" class="w-16 glass">{$result["A"]}</Button>
     <Button color="alternative" class="w-16 glass">{$result["B"]}</Button>
     <Button color="alternative" class="w-16 glass">{$result["C"]}</Button>
   </div>
-{:else}
+{:else if selected=="ral"}
   <div class="w-[21.3rem] lg:w-[14.5rem] flex flex-row mt-4 justify-evenly glass h-10 items-center rounded-md">
     <div>{ralCode}</div>
     <div>{ralName}</div>
+  </div>
+{:else if selected=="ncs"}
+  <div class="w-[21.3rem] lg:w-[14.5rem] flex flex-row mt-4 justify-evenly glass h-10 items-center rounded-md">
+    <div>{ncs}</div>
   </div>
 {/if}
