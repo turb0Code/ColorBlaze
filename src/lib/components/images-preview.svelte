@@ -35,15 +35,22 @@ colors.subscribe(() => {
 });
 </script>
 
-<div class="flex flex-col">
+<div class="grid grid-rows-2 grid-cols-2 w-[27rem] items-center justify-items-center">
 
-  <div class="flex flex-row">
+  <div class="w-40">
     <Abstract mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></Abstract>
+  </div>
+
+  <div class="w-40 flex justify-center">
     <MilkSmile mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></MilkSmile>
   </div>
 
-  <div class="flex flex-row">
-    <Smile mainColor={mainColor} accentColor={accentColor}></Smile>
-    <Food mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></Food>
+  <div class="w-40 flex justify-center">
+    <Smile mainColor={mainColor} accentColor={accentColor} class="w-20"></Smile>
   </div>
+
+  <div class="w-40 flex justify-center">
+    <Food mainColor={mainColor} class="w-20"></Food>
+  </div>
+
 </div>

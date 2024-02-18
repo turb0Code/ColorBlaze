@@ -2,14 +2,13 @@
   import { Button } from "flowbite-svelte";
   import { HslToRgb, HslToCmy, HslToYuv, HslToYiq, HslToXyz, HslToLab, HslToLuv } from "$lib/scripts/color-conversion.js";
   import { writable, derived } from "svelte/store";
-  import { h, s, l } from "$lib/scripts/stores.js";
+  import { h, s, l, space } from "$lib/scripts/stores.js";
   import { Select, Label } from "flowbite-svelte";
   import ColorConverter from 'simple-color-converter';
   import { onMount } from "svelte";
   import { callHslToNcs } from "$lib/scripts/ncs.js";
 
   let isMobile = false;
-  let selected;
   let options = [
     { value: "yuv", name: "YUV" },
     { value: "yiq", name: "YIQ" },
@@ -66,7 +65,7 @@
   }
 
   const updateColorSpaces = async (h, s, l, calcNcs) => {
-    switch (selected) {
+    switch ($space) {
       case "yuv":
         tmp = HslToYuv(h, s, l);
         result.set({ A: tmp["Y"], B: tmp["U"], C: tmp["V"] });
@@ -175,7 +174,7 @@
 <Select
   id="countries"
   class="mt-2 w-[21.3rem] lg:w-[14.5rem] glass"
-  bind:value={selected}
+  bind:value={$space}
   on:change={updateColorSpaces($h, $s, $l)}
   placeholder=""
 >
@@ -188,18 +187,18 @@
 
 
 
-{#if selected!="ral" && selected!="ncs"}
+{#if $space!="ral" && $space!="ncs"}
   <div class="w-[21.3rem] lg:w-[14.5rem] flex flex-row mt-4 justify-evenly">
     <Button color="alternative" class="w-16 glass">{$result["A"]}</Button>
     <Button color="alternative" class="w-16 glass">{$result["B"]}</Button>
     <Button color="alternative" class="w-16 glass">{$result["C"]}</Button>
   </div>
-{:else if selected=="ral"}
+{:else if $space=="ral"}
   <div class="w-[21.3rem] lg:w-[14.5rem] flex flex-row mt-4 justify-evenly glass h-10 items-center rounded-md">
     <div>{ralCode}</div>
     <div>{ralName}</div>
   </div>
-{:else if selected=="ncs"}
+{:else if $space=="ncs"}
   <div class="w-[21.3rem] lg:w-[14.5rem] flex flex-row mt-4 justify-evenly glass h-10 items-center rounded-md">
     <div>{ncs}</div>
   </div>

@@ -10,8 +10,8 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:krita="http://krita.org/namespaces/svg/krita"
     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-    width="180pt"
-    height="180pt"
+    width="130pt"
+    height="130pt"
     viewBox="0 0 180 180">
   <defs>
     <linearGradient id="gradient0" gradientUnits="objectBoundingBox" x1="0.148711120071409" y1="0.441759503741539" x2="1" y2="1" spreadMethod="pad">

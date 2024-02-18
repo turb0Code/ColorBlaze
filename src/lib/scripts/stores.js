@@ -25,3 +25,7 @@ export { complement };
 let callUpdatePosition = writable(false);
 
 export { callUpdatePosition };
+
+let space = writable("yuv");
+
+export { space };
