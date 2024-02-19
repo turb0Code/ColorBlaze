@@ -108,7 +108,7 @@
   ];
 </script>
 
-<div class=" absolute left-0 min-[370px]:left-4 min-[380px]:left-8 lg:none lg:left-1/4 lg:right-1/4">
+<div class=" absolute left-0 min-[370px]:left-2 min-[380px]:left-4 lg:none lg:left-1/4 lg:right-1/4">
 
   <div class=" grid grid-rows-1 grid-cols-1 lg:grid-rows-2 lg:grid-cols-2 gap-20">
 
