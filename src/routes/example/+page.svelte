@@ -91,7 +91,7 @@
     <div class="flex flex-row">
 
       <!-- paid plan -->
-      <div class="mr-0 lg:mr-4 mb-4 lg:mb-0">
+      <div class="mr-0 lg:mr-4 mb-4 lg:mb-0 lg:h-auto h-[36.5rem] lg:w-auto w-1/2">
         <Card padding="xl" class="h-full">
           <h5 class="mb-4 text-xl font-medium" style={`color: ${mainColor};`}>Standard plan</h5>
           <div class="flex items-baseline text-gray-900 dark:text-white">
@@ -136,7 +136,7 @@
 
       <!-- sign in card -->
       <div>
-        <Card class="h-full w-40 lg:w-auto">
+        <Card class="lg:w-auto lg:h-auto h-[36.5rem]">
           <form class="flex flex-col space-y-6" action="/">
             <h3 class="text-xl font-medium" style={`color: ${mainColor};`}>Sign in to our platform</h3>
             <Label class="space-y-2">
@@ -149,8 +149,8 @@
             </Label>
             <div class="flex items-start">
               <Checkbox><span style={`color: ${accent2Color};`}>Remember me</span></Checkbox>
-              <a href="/" class="ms-auto text-sm" style={`color: ${accent3Color};`}> Lost password? </a>
             </div>
+            <a href="/" class="ms-auto text-sm lg:text-center ml-0" style={`color: ${accent3Color};`}> Lost password? </a>
             <Button type="submit" class="w-full" style={`background-color: ${mainColor};`}>Login to your account</Button>
             <div class="text-sm font-medium text-gray-500 dark:text-gray-300" style={`color: ${accentColor};`}>
               Not registered? <a href="/" class="hover:underline" style={`color: ${accent3Color};`}> Create account </a>
