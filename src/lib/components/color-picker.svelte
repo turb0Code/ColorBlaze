@@ -3,9 +3,8 @@
   import { onMount } from "svelte";
   import ColorSpace from "$lib/components/color-space.svelte";
   import { RgbToHsl } from "$lib/scripts/color-conversion.js";
-  import { h, s, l, hex, callUpdatePosition, harmony, distance } from "$lib/scripts/stores.js";
+  import { h, s, l, hex, callUpdatePosition, harmony, distance, firstVisit } from "$lib/scripts/stores.js";
   import "$lib/scripts/toolcool-color-picker.min.js";
-    import { RadioButton } from "flowbite-svelte";
 
   let picker1;
 
@@ -22,7 +21,6 @@
     $harmony = "dbct";
     $distance = Math.floor(Math.random() * 90) + 1;
 
-
     return `hsl(${hue}, ${saturation}, ${lightness})`;
   }
 
@@ -37,8 +35,11 @@
     picker1.color = "hsl(40, 42, 10)";    // NOW I HAVE IDEA
     picker1.opened = true;                // STUPID BUT WORKS... (YEYYY) [ACUTALLY 4 HOURS FOR 2 LINES OF CODE - FUCK ME!!!]
 
-    picker1.color = randomHsl();
-    picker1.opened = true;
+    if ($firstVisit) {
+      picker1.color = randomHsl();
+      picker1.opened = true;
+      $firstVisit = false;
+    }
 
     picker1.addEventListener("change", (e) => {
       let hsl = RgbToHsl(

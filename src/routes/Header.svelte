@@ -12,6 +12,7 @@
   } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   import FileExport from "$lib/components/file-export.svelte";
+  import PalletePreview from "../lib/components/pallete-preview.svelte";
 
   let src = "$lib/images/logo.svg";
   let menu = [
@@ -80,13 +81,15 @@
     <NavLi href="/images">Images</NavLi>
     <NavLi href="/services">Contact</NavLi>
     <div class="grid grid-cols-3">
+      <div class="flex flex-row w-[14.5rem] justify-between opacity-100">
+      <PalletePreview></PalletePreview>
       <Button class="lg:w-auto h-10"  on:click={() => darkMode.set(!$darkMode)}>
-        {#if $darkMode}
-          <SunSolid />
-        {:else}
-          <MoonSolid />
-        {/if}
-      </Button>
+          {#if $darkMode}
+            <SunSolid />
+          {:else}
+            <MoonSolid />
+          {/if}
+        </Button>
 
       <Button on:click={saveJson($colors)} class="clear-left ml-2 mr-0 lg:m-0 lg:w-0 lg:h-0 lg:p-0">
         <ArrowDownToBraketSolid class="lg:w-0 lg:h-0"/>
@@ -98,5 +101,6 @@
     </div>
 
     <input type="file" style="display: none;" id="file-picker" bind:files/>
+    </div>
   </NavUl>
 </Navbar>

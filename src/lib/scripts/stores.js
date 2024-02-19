@@ -29,3 +29,7 @@ export { callUpdatePosition };
 let space = writable("yuv");
 
 export { space };
+
+let firstVisit = writable(true);
+
+export { firstVisit };
