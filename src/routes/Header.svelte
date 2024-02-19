@@ -33,7 +33,8 @@
     <NavLi href="/example">Website</NavLi>
     <NavLi href="/presentation">Presentation</NavLi>
     <NavLi href="/images">Images</NavLi>
-    <Button on:click={() => darkMode.set(!$darkMode)}>
+    <NavLi href="/services">Contact</NavLi>
+    <Button class="w-1/3 lg:w-auto"  on:click={() => darkMode.set(!$darkMode)}>
       {#if $darkMode}
         <SunSolid />
       {:else}

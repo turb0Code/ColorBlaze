@@ -14,7 +14,7 @@
 </script>
 
 <div
-    class="mr-2 border-2 border-gray-200 dark:border-gray-600 text-center h-[6.4rem] w-[6.4rem] rounded-md flex align-middle items-center justify-center clear-left mt-1"
+    class="mr-2 border-2 border-gray-200 dark:border-gray-600 text-center text-xs h-[4.8rem] w-[4.8rem] lg:text-base lg:h-[6.4rem] lg:w-[6.4rem] rounded-md flex align-middle items-center justify-center clear-left mt-1"
     style="background-color: {hex};"
 >
     <button class="p-0" style="color: {textColor}" on:click={copyColor}>{hex}</button>
