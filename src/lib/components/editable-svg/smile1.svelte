@@ -12,7 +12,7 @@
     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
     width="130pt"
     height="130pt"
-    viewBox="0 0 180 180">
+    viewBox="0 10 180 180">
   <defs>
     <linearGradient id="gradient0" gradientUnits="objectBoundingBox" x1="0.148711120071409" y1="0.441759503741539" x2="1" y2="1" spreadMethod="pad">
     <stop stop-color={`${mainColor}`} offset="0" stop-opacity="1"/>

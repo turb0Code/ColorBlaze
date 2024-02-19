@@ -5,6 +5,14 @@
   import ColorPreview from "../lib/components/color-preview.svelte";
   import ColorConverter from 'simple-color-converter';
   import ImagesPreview from "../lib/components/images-preview.svelte";
+  import { onMount } from "svelte";
+
+  let isMobile = false;
+
+  onMount(() => {
+    const userAgent = window.navigator.userAgent;
+    isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+  });
 </script>
 
 <svelte:head>
@@ -29,7 +37,9 @@
 
     <ColorPreview></ColorPreview>
 
-    <ImagesPreview></ImagesPreview>
+    {#if !isMobile}
+      <ImagesPreview></ImagesPreview>
+    {/if}
   </div>
 
 </div>

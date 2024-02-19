@@ -35,21 +35,21 @@ colors.subscribe(() => {
 });
 </script>
 
-<div class="grid grid-rows-2 grid-cols-2 w-[27rem] items-center justify-items-center">
+<div class="grid grid-rows-2 grid-cols-2 w-[27rem] h-[27rem] items-center justify-items-center">
 
-  <div class="w-40">
+  <div class="w-40 h-40 border-2 rounded-md border-gray-300 dark:border-gray-600 glass">
     <Abstract mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></Abstract>
   </div>
 
-  <div class="w-40 flex justify-center">
+  <div class="w-40 flex justify-center h-40 border-2 rounded-md border-gray-300 dark:border-gray-600 glass">
     <MilkSmile mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></MilkSmile>
   </div>
 
-  <div class="w-40 flex justify-center">
+  <div class="w-40 flex justify-center h-40 border-2 rounded-md border-gray-300 dark:border-gray-600 glass">
     <Smile mainColor={mainColor} accentColor={accentColor} class="w-20"></Smile>
   </div>
 
-  <div class="w-40 flex justify-center">
+  <div class="w-40 flex justify-center h-40 border-2 rounded-md border-gray-300 dark:border-gray-600 glass">
     <Food mainColor={mainColor} class="w-20"></Food>
   </div>
 

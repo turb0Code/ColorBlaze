@@ -16,9 +16,7 @@
   let menu = [
     { name: "Website", href: "/example" },
     { name: "Presentation", href: "/presentation" },
-    { name: "Contact us", href: "/contact" },
-    { name: "Library", href: "/library" },
-    { name: "Newsletter", href: "/news" },
+    { name: "Images", href: "/images" },
   ];
 </script>
 
@@ -35,7 +33,6 @@
     <NavLi href="/example">Website</NavLi>
     <NavLi href="/presentation">Presentation</NavLi>
     <NavLi href="/images">Images</NavLi>
-    <NavLi href="/services">Contact</NavLi>
     <Button on:click={() => darkMode.set(!$darkMode)}>
       {#if $darkMode}
         <SunSolid />

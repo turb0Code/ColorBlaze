@@ -1,7 +1,7 @@
 <script>
 
   import { Alert, Button, Breadcrumb, BreadcrumbItem, Spinner, Card, Toggle, Label, Input, Checkbox, Drawer, CloseButton, Sidebar, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper, Dropdown, DropdownItem, Popover, Radio, Range } from 'flowbite-svelte';
-  import { InfoCircleSolid, UserCircleSolid, HomeOutline, ChevronDoubleRightOutline, ArrowRightOutline, CheckCircleSolid, ChartPieSolid, ShoppingCartSolid, GridSolid, MailBoxSolid, UsersSolid, BagSolid, ArrowRightToBracketSolid, FileEditSolid, ChevronDownSolid, ChevronRightSolid, DatabaseSolid, ChevronRightOutline, DownloadSolid, AdjustmentsHorizontalSolid, MessagesSolid } from 'flowbite-svelte-icons';
+  import { InfoCircleSolid, HomeOutline, ChevronDoubleRightOutline, ArrowRightOutline, CheckCircleSolid, ChartPieSolid, ShoppingCartSolid, GridSolid, MailBoxSolid, UsersSolid, BagSolid, ArrowRightToBracketSolid, FileEditSolid, ChevronDownSolid, ChevronRightSolid, DatabaseSolid, ChevronRightOutline } from 'flowbite-svelte-icons';
   import { colors } from "$lib/scripts/color-stores.js";
   import { sineIn } from 'svelte/easing';
   import { page } from '$app/stores';
