@@ -3,10 +3,28 @@
   import { onMount } from "svelte";
   import ColorSpace from "$lib/components/color-space.svelte";
   import { RgbToHsl } from "$lib/scripts/color-conversion.js";
-  import { h, s, l, hex, callUpdatePosition } from "$lib/scripts/stores.js";
+  import { h, s, l, hex, callUpdatePosition, harmony, distance } from "$lib/scripts/stores.js";
   import "$lib/scripts/toolcool-color-picker.min.js";
+    import { RadioButton } from "flowbite-svelte";
 
   let picker1;
+
+  const randomHsl = () => {
+    const hue = Math.floor(Math.random() *  360);
+
+    const saturation = Math.floor(Math.random() *  101);
+
+    const lightness = Math.floor(Math.random() *  101);
+
+    $h = hue;
+    $s = saturation;
+    $l = lightness;
+    $harmony = "dbct";
+    $distance = Math.floor(Math.random() * 90) + 1;
+
+
+    return `hsl(${hue}, ${saturation}, ${lightness})`;
+  }
 
   onMount(() => {
     picker1 = document.getElementById("color-picker-1");
@@ -18,6 +36,9 @@
                                           // ALL MY IDEAS ARE BAD OR FUCKING HARD
     picker1.color = "hsl(40, 42, 10)";    // NOW I HAVE IDEA
     picker1.opened = true;                // STUPID BUT WORKS... (YEYYY) [ACUTALLY 4 HOURS FOR 2 LINES OF CODE - FUCK ME!!!]
+
+    picker1.color = randomHsl();
+    picker1.opened = true;
 
     picker1.addEventListener("change", (e) => {
       let hsl = RgbToHsl(
