@@ -19,12 +19,6 @@
 
   let isMobile = false;
   let files;
-  let src = "$lib/images/logo.svg";
-  let menu = [
-    { name: "Website", href: "/example" },
-    { name: "Presentation", href: "/presentation" },
-    { name: "Images", href: "/images" },
-  ];
 
   onMount(() => {
     const userAgent = window.navigator.userAgent;
@@ -41,7 +35,6 @@
       try {
         const jsonData = JSON.parse(content);
         $colors = jsonData.colors;
-        console.log($colors);
         h.set(jsonData.main.h);
         s.set(jsonData.main.s);
         l.set(jsonData.main.l);
