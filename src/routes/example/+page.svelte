@@ -81,7 +81,7 @@
     </Breadcrumb>
 
     <!-- alert -->
-    <Alert dismissable class="mb-4" style={`color: ${mainColor};`}>
+    <Alert class="mb-4" style={`color: ${mainColor};`}>
       <InfoCircleSolid slot="icon" class="w-4 h-4"/>
       A simple default alert with an
       <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900" style={`color: ${mainColor};`}>example link</a>
