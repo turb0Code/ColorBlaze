@@ -62,7 +62,7 @@
 </script>
 
 
-<div class="flex flex-row mt-2">
+<div class="flex flex-row mt-2 ml-[1.25rem]">
     <ColorField hex={$hex1}></ColorField>
 
     {#if $harmony == "cont"}

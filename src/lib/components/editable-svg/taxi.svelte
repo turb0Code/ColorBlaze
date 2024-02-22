@@ -5,7 +5,7 @@
   export let accent3Color = "#000000";
 </script>
 
-<svg id="Warstwa_1" data-name="Warstwa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402.14 153.37"     width="152" height="152">
+<svg id="Warstwa_1" data-name="Warstwa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 120 400 130" width="552" height="552">
   <defs>
     <style>.cls-1,.cls-4{fill:#f39200;}.cls-2,.cls-6{fill:#fff;}.cls-3{fill:none;}.cls-4,.cls-6,.cls-8{isolation:isolate;}.cls-4{font-size:41.01px;letter-spacing:-0.03em;}.cls-4,.cls-6{font-family:Geometric212BT-BookCondensed, Geometr212 BkCn BT;}.cls-5{letter-spacing:0em;}.cls-6{font-size:16.4px;}.cls-7{fill:#f6f6f6;}.cls-8{font-size:10.39px;font-family:Geometric212BT-HeavyCondensed, Geometr212 BkCn BT;font-weight:800;letter-spacing:-0.06em;}.cls-9{letter-spacing:0em;}</style>
   </defs>

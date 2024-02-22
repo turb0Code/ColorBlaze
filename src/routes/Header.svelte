@@ -90,7 +90,6 @@
         </Button>
     </div>
 
-
     {#if isMobile}
       <ButtonGroup class="w-[20.5rem] space-x-px mt-3">
         <Button on:click={saveJson($colors)} class="ml-0 mr-1 w-[100%]">

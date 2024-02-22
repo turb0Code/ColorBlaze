@@ -38,27 +38,27 @@
 </script>
 
 <div class="grid grid-cols-4 grid-rows-2">
-    <div class="w-[30rem] h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass col-span-2">
-      <Taxi mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></Taxi>
+    <div class="w-[30rem] h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass col-span-2 pl-16">
+        <Taxi mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></Taxi>
     </div>
 
     <div class="w-60 h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass">
       <Logo mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></Logo>
     </div>
 
-    <div class="w-60 h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass">
+    <div class="w-60 h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass align-middle">
       <Abstract mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></Abstract>
     </div>
 
-    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass">
+    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass align-middle">
       <MilkSmile mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></MilkSmile>
     </div>
 
-    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass">
+    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass align-middle">
       <Smile mainColor={mainColor} accentColor={accentColor} class="w-20"></Smile>
     </div>
 
-    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass">
+    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass align-middle">
       <Food mainColor={mainColor} class="w-20"></Food>
     </div>
 
