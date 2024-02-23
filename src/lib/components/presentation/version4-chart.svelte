@@ -35,7 +35,7 @@
 
     <div class="absolute w-28 ml-28 lg:ml-32 text-center text-3xl mt-2" style={`border: solid 4px ${mainColor}; color: ${mainColor};`}>TITLE</div>
 
-    <div class="pie w-32 h-32 ml-[6.5rem] lg:ml-32 mt-14 bg-accent2 border-4 border-pres4 shadow-2xl shadow-accent" style={`background-image: conic-gradient(${mainColor} 64%, ${accentColor} 64%, ${accentColor} 81%, ${accent2Color} 81%); border: solid 4px ${mainColor};`}></div>
+    <div class="pie w-32 h-32 ml-[6.5rem] lg:ml-32 mt-14 bg-accent2 border-4 border-pres4 " style={`background-image: conic-gradient(${mainColor} 64%, ${accentColor} 64%, ${accentColor} 81%, ${accent2Color} 81%); border: solid 4px ${mainColor};`}></div>
 
 </div>
 

@@ -31,9 +31,9 @@
   });
 </script>
 
-<div class="flex w-96 h-56 bg-white">
+<div class="flex w-[22rem] lg:w-96 h-56 bg-white">
 
-    <div class="absolute w-[22rem] lg:w-96 text-center text-3xl mt-2" style={`color: ${mainColor};`}>TITLE</div>
+    <div class="absolute w-[20rem] lg:w-96 text-center text-3xl mt-2" style={`color: ${mainColor};`}>TITLE</div>
 
     <table class="w-80 h-40 border-2 border-solid border-white ml-4 lg:ml-8 mt-12 text-sm text-center">
 

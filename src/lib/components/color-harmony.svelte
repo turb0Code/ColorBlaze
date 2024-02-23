@@ -1,4 +1,5 @@
 <script>
+  import autoAnimate from '@formkit/auto-animate';
   import { Select, Label, Input, Checkbox } from "flowbite-svelte";
   import { distance, harmony, complement, h } from "$lib/scripts/stores.js";
 
@@ -56,7 +57,7 @@
 </script>
 
 <div class="flex felx-row float-left ml-[1.25rem]">
-  <div class="mr-1">
+  <div class="mr-1" use:autoAnimate>
     <Label for="countries" class="w-[14.5rem]">Select color harmony</Label>
     <Select
       id="countries"
@@ -74,7 +75,7 @@
   </div>
 
   {#if opened}
-    <div class="ml-1">
+    <div class="ml-1" use:autoAnimate>
       <Label class="space-y-2 w-24">
         <span>Distance</span>
       </Label>

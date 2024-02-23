@@ -1,4 +1,5 @@
 <script>
+  import autoAnimate from '@formkit/auto-animate';
   import { Button } from "flowbite-svelte";
   import { HslToRgb, HslToCmy, HslToYuv, HslToYiq, HslToXyz, HslToLab, HslToLuv } from "$lib/scripts/color-conversion.js";
   import { writable, derived } from "svelte/store";

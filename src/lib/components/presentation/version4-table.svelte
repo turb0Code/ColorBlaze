@@ -35,7 +35,7 @@
 
     <div class="absolute w-28 ml-[7rem] lg:ml-32 text-center text-3xl mt-2" style={`border: solid 4px ${mainColor}; color: ${mainColor};`}>TITLE</div>
 
-    <table class="w-72 h-36 border-4 border-accent ml-6 lg:ml-10 mt-14 text-sm text-center shadow-2xl shadow-pres4" style={`border: solid 4px ${mainColor};`}>
+    <table class="w-72 h-36 border-4 border-accent ml-6 lg:ml-10 mt-14 text-sm text-center " style={`border: solid 4px ${mainColor};`}>
 
         <tr style={`border: solid 4px ${mainColor}; background-color: ${accentColor}; color: ${mainColor};`}>
           <th>Header 1</th>

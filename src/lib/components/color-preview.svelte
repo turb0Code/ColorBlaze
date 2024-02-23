@@ -1,4 +1,5 @@
 <script>
+    import autoAnimate from '@formkit/auto-animate';
     import ColorField from "$lib/components/color-field.svelte";
     import { harmony, h, s, l, distance, complement } from "$lib/scripts/stores.js";
     import { writable } from "svelte/store";

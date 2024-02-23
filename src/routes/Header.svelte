@@ -72,9 +72,9 @@
     <span class="self-center whitespace-nowrap text-2xl font-semibold dark:text-main">ColorBlaze</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
-  <NavUl {hidden}>
+  <NavUl {hidden} >
     <NavLi href="/">Home</NavLi>
-    <NavLi href="/example">Website</NavLi>
+    <NavLi href="/example" >Website</NavLi>
     <NavLi href="/presentation">Presentation</NavLi>
     <NavLi href="/images">Images</NavLi>
     <div class="flex flex-row w-[20.5rem] lg:w-[14.5rem] justify-between opacity-100">

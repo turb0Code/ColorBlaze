@@ -31,7 +31,7 @@
   });
 </script>
 
-<div class="flex w-[22rem] lg:w-96 h-56 bg-white" >
+<div class="flex w-[22rem] lg:w-96 h-56 bg-white">
 
   <div class="absolute w-56 ml-16 lg:ml-20 text-center text-3xl mt-2 px-1" style={`color: ${mainColor};`}>TITLE</div>
 

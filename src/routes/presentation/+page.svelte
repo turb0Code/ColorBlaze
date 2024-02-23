@@ -1,5 +1,15 @@
 <script>
-  // Import all the components for the slides
+  import { onMount } from "svelte";
+
+let isMobile = false;
+
+onMount(() => {
+  const userAgent = window.navigator.userAgent;
+  isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+});
+
+  import autoAnimate from '@formkit/auto-animate';
+
   import Version1Chart from "../../lib/components/presentation/version1-chart.svelte";
     import Version1Images from "../../lib/components/presentation/version1-images.svelte";
     import Version1Table from "../../lib/components/presentation/version1-table.svelte";
@@ -115,15 +125,17 @@
     <div class="flex">
 
 
-      <div class="carousel">
+      <div class="carousel" use:autoAnimate>
 
         <div class="z-0 h-56 absolute">
-          <button id="nextButton" class="bg-gray-200 w-8 h-56 flex right-0 ml-[20rem] lg:ml-[22rem] opacity-5 hover:opacity-30" on:click={nextSlide1}><ArrowKeyRight class="h-24 mt-16"></ArrowKeyRight></button>
+          <button id="nextButton" class="bg-gray-200 w-[22rem] lg:w-8 h-56 flex right-0 lg:ml-[22rem] opacity-5 lg:hover:opacity-30" on:click={nextSlide1}><ArrowKeyRight class="h-0 ml-4 lg:h-24 lg:mt-16"></ArrowKeyRight></button>
         </div>
 
-        <div class="z-0 h-56 absolute">
-          <button id="nextButton" class="bg-gray-200 w-8 h-56 flex right-0 opacity-5 hover:opacity-30" on:click={prevSlide1}><ArrowKeyLeft class="h-24 mt-16"></ArrowKeyLeft></button>
-        </div>
+        {#if !isMobile}
+          <div class=" lg:z-0 h-56 absolute">
+            <button id="nextButton" class="bg-gray-200 lg:w-8 h-56 flex right-0 lg:opacity-5 lg:hover:opacity-30" on:click={prevSlide1}><ArrowKeyLeft class="h-24 mt-16"></ArrowKeyLeft></button>
+          </div>
+        {/if}
 
         {#each slides1 as SlideComponent, index1 (index1)}
           {#if currentIndex1 === index1}
@@ -140,15 +152,17 @@
     <div class="flex">
 
 
-      <div class="carousel">
+      <div class="carousel" use:autoAnimate>
 
         <div class="z-0 h-56 absolute">
-          <button id="nextButton" class="bg-gray-200 w-8 h-56 flex right-0 ml-[20rem] lg:ml-[22rem] opacity-5 hover:opacity-30" on:click={nextSlide2}><ArrowKeyRight class="h-24 mt-16"></ArrowKeyRight></button>
+          <button id="nextButton" class="bg-gray-200 w-[22rem] lg:w-8 h-56 flex right-0 lg:ml-[22rem] opacity-0 lg:opacity-5 lg:hover:opacity-30" on:click={nextSlide2}><ArrowKeyRight class="h-0 ml-4 lg:h-24 lg:mt-16"></ArrowKeyRight></button>
         </div>
 
+        {#if !isMobile}
         <div class="z-0 h-56 absolute">
           <button id="prevButton" class="bg-gray-200 w-8 h-56 flex right-0 opacity-5 hover:opacity-30" on:click={prevSlide2}><ArrowKeyLeft class="h-24 mt-16"></ArrowKeyLeft></button>
         </div>
+        {/if}
 
         {#each slides2 as SlideComponent, index2 (index2)}
           {#if currentIndex2 === index2}
@@ -165,15 +179,17 @@
     <div class="flex">
 
 
-      <div class="carousel">
+      <div class="carousel" use:autoAnimate>
 
         <div class="z-0 h-56 absolute">
-          <button id="nextButton" class="bg-gray-200 w-8 h-56 flex right-0 ml-[20rem] lg:ml-[22rem] opacity-5 hover:opacity-30" on:click={nextSlide3}><ArrowKeyRight class="h-24 mt-16"></ArrowKeyRight></button>
+          <button id="nextButton" class="bg-gray-200 w-[22rem] lg:w-8 h-56 flex right-0 lg:ml-[22rem] opacity-0 lg:opacity-5 lg:hover:opacity-30" on:click={nextSlide3}><ArrowKeyRight class="h-0 ml-4 lg:h-24 lg:mt-16"></ArrowKeyRight></button>
         </div>
 
+        {#if !isMobile}
         <div class="z-0 h-56 absolute">
           <button id="prevButton" class="bg-gray-200 w-8 h-56 flex right-0 opacity-5 hover:opacity-30" on:click={prevSlide3}><ArrowKeyLeft class="h-24 mt-16"></ArrowKeyLeft></button>
         </div>
+        {/if}
 
         {#each slides3 as SlideComponent, index3 (index3)}
           {#if currentIndex3 === index3}
@@ -190,15 +206,17 @@
     <div class="flex">
 
 
-      <div class="carousel">
+      <div class="carousel" use:autoAnimate>
 
         <div class="z-0 h-56 absolute">
-          <button id="nextButton" class="bg-gray-200 w-8 h-56 flex right-0 ml-[20rem] lg:ml-[22rem] opacity-5 hover:opacity-30" on:click={nextSlide4}><ArrowKeyRight class="h-24 mt-16"></ArrowKeyRight></button>
+          <button id="nextButton" class="bg-gray-200 w-[22rem] lg:w-8 h-56 flex right lg:ml-[22rem] opacity-0 lg:opacity-5 lg:hover:opacity-30" on:click={nextSlide4}><ArrowKeyRight class="h-0 ml-4 lg:h-24 lg:mt-16"></ArrowKeyRight></button>
         </div>
 
+        {#if !isMobile}
         <div class="z-0 h-56 absolute">
           <button id="prevButton" class="bg-gray-200 w-8 h-56 flex right-0 opacity-5 hover:opacity-30" on:click={prevSlide4}><ArrowKeyLeft class="h-24 mt-16"></ArrowKeyLeft></button>
         </div>
+        {/if}
 
         {#each slides4 as SlideComponent, index4 (index4)}
           {#if currentIndex4 === index4}

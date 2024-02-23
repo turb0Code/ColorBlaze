@@ -1,4 +1,5 @@
 <script lang="js">
+  import autoAnimate from '@formkit/auto-animate';
   import { writable } from "svelte/store";
   import { onMount } from "svelte";
   import ColorSpace from "$lib/components/color-space.svelte";

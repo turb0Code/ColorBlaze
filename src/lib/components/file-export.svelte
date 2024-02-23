@@ -1,4 +1,5 @@
 <script>
+    import autoAnimate from '@formkit/auto-animate';
     import { saveJson } from "$lib/scripts/exporting.js";
     import { Button } from "flowbite-svelte";
     import { ArrowDownToBraketSolid, ArrowUpFromBracketSolid } from "flowbite-svelte-icons";
