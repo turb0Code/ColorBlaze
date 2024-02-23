@@ -3,15 +3,15 @@
 	export let accentColor = "#000000";
 	export let accent2Color = "#000000";
 	export let accent3Color = "#000000";
-	export let viewBox = "0 0 180 180";
+	export let viewBox = "0 0 150 170";
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:krita="http://krita.org/namespaces/svg/krita"
     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-    width="122pt"
-    height="122pt"
+    width="132pt"
+    height="132pt"
     viewBox={viewBox}>
 	<defs>
 		<radialGradient id="gradient0" gradientUnits="objectBoundingBox" cx="0" cy="0" fx="0" fy="0" r="1.4142135623731" spreadMethod="pad">

@@ -39,7 +39,7 @@
 </script>
 
 <div class="grid grid-cols-4 grid-rows-2 h-[34.5rem]">
-    <div class="w-[32.5rem] h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass col-span-2 pl-16">
+    <div class="w-[32rem] h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass col-span-2 pl-20 mr-[2rem]">
         <Taxi mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></Taxi>
     </div>
 

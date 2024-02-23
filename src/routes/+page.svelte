@@ -151,7 +151,7 @@ onMount(() => {
         <Button style={`background: linear-gradient(45deg, ${accent2Color}, ${accentColor});`} class="flex-1 w-46 h-16 text-xl">Button</Button>
       </div>
 
-      <div class="flex flex-row mb-6 w-[29rem]">
+      <div class="flex flex-row mb-[0.6rem] w-[29rem]">
         <Input style={`background-color: ${mainColor}; color: ${accentColor};`} placeholder="Default input" class=" h-16 text-l flex-1 mr-2 p-0"/>
         <Button class="flex-1 h-16 text-xl p-1" style={`background-color: ${accentColor};`}>
           <Spinner class="me-3" size="4" color="white" />Loading ...

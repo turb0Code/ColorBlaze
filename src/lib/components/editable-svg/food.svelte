@@ -1,8 +1,8 @@
 <script>
 	export let mainColor = "#000000";
 	export let viewBox = "0 0 220 220";
-	export let width = "155";
-	export let height = "155";
+	export let width = "185";
+	export let height = "185";
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg"

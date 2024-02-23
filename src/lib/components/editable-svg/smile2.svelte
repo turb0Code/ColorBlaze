@@ -1,7 +1,7 @@
 <script>
 	export let mainColor = "#000000";
 	export let accentColor = "#000000";
-    export let viewBox = "15 45 150 150";
+    export let viewBox = "15 45 150 115";
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg"

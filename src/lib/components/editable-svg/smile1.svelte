@@ -2,7 +2,7 @@
 	export let mainColor = "#000000";
 	export let accentColor = "#000000";
 	export let accent2Color = "#000000";
-  export let viewBox = "0 10 180 180";
+  export let viewBox = "0 10 180 145";
 </script>
 
 
