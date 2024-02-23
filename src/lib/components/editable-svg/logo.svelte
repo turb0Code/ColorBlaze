@@ -2,8 +2,7 @@
   export let mainColor = "#000000";
   export let accentColor = "#000000";
   export let accent2Color = "#000000";
-  export let accent3Color = "#000000";
-  export 
+  export let accent3Color = "#000000"; 
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:krita="http://krita.org/namespaces/svg/krita" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" width="240pt" height="240pt" viewBox="0 0 240 240">

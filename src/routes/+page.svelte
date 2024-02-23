@@ -2,9 +2,9 @@
 
 import { colors } from "$lib/scripts/color-stores.js";
 
-import { Alert, Button, Breadcrumb, BreadcrumbItem, Spinner, Card, Toggle, Label, Input, Checkbox, Drawer, CloseButton, Sidebar, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper, Dropdown, DropdownItem, Popover, Radio, Range } from 'flowbite-svelte';
+import { Button, Spinner, Label, Input, Checkbox, Dropdown, Popover } from 'flowbite-svelte';
 
-import { InfoCircleSolid, HomeOutline, ChevronDoubleRightOutline, ArrowRightOutline, CheckCircleSolid, ChartPieSolid, ShoppingCartSolid, GridSolid, MailBoxSolid, UsersSolid, BagSolid, ArrowRightToBracketSolid, FileEditSolid, ChevronDownSolid, ChevronRightSolid, DatabaseSolid, ChevronRightOutline } from 'flowbite-svelte-icons';
+import {ChevronDownSolid } from 'flowbite-svelte-icons';
 
 let mainColor = "#000000";
   let accentColor = "#000000";
@@ -114,7 +114,48 @@ onMount(() => {
 
   {#if !isMobile}
 
-  <div class="right-0 mt-20 grid grid-cols-1">
+  <div class="right-0  grid grid-cols-1">
+
+    <Label for="countries" class="w-96">Examples</Label>
+
+    <div class="mt-0 w-96">
+
+      <div class="grid grid-cols-2 mb-9" >
+        <Button id="hover" class="mr-2 flex-1 h-16" style={`background-color: ${accent3Color};`}>Hover popover</Button>
+        <Popover class="w-64 text-sm font-light" title="Popover title" triggeredBy="#hover" trigger="hover">And here's some amazing content. It's very engaging. Right?</Popover>
+        <Button class="w-48 flex-1 text-l" style={`background-color: ${accent2Color};`}>Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
+        <Dropdown class="w-46 p-3 space-y-1 text-sm">
+          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+            <Checkbox>Default checkbox</Checkbox>
+          </li>
+          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+            <Checkbox checked>Checked state</Checkbox>
+          </li>
+          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+            <Checkbox>Default checkbox</Checkbox>
+          </li>
+        </Dropdown>
+      </div>
+
+      <div class="grid grid-cols-2 mb-3">
+        <Button style={`background-color: ${mainColor};`} class="flex-1 mr-2 h-16 w-46 text-xl">Button</Button>
+        <Button style={`background-color: ${accentColor};`} class="flex-1 h-16 w-46 text-xl">Button</Button>
+      </div>
+
+      <div class="grid grid-cols-2 mb-8">
+        <Button style={`background: linear-gradient(45deg, ${mainColor}, ${accent3Color});`} class="flex-1 mr-2 w-46 h-16 text-xl">Button</Button>
+        <Button style={`background: linear-gradient(45deg, ${accent2Color}, ${accentColor});`} class="flex-1 w-46 h-16 text-xl">Button</Button>
+      </div>
+
+      <div class="grid grid-cols-2 mb-6">
+        <Input style={`background-color: ${mainColor}; color: ${accentColor};`} placeholder="Default input" class="mr-2 h-16 w-46 text-l"/>
+        <Button class="flex-1 mr-2 h-16 w-48 text-xl" style={`background-color: ${accentColor};`}>
+          <Spinner class="me-3" size="4" color="white" />Loading ...
+        </Button>
+      </div> 
+
+    </div>
+
 
       <div class="carousel mb-0" use:autoAnimate>
 
@@ -136,30 +177,6 @@ onMount(() => {
           {/if}
         {/each}
 
-      </div>
-
-      <div class="ml-12 mt-0">
-        <Button style={`background-color: ${mainColor};`} class="flex-1 mr-2 h-10 w-48">Button</Button>
-        <Button style={`background-color: ${accentColor};`} class="flex-1 h-10 w-48">Button</Button>
-        <Button style={`background: linear-gradient(45deg, ${mainColor}, ${accent3Color});`} class="flex-1 mr-2 w-48">Button</Button>
-        <Button style={`background: linear-gradient(45deg, ${accent2Color}, ${accentColor});`} class="flex-1 w-48">Button</Button>
-        <Input style={`background-color: ${mainColor}; color: ${accentColor};`} placeholder="Default input" class="mr-2 h-10 w-48"/>
-        <Button class="flex-1 mr-2 h-10 w-48" style={`background-color: ${accentColor};`}>
-          <Spinner class="me-3" size="4" color="white" />Loading ...
-        </Button>
-        <Button id="hover" class="mr-2 flex-1 h-10 w-48" style={`background-color: ${accent3Color};`}>Hover popover</Button>
-        <Button class="w-48 flex-1" style={`background-color: ${accent2Color};`}>Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
-        <Dropdown class="w-48 p-3 space-y-1 text-sm">
-          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-            <Checkbox>Default checkbox</Checkbox>
-          </li>
-          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-            <Checkbox checked>Checked state</Checkbox>
-          </li>
-          <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-            <Checkbox>Default checkbox</Checkbox>
-          </li>
-        </Dropdown> 
       </div>
 
   </div>

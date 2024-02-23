@@ -35,9 +35,9 @@ colors.subscribe(() => {
 });
 </script>
 
-<div class="grid grid-rows-2 grid-cols-2 w-[25rem] h-[25rem] items-center justify-items-center mt-[0.25rem]">
+<div class="grid grid-rows-2 grid-cols-2 w-[33.2rem] h-[22.5rem] items-center justify-items-center mt-[] justify-end ml-5">
 
-  <div class="w-40 h-40 border-2 rounded-md border-gray-300 dark:border-gray-600 glass">
+  <div class="w-40 h-40 border-2 rounded-md border-gray-300 dark:border-gray-600 glass justify-self-start">
     <Abstract mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></Abstract>
   </div>
 
@@ -45,7 +45,7 @@ colors.subscribe(() => {
     <MilkSmile mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></MilkSmile>
   </div>
 
-  <div class="w-40 flex justify-center h-40 border-2 rounded-md border-gray-300 dark:border-gray-600 glass">
+  <div class="w-40 flex justify-center h-40 border-2 rounded-md border-gray-300 dark:border-gray-600 glass justify-self-start">
     <Smile mainColor={mainColor} accentColor={accentColor} class="w-20"></Smile>
   </div>
 
