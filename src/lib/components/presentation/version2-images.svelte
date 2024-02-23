@@ -43,7 +43,7 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fames ac turpis egestas sed tempus urna et pharetra. Ridiculus mus mauris vitae ultricies leo integer malesuada.
     </div>
 
-    <div class="h-56 w-96 mr-2 lg:mt-8mt-12 ">
+    <div class="h-56 w-96 mr-2 lg:mt-8 mt-12 ">
         <img src="src/lib/images/image2.jpg" alt="" class="mb-4 border-2 rounded-lg" style={`border-color: ${accentColor}`}>
         <img src="src/lib/images/phone3.jpg" alt="" class="border-2 rounded-lg" style={`border-color: ${accentColor}`}>
     </div>

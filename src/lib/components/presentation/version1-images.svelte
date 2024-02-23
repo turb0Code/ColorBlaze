@@ -36,7 +36,7 @@
     <div class="absolute w-[22rem] lg:w-96 text-center text-3xl mt-2" style={`color: ${mainColor};`}>TITLE</div>
 
     <div class="h-56 w-96 ml-2 mt-20">
-        <img src="src/lib/images/phone1.jpg" alt="" class="">
+        <img src="src/lib/images/phone1.jpg" alt="phone" class="">
     </div>
 
     <div class="text-xs text-center mx-2 mt-14" style={`color: ${accentColor};`}>
