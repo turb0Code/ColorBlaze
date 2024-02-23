@@ -66,10 +66,10 @@
 
 <Navbar let:hidden let:toggle class="opacity-100 rounded-b-xl bg-accent2/70 dark:bg-accent3/40">
   <NavBrand href="/">
-    <div class="w-14 h-14">
+    <div class="w-16 h-16">
       <img src="src/lib/images/logo.svg" alt="ColorBlaze logo"/>
     </div>
-    <span class="self-center whitespace-nowrap text-2xl font-semibold dark:text-main">ColorBlaze</span>
+    <span class="self-center whitespace-nowrap text-[1.7rem] font-bold bg-gradient-to-r from-accent/100 via-main to-accent4 inline-block text-transparent bg-clip-text">ColorBlaze</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
   <NavUl {hidden} >

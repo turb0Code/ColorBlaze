@@ -12,7 +12,7 @@
   const randomHsl = () => {
     const hue = Math.floor(Math.random() *  360);
 
-    const saturation = Math.floor(Math.random() *  101);
+    const saturation = Math.floor(Math.random() *  70) + 31;
 
     const lightness = Math.floor(Math.random() *  101);
 
@@ -20,7 +20,7 @@
     $s = saturation;
     $l = lightness;
     $harmony = "dbct";
-    $distance = Math.floor(Math.random() * 90) + 1;
+    $distance = Math.floor(Math.random() * 45) + 45;
 
     return `hsl(${hue}, ${saturation}, ${lightness})`;
   }

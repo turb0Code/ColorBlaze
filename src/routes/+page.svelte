@@ -97,10 +97,10 @@ onMount(() => {
   </div>
 
   <!-- prawa strona -->
-  <div class="" use:autoAnimate>
-    <ColorHarmony></ColorHarmony>
+  <div class="">
 
     {#if !isMobile}
+      <ColorHarmony></ColorHarmony>
       <FileExport></FileExport>
     {:else}
       <div class="clear-left"></div>

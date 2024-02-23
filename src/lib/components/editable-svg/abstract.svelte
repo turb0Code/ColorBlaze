@@ -3,6 +3,7 @@
 	export let accentColor = "#000000";
 	export let accent2Color = "#000000";
 	export let accent3Color = "#000000";
+	export let viewBox = "0 0 180 180";
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +12,7 @@
     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
     width="122pt"
     height="122pt"
-    viewBox="0 0 180 180">
+    viewBox={viewBox}>
 	<defs>
 		<radialGradient id="gradient0" gradientUnits="objectBoundingBox" cx="0" cy="0" fx="0" fy="0" r="1.4142135623731" spreadMethod="pad">
 		<stop stop-color={`${mainColor}`} offset="0" stop-opacity="1"/>

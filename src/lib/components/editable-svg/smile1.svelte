@@ -2,7 +2,7 @@
 	export let mainColor = "#000000";
 	export let accentColor = "#000000";
 	export let accent2Color = "#000000";
-	export let accent3Color = "#000000";
+  export let viewBox = "0 10 180 180";
 </script>
 
 
@@ -12,7 +12,7 @@
     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
     width="130pt"
     height="130pt"
-    viewBox="0 10 180 180">
+    viewBox={viewBox}>
   <defs>
     <linearGradient id="gradient0" gradientUnits="objectBoundingBox" x1="0.148711120071409" y1="0.441759503741539" x2="1" y2="1" spreadMethod="pad">
     <stop stop-color={`${mainColor}`} offset="0" stop-opacity="1"/>

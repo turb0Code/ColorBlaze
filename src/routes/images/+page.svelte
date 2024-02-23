@@ -5,6 +5,7 @@
   import Food from "$lib/components/editable-svg/food.svelte";
   import Logo from "$lib/components/editable-svg/logo.svelte";
   import Taxi from "$lib/components/editable-svg/taxi.svelte";
+  import Anchor from "$lib/components/editable-svg/anchor.svelte";
   import { colors } from "$lib/scripts/color-stores.js";
 
   let mainColor = "#000000";
@@ -37,32 +38,32 @@
   });
 </script>
 
-<div class="grid grid-cols-4 grid-rows-2">
-    <div class="w-[30rem] h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass col-span-2 pl-16">
+<div class="grid grid-cols-4 grid-rows-2 h-[34.5rem]">
+    <div class="w-[32.5rem] h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass col-span-2 pl-16">
         <Taxi mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></Taxi>
     </div>
 
-    <div class="w-60 h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass">
-      <Logo mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></Logo>
+    <div class="w-60 h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass items-center">
+      <Logo mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} viewBox="0 0 325 320"></Logo>
     </div>
 
-    <div class="w-60 h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass align-middle">
-      <Abstract mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></Abstract>
+    <div class="w-60 h-60 flex border-2 rounded-md border-gray-300 dark:border-gray-600 glass justify-center align-middle items-center">
+      <Abstract mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color} viewBox="0 0 170 170"></Abstract>
     </div>
 
-    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass align-middle">
-      <MilkSmile mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color}></MilkSmile>
+    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass align-middle items-center">
+      <MilkSmile mainColor={mainColor} accentColor={accentColor} accent2Color={accent2Color} accent3Color={accent3Color} viewBox="0 0 180 180"></MilkSmile>
     </div>
 
-    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass align-middle">
-      <Smile mainColor={mainColor} accentColor={accentColor} class="w-20"></Smile>
+    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass align-middle items-center">
+      <Smile mainColor={mainColor} accentColor={accentColor} viewBox="15 11 150 180" class="w-20"></Smile>
     </div>
 
-    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass align-middle">
-      <Food mainColor={mainColor} class="w-20"></Food>
+    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass align-middle items-center">
+      <Food mainColor={mainColor} width="240" height="240" class="w-20"></Food>
     </div>
 
-    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass">
-      <Food mainColor={mainColor} class="w-20"></Food>
+    <div class="w-60 flex justify-center h-60 border-2 rounded-md border-gray-300 dark:border-gray-600 glass items-center">
+      <Anchor mainColor={accentColor} width="240" height="240" class="w-20"></Anchor>
     </div>
 </div>
