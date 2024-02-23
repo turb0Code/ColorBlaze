@@ -1,5 +1,6 @@
 <script lang="js">
 
+
 import { colors } from "$lib/scripts/color-stores.js";
 
 import { Button, Spinner, Label, Input, Checkbox, Dropdown, Popover } from 'flowbite-svelte';
@@ -121,7 +122,7 @@ onMount(() => {
     <div class="mt-0 w-96">
 
       <div class="grid grid-cols-2 mb-9" >
-        <Button id="hover" class="mr-2 flex-1 h-16" style={`background-color: ${accent3Color};`}>Hover popover</Button>
+        <Button id="hover" class="mr-2 flex-1 h-16 text-lg" style={`background-color: ${accent3Color};`}>Hover popover</Button>
         <Popover class="w-64 text-sm font-light" title="Popover title" triggeredBy="#hover" trigger="hover">And here's some amazing content. It's very engaging. Right?</Popover>
         <Button class="w-48 flex-1 text-l" style={`background-color: ${accent2Color};`}>Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
         <Dropdown class="w-46 p-3 space-y-1 text-sm">

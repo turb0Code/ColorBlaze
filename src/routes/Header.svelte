@@ -64,7 +64,7 @@
   }
 </script>
 
-<Navbar let:hidden let:toggle class="opacity-75 rounded-b-xl bg-accent2/70 dark:bg-accent3/40">
+<Navbar let:hidden let:toggle class="opacity-100 rounded-b-xl bg-accent2/70 dark:bg-accent3/40">
   <NavBrand href="/">
     <div class="w-14 h-14">
       <img src="src/lib/images/logo.svg" alt="ColorBlaze logo"/>
@@ -79,7 +79,7 @@
     <NavLi href="/images">Images</NavLi>
     <div class="flex flex-row w-[20.5rem] lg:w-[14.5rem] justify-between opacity-100">
         {#if !isMobile}
-        <PalletePreview></PalletePreview>
+        <PalletePreview class="opacity-100"></PalletePreview>
         {/if}
         <Button class="w-[100%] lg:w-auto h-10"  on:click={() => darkMode.set(!$darkMode)}>
             {#if $darkMode}
