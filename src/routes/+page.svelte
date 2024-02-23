@@ -115,17 +115,17 @@ onMount(() => {
 
   {#if !isMobile}
 
-  <div class="right-0  grid grid-cols-1">
+  <div class="right-0 grid grid-cols-1">
 
     <Label for="countries" class="w-96">Examples</Label>
 
-    <div class="mt-0 w-96">
+    <div class="mt-0 w-[29rem]">
 
-      <div class="grid grid-cols-2 mb-9" >
-        <Button id="hover" class="mr-2 flex-1 h-16 text-lg" style={`background-color: ${accent3Color};`}>Hover popover</Button>
+      <div class="flex flex-row mb-9" >
+        <Button id="hover" class="mr-2 h-16 text-lg flex-1" style={`background-color: ${accent3Color};`}>Hover popover</Button>
         <Popover class="w-64 text-sm font-light" title="Popover title" triggeredBy="#hover" trigger="hover">And here's some amazing content. It's very engaging. Right?</Popover>
         <Button class="w-48 flex-1 text-l" style={`background-color: ${accent2Color};`}>Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
-        <Dropdown class="w-46 p-3 space-y-1 text-sm">
+        <Dropdown class="w-46 p-3 space-y-1 text-sm flex-1">
           <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
             <Checkbox>Default checkbox</Checkbox>
           </li>
@@ -148,12 +148,12 @@ onMount(() => {
         <Button style={`background: linear-gradient(45deg, ${accent2Color}, ${accentColor});`} class="flex-1 w-46 h-16 text-xl">Button</Button>
       </div>
 
-      <div class="grid grid-cols-2 mb-6">
-        <Input style={`background-color: ${mainColor}; color: ${accentColor};`} placeholder="Default input" class="mr-2 h-16 w-46 text-l"/>
-        <Button class="flex-1 mr-2 h-16 w-48 text-xl" style={`background-color: ${accentColor};`}>
+      <div class="flex flex-row mb-6">
+        <Input style={`background-color: ${mainColor}; color: ${accentColor};`} placeholder="Default input" class=" h-16 text-l flex-1"/>
+        <Button class="flex-1 h-16 text-xl" style={`background-color: ${accentColor};`}>
           <Spinner class="me-3" size="4" color="white" />Loading ...
         </Button>
-      </div> 
+      </div>
 
     </div>
 
@@ -191,8 +191,9 @@ onMount(() => {
 
   .grid-box {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr;
     grid-template-rows: 1fr;
+    align-self: center;
   }
 
   @media (max-width: 779px) {
