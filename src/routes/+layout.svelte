@@ -31,6 +31,6 @@
     margin: 0 auto;
     box-sizing: border-box;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
   }
 </style>

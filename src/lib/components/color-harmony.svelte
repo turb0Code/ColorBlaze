@@ -56,7 +56,7 @@
   distance.subscribe(() => updateColorHarmony());
 </script>
 
-<div class="flex felx-row float-left ml-[1.25rem]">
+<div class="flex felx-row float-left ml-3">
   <div class="mr-1" use:autoAnimate>
     <Label for="countries" class="w-[14.5rem]">Select color harmony</Label>
     <Select

@@ -97,32 +97,35 @@ onMount(() => {
   </div>
 
   <!-- prawa strona -->
-  <div class="">
+  <div class="flex flex-col items-center">
+    <div>
 
-    {#if !isMobile}
-      <ColorHarmony></ColorHarmony>
-      <FileExport></FileExport>
-    {:else}
-      <div class="clear-left"></div>
-    {/if}
+      {#if !isMobile}
+        <ColorHarmony></ColorHarmony>
+        <FileExport></FileExport>
+      {:else}
+        <div class="clear-left"></div>
+      {/if}
 
-    <ColorPreview class="" ></ColorPreview>
+      <ColorPreview class="" ></ColorPreview>
 
-    {#if !isMobile}
-      <ImagesPreview></ImagesPreview>
-    {/if}
+      {#if !isMobile}
+        <ImagesPreview></ImagesPreview>
+      {/if}
+
+    </div>
   </div>
 
   {#if !isMobile}
 
-  <div class="right-0 grid grid-cols-1">
+  <div class="right-0 grid grid-cols-1 ml-5">
 
     <Label for="countries" class="w-96">Examples</Label>
 
     <div class="mt-0 w-[29rem]">
 
       <div class="flex flex-row mb-9" >
-        <Button id="hover" class="mr-2 h-16 text-lg flex-1" style={`background-color: ${accent3Color};`}>Hover popover</Button>
+        <Button id="hover" class="mr-2 h-16 text-lg flex-1 p-4" style={`background-color: ${accent3Color};`}>Hover popover</Button>
         <Popover class="w-64 text-sm font-light" title="Popover title" triggeredBy="#hover" trigger="hover">And here's some amazing content. It's very engaging. Right?</Popover>
         <Button class="w-48 flex-1 text-l" style={`background-color: ${accent2Color};`}>Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
         <Dropdown class="w-46 p-3 space-y-1 text-sm flex-1">
@@ -148,9 +151,9 @@ onMount(() => {
         <Button style={`background: linear-gradient(45deg, ${accent2Color}, ${accentColor});`} class="flex-1 w-46 h-16 text-xl">Button</Button>
       </div>
 
-      <div class="flex flex-row mb-6">
-        <Input style={`background-color: ${mainColor}; color: ${accentColor};`} placeholder="Default input" class=" h-16 text-l flex-1"/>
-        <Button class="flex-1 h-16 text-xl" style={`background-color: ${accentColor};`}>
+      <div class="flex flex-row mb-6 w-[29rem]">
+        <Input style={`background-color: ${mainColor}; color: ${accentColor};`} placeholder="Default input" class=" h-16 text-l flex-1 mr-2 p-0"/>
+        <Button class="flex-1 h-16 text-xl p-1" style={`background-color: ${accentColor};`}>
           <Spinner class="me-3" size="4" color="white" />Loading ...
         </Button>
       </div>
