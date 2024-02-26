@@ -20,26 +20,26 @@
 }
 
 html {
-	color: black;
-	background-color: #efefef;
-	background-image: url("../lib/images/wiggle.svg");
-	--tool-cool-color-picker-popup-bg: #efefef;
-	--tool-cool-color-picker-popup-border-color: #efefef;
+    color: black;
+    background-color: #efefef;
+    background-image: url("../lib/images/wiggle.svg");
+    --tool-cool-color-picker-popup-bg: #efefef;
+    --tool-cool-color-picker-popup-border-color: #efefef;
+}
 
-	.app.dark {
-		color: #ffffff;
-		background-color: #0e0e0f;
-		--tool-cool-color-picker-popup-bg: #0e0e0f;
-		--tool-cool-color-picker-popup-border-color: #0e0e0f;
-		background-image: url("../lib/images/wiggle.svg");
+.app.dark {
+    color: #ffffff;
+    background-color: #0e0e0f;
+    --tool-cool-color-picker-popup-bg: #0e0e0f;
+    --tool-cool-color-picker-popup-border-color: #0e0e0f;
+    background-image: url("../lib/images/wiggle.svg");
+}
 
-		.glass {
-			background-color: rgba(255, 255, 255, 0.03);
-			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-			backdrop-filter: blur(2.4px);
-			-webkit-backdrop-filter: blur(2.4px);
-		}
-	}
+.app.dark .glass {
+    background-color: rgba(255,  255,  255,  0.03);
+    box-shadow:  0  4px  30px rgba(0,  0,  0,  0.1);
+    backdrop-filter: blur(2.4px);
+    -webkit-backdrop-filter: blur(2.4px);
 }
 
 .glass {

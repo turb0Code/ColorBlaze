@@ -1,10 +1,10 @@
 <script>
   import autoAnimate from '@formkit/auto-animate';
   import { Button } from "flowbite-svelte";
-  import { HslToRgb, HslToCmy, HslToYuv, HslToYiq, HslToXyz, HslToLab, HslToLuv } from "$lib/scripts/color-conversion.js";
+  import { HslToRgb, HslToCmy, HslToYuv, HslToYiq, HslToXyz, HslToLab, HslToLuv, RgbToHsl } from "$lib/scripts/color-conversion.js";
   import { writable, derived } from "svelte/store";
   import { h, s, l, space } from "$lib/scripts/stores.js";
-  import { Select, Label } from "flowbite-svelte";
+  import { Select, Label, Input } from "flowbite-svelte";
   import ColorConverter from 'simple-color-converter';
   import { onMount } from "svelte";
   import { callHslToNcs } from "$lib/scripts/ncs.js";
@@ -20,6 +20,19 @@
     { value: "ral", name: "RAL" },
     { value: "ncs", name: "NCS" },
   ];
+
+  let rgb = writable({});
+  let cmy = writable({});
+  let yuv = writable({});
+  let result = writable({ A: 0, B: 0, C: 0 });
+  let ral, ralCode, ralName, tmp;
+  let ncs = "NCS COLOR"
+  let currentDate = new Date();
+  let time = currentDate.getTime();
+
+  let hsl = derived([h, s, l], ([$h, $s, $l]) => {
+    return { h: $h, s: $s, l: $l };
+  });
 
   onMount(() => {
     const userAgent = window.navigator.userAgent;
@@ -40,19 +53,21 @@
     }
   });
 
+  const updateColorValues = () => {
+    $rgb["R"] = $rgb["R"] >=  0 && $rgb["R"] <=  255 ? $rgb["R"] :  0;
+    $rgb["G"] = $rgb["G"] >=  0 && $rgb["G"] <=  255 ? $rgb["G"] :  0;
+    $rgb["B"] = $rgb["B"] >=  0 && $rgb["B"] <=  255 ? $rgb["B"] :  0;
 
-  let rgb = writable({});
-  let cmy = writable({});
-  let yuv = writable({});
-  let result = writable({ A: 0, B: 0, C: 0 });
-  let ral, ralCode, ralName, tmp;
-  let ncs = "NCS COLOR"
-  let currentDate = new Date();
-  let time = currentDate.getTime();
-
-  let hsl = derived([h, s, l], ([$h, $s, $l]) => {
-    return { h: $h, s: $s, l: $l };
-  });
+    try {
+      $rgb["R"] = parseInt($rgb["R"]);
+      $rgb["G"] = parseInt($rgb["G"]);
+      $rgb["B"] = parseInt($rgb["B"]);
+      let tmpHsl = RgbToHsl($rgb["R"], $rgb["G"], $rgb["B"]);
+      $h = tmpHsl["H"];
+      $s = tmpHsl["S"];
+      $l = tmpHsl["L"];
+    } catch (e) { return; }
+  }
 
   const checkDelay = (h, s, l) => {
     currentDate = new Date();
@@ -128,17 +143,17 @@
 <div class="w-[21.3rem] lg:w-[14.5rem] flex flex-row mt-[12.3rem] lg:mt-[12.3rem] justify-evenly glass rounded-md pb-1">
   <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">R</div>
-    <Button color="alternative" class="w-16">{$rgb["R"]}</Button>
+    <Input type="text" bind:value={$rgb["R"]} on:change={updateColorValues} class="w-16 dark:bg-transparent border-gray-600 dark:border-gray-400 text-center"/>
   </div>
 
   <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">G</div>
-    <Button color="alternative" class="w-16">{$rgb["G"]}</Button>
+    <Input type="text" bind:value={$rgb["G"]} on:change={updateColorValues} class="w-16 dark:bg-transparent border-gray-600 dark:border-gray-400 text-center"/>
   </div>
 
   <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">B</div>
-    <Button color="alternative" class="w-16">{$rgb["B"]}</Button>
+    <Input type="text" bind:value={$rgb["B"]} on:change={updateColorValues} class="w-16 dark:bg-transparent border-gray-600 dark:border-gray-400 text-center"/>
   </div>
 </div>
 
