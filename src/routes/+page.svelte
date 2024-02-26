@@ -1,41 +1,7 @@
-<script lang="js">
-
-
+<script>
 import { colors } from "$lib/scripts/color-stores.js";
-
 import { Button, Spinner, Label, Input, Checkbox, Dropdown, Popover } from 'flowbite-svelte';
-
 import {ChevronDownSolid } from 'flowbite-svelte-icons';
-
-let mainColor = "#000000";
-  let accentColor = "#000000";
-  let accent2Color = "#000000";
-  let accent3Color = "#000000";
-
-  colors.subscribe(() => {
-    mainColor = $colors[0];
-    if (!$colors[1]) {
-      accentColor = mainColor;
-      accent2Color = mainColor;
-      accent3Color = mainColor;
-    }
-    else if (!$colors[2]) {
-      accentColor = $colors[1];
-      accent2Color = mainColor;
-      accent3Color = $colors[1];
-    }
-    else if (!$colors[3]) {
-      accentColor = $colors[1];
-      accent2Color = $colors[2];
-      accent3Color = $colors[1];
-    }
-    else {
-      accentColor = $colors[1];
-      accent2Color = $colors[2];
-      accent3Color = $colors[3];
-    }
-  });
-
 import autoAnimate from '@formkit/auto-animate';
 import ColorPicker from "../lib/components/color-picker.svelte";
 import ColorHarmony from "../lib/components/color-harmony.svelte";
@@ -43,43 +9,69 @@ import FileExport from "$lib/components/file-export.svelte";
 import ColorPreview from "../lib/components/color-preview.svelte";
 import ImagesPreview from "../lib/components/images-preview.svelte";
 import { onMount } from "svelte";
-
 import Version3Chart from "../lib/components/presentation/version3-chart.svelte";
 import Version3Images from "../lib/components/presentation/version3-images.svelte";
 import Version3Table from "../lib/components/presentation/version3-table.svelte";
 import Version3Title from "../lib/components/presentation/version3-title.svelte";
-
 import {ArrowKeyRight, ArrowKeyLeft } from 'flowbite-svelte';
 
+let mainColor = "#000000";
+let accentColor = "#000000";
+let accent2Color = "#000000";
+let accent3Color = "#000000";
+let currentIndex3 =  0;
 let isMobile = false;
+
+colors.subscribe(() => {
+  mainColor = $colors[0];
+  if (!$colors[1]) {
+    accentColor = mainColor;
+    accent2Color = mainColor;
+    accent3Color = mainColor;
+  }
+  else if (!$colors[2]) {
+    accentColor = $colors[1];
+    accent2Color = mainColor;
+    accent3Color = $colors[1];
+  }
+  else if (!$colors[3]) {
+    accentColor = $colors[1];
+    accent2Color = $colors[2];
+    accent3Color = $colors[1];
+  }
+  else {
+    accentColor = $colors[1];
+    accent2Color = $colors[2];
+    accent3Color = $colors[3];
+  }
+});
 
 onMount(() => {
   const userAgent = window.navigator.userAgent;
   isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
 });
 
-  let currentIndex3 =  0;
 
-  function showSlide3(index3) {
-    currentIndex3 = index3;
-  }
+function showSlide3(index3) {
+  currentIndex3 = index3;
+}
 
-  function nextSlide3() {
-    const nextIndex3 = (currentIndex3 +  1) %  4;
-    showSlide3(nextIndex3);
-  }
+function nextSlide3() {
+  const nextIndex3 = (currentIndex3 +  1) %  4;
+  showSlide3(nextIndex3);
+}
 
-  function prevSlide3() {
-    const prevIndex3 = (currentIndex3 -  1 +  4) %  4;
-    showSlide3(prevIndex3);
-  }
+function prevSlide3() {
+  const prevIndex3 = (currentIndex3 -  1 +  4) %  4;
+  showSlide3(prevIndex3);
+}
 
-  const slides3 = [
-    Version3Title,
-    Version3Images,
-    Version3Table,
-    Version3Chart,
-  ];
+const slides3 = [
+  Version3Title,
+  Version3Images,
+  Version3Table,
+  Version3Chart,
+];
 
 </script>
 
