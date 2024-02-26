@@ -46,11 +46,11 @@
     }
 </script>
 
-<Button on:click={saveJson($colors)} class="clear-left mt-[1.25rem] ml-2 mr-0">
+<Button on:click={() => document.getElementById("file-picker").click()} class="clear-left mt-[1.25rem] ml-2 mr-0">
     <ArrowDownToBraketSolid />
 </Button>
 
-<Button class="clear-left mt-[1.25rem] ml-1 w-[4rem] h-[2.5rem] p-0" on:click={() => document.getElementById("file-picker").click()}>
+<Button on:click={saveJson($colors)} class="clear-left mt-[1.25rem] ml-1 w-[4rem] h-[2.5rem] p-0" >
     <ArrowUpFromBracketSolid />
 </Button>
 

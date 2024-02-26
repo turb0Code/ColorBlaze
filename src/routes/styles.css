@@ -30,9 +30,9 @@ html {
 .app.dark {
     color: #ffffff;
     background-color: #0e0e0f;
-    --tool-cool-color-picker-popup-bg: #0e0e0f;
-    --tool-cool-color-picker-popup-border-color: #0e0e0f;
     background-image: url("../lib/images/wiggle.svg");
+	--tool-cool-color-picker-popup-bg: #0e0e0f;
+    --tool-cool-color-picker-popup-border-color: #0e0e0f;
 }
 
 .app.dark .glass {

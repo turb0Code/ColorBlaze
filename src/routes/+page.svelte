@@ -129,8 +129,8 @@ onMount(() => {
 
     <div class="mt-0 w-[29rem]">
 
-      <div class="flex flex-row mb-9" >
-        <Button id="hover" class="mr-2 h-16 text-lg flex-1 p-4" style={`background-color: ${accent3Color};`}>Hover popover</Button>
+      <div class="flex flex-row mb-3" >
+        <Button id="hover" class="mr-2 h-[4.75rem] text-lg flex-1 p-4" style={`background-color: ${accent3Color};`}>Hover popover</Button>
         <Popover class="w-64 text-sm font-light" title="Popover title" triggeredBy="#hover" trigger="hover">And here's some amazing content. It's very engaging. Right?</Popover>
         <Button class="w-48 flex-1 text-l" style={`background-color: ${accent2Color};`}>Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
         <Dropdown class="w-46 p-3 space-y-1 text-sm flex-1">
@@ -147,18 +147,18 @@ onMount(() => {
       </div>
 
       <div class="grid grid-cols-2 mb-3">
-        <Button style={`background-color: ${mainColor};`} class="flex-1 mr-2 h-16 w-46 text-xl">Button</Button>
-        <Button style={`background-color: ${accentColor};`} class="flex-1 h-16 w-46 text-xl">Button</Button>
+        <Button style={`background-color: ${mainColor};`} class="flex-1 mr-2 h-[4.75rem] w-46 text-xl">Button</Button>
+        <Button style={`background-color: ${accentColor};`} class="flex-1 h-[4.75rem] w-46 text-xl">Button</Button>
       </div>
 
-      <div class="grid grid-cols-2 mb-8">
-        <Button style={`background: linear-gradient(45deg, ${mainColor}, ${accent3Color});`} class="flex-1 mr-2 w-46 h-16 text-xl">Button</Button>
-        <Button style={`background: linear-gradient(45deg, ${accent2Color}, ${accentColor});`} class="flex-1 w-46 h-16 text-xl">Button</Button>
+      <div class="grid grid-cols-2 mb-3">
+        <Button style={`background: linear-gradient(45deg, ${mainColor}, ${accent3Color});`} class="flex-1 mr-2 w-46 h-[4.75rem] text-xl">Button</Button>
+        <Button style={`background: linear-gradient(45deg, ${accent2Color}, ${accentColor});`} class="flex-1 w-46 h-[4.75rem] text-xl">Button</Button>
       </div>
 
       <div class="flex flex-row mb-[0.6rem] w-[29rem]">
-        <Input style={`background-color: ${mainColor}; color: ${accentColor};`} placeholder="Default input" class=" h-16 text-l flex-1 mr-2 p-0"/>
-        <Button class="flex-1 h-16 text-xl p-1" style={`background-color: ${accentColor};`}>
+        <Input style={`background-color: ${mainColor}; color: ${accentColor};`} placeholder="Default input" class=" h-[4.75rem] text-l flex-1 mr-2 p-0"/>
+        <Button class="flex-1 h-[4.75rem] text-xl p-1" style={`background-color: ${accentColor};`}>
           <Spinner class="me-3" size="4" color="white" />Loading ...
         </Button>
       </div>
