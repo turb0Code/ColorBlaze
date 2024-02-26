@@ -134,12 +134,6 @@
   });
 </script>
 
-<div>
-  {#if isMobile}
-    <ColorHarmony></ColorHarmony>
-  {/if}
-</div>
-
 <div class="w-[21.3rem] lg:w-[14.5rem] flex flex-row mt-[12.3rem] lg:mt-[12.3rem] justify-evenly glass rounded-md pb-1">
   <div class="text-center p-1">
     <div class="text-[0.8rem] font-bold">R</div>

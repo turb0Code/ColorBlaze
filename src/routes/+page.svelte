@@ -100,14 +100,19 @@ onMount(() => {
   <div class="flex flex-col items-center">
     <div>
 
-      {#if !isMobile}
-        <ColorHarmony></ColorHarmony>
-        <FileExport></FileExport>
-      {:else}
-        <div class="clear-left"></div>
-      {/if}
 
-      <ColorPreview class="" ></ColorPreview>
+      <div class="grid grid-cols-1">
+        <div>
+        <ColorHarmony></ColorHarmony>
+        {#if !isMobile}
+        <FileExport></FileExport>
+        {:else}
+          <div class="clear-left"></div>
+        {/if}
+        </div>
+        <ColorPreview class="" ></ColorPreview>
+      </div>
+
 
       {#if !isMobile}
         <ImagesPreview></ImagesPreview>
@@ -188,6 +193,7 @@ onMount(() => {
   {/if}
 
 </div>
+
 
 <style>
 

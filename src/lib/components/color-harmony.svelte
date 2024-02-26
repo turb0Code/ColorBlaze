@@ -58,10 +58,10 @@
 
 <div class="flex felx-row float-left ml-3">
   <div class="mr-1" use:autoAnimate>
-    <Label for="countries" class="w-[14.5rem]">Select color harmony</Label>
+    <Label for="countries" class="w-[12rem] lg:w-[12rem]">Select color harmony</Label>
     <Select
       id="countries"
-      class="w-[14.5rem] lg:w-[14.5rem] glass"
+      class="w-[12rem] lg:w-[12rem] glass"
       bind:value={$harmony}
       placeholder=""
       on:change={updateColorHarmony}

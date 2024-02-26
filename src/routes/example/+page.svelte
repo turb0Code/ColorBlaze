@@ -353,7 +353,7 @@
       <!-- toggles -->
       <div class="flex-1">
         <Toggle style={`background-color: ${accent3Color};`} class="mb-4">Default toggle</Toggle>
-        <Toggle checked>Toggled toggle</Toggle>
+        <Toggle style={`background-color: ${accent3Color};`} checked>Toggled toggle</Toggle>
       </div>
 
     </div>
