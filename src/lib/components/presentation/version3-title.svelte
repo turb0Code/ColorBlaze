@@ -31,7 +31,7 @@
   });
   </script>
 
-<div id="tlo" class="flex flex-col w-[22rem] lg:w-96 h-56 justify-center items-center " style={`background-color: ${accent3Color};`}>
+<div id="tlo" class="flex flex-col w-[22rem] lg:w-96 h-56 justify-center items-center rounded-md" style={`background-color: ${accent3Color};`}>
 
     <div class="text-5xl bg-white border-l-8 border-b-8 border-pres4" style={`border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color}; color: ${mainColor};`}>TITLE</div>
 

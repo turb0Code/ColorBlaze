@@ -31,7 +31,7 @@
   });
 </script>
 
-<div class="flex w-[22rem] lg:w-96 h-56" style={`background-color: ${accentColor}; border: solid 8px ${accent2Color};`}>
+<div class="flex w-[22rem] lg:w-96 h-56 rounded-md" style={`background-color: ${accentColor}; border: solid 8px ${accent2Color};`}>
 
     <div class="absolute w-28 ml-28 lg:ml-32 text-center text-3xl mt-2" style={`border: solid 4px ${mainColor}; color: ${mainColor};`}>TITLE</div>
 

@@ -44,7 +44,7 @@
 
 </script>
 
-<div id="tlo" class="flex w-[22rem] lg:w-96 h-56" style={`background-color: ${accent3Color};`}>
+<div id="tlo" class="flex w-[22rem] lg:w-96 h-56 rounded-md" style={`background-color: ${accent3Color};`}>
 
   <div class="absolute w-56 ml-16 lg:ml-20 text-center text-3xl mt-2 bg-white" style={`border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color}; color: ${mainColor};`}>TITLE</div>
 

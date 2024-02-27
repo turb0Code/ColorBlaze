@@ -1,5 +1,25 @@
 <script>
-  import { onMount } from "svelte";
+import { onMount } from "svelte";
+import autoAnimate from '@formkit/auto-animate';
+import Version1Chart from "../../lib/components/presentation/version1-chart.svelte";
+import Version1Images from "../../lib/components/presentation/version1-images.svelte";
+import Version1Table from "../../lib/components/presentation/version1-table.svelte";
+import Version1Title from "../../lib/components/presentation/version1-title.svelte";
+import Version2Chart from "../../lib/components/presentation/version2-chart.svelte";
+import Version2Images from "../../lib/components/presentation/version2-images.svelte";
+import Version2Table from "../../lib/components/presentation/version2-table.svelte";
+import Version2Title from "../../lib/components/presentation/version2-title.svelte";
+import Version3Chart from "../../lib/components/presentation/version3-chart.svelte";
+import Version3Images from "../../lib/components/presentation/version3-images.svelte";
+import Version3Table from "../../lib/components/presentation/version3-table.svelte";
+import Version3Title from "../../lib/components/presentation/version3-title.svelte";
+import Version4Chart from "../../lib/components/presentation/version4-chart.svelte";
+import Version4Images from "../../lib/components/presentation/version4-images.svelte";
+import Version4Table from "../../lib/components/presentation/version4-table.svelte";
+import Version4Title from "../../lib/components/presentation/version4-title.svelte";
+import { slide, fade } from 'svelte/transition';
+import { elasticInOut } from 'svelte/easing';
+import {ArrowKeyRight, ArrowKeyLeft } from 'flowbite-svelte';
 
 let isMobile = false;
 
@@ -7,30 +27,6 @@ onMount(() => {
   const userAgent = window.navigator.userAgent;
   isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
 });
-
-  import autoAnimate from '@formkit/auto-animate';
-
-  import Version1Chart from "../../lib/components/presentation/version1-chart.svelte";
-    import Version1Images from "../../lib/components/presentation/version1-images.svelte";
-    import Version1Table from "../../lib/components/presentation/version1-table.svelte";
-    import Version1Title from "../../lib/components/presentation/version1-title.svelte";
-    import Version2Chart from "../../lib/components/presentation/version2-chart.svelte";
-    import Version2Images from "../../lib/components/presentation/version2-images.svelte";
-    import Version2Table from "../../lib/components/presentation/version2-table.svelte";
-    import Version2Title from "../../lib/components/presentation/version2-title.svelte";
-    import Version3Chart from "../../lib/components/presentation/version3-chart.svelte";
-    import Version3Images from "../../lib/components/presentation/version3-images.svelte";
-    import Version3Table from "../../lib/components/presentation/version3-table.svelte";
-    import Version3Title from "../../lib/components/presentation/version3-title.svelte";
-    import Version4Chart from "../../lib/components/presentation/version4-chart.svelte";
-    import Version4Images from "../../lib/components/presentation/version4-images.svelte";
-    import Version4Table from "../../lib/components/presentation/version4-table.svelte";
-    import Version4Title from "../../lib/components/presentation/version4-title.svelte";
-
-    import { slide, fade } from 'svelte/transition';
-    import { elasticInOut } from 'svelte/easing';
-
-    import {ArrowKeyRight, ArrowKeyLeft } from 'flowbite-svelte';
 
   let currentIndex1 =  0;
   let currentIndex2 =  0;
@@ -122,7 +118,7 @@ onMount(() => {
 
   <div class=" grid grid-rows-1 grid-cols-1 lg:grid-rows-2 lg:grid-cols-2 gap-16">
 
-    <div class="flex">
+    <div class="flex rounded-md">
 
 
       <div class="carousel" use:autoAnimate>

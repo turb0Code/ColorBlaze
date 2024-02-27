@@ -31,7 +31,7 @@
   });
 </script>
 
-<div class="flex flex-col w-[22rem] lg:w-96 h-56 justify-center items-center" style={`background: linear-gradient(90deg, ${accentColor} 5%, ${accent3Color} 35%, ${accent2Color} 90%)`}>
+<div class="flex flex-col w-[22rem] lg:w-96 h-56 justify-center items-center rounded-md" style={`background: linear-gradient(90deg, ${accentColor} 5%, ${accent3Color} 35%, ${accent2Color} 90%)`}>
 
     <div class="text-5xl p-1 rounded-lg mb-1 border-2" style={`color: ${mainColor}; border-color: ${accentColor};`}>TITLE</div>
 
