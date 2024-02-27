@@ -1,29 +1,20 @@
 # Color Blaze
 
-![Color Blaze Logo](./src/lib/images/logo.svg)
+![Color Blaze Logo](./src/lib/images/color-blaze-logo.png)
 
-## Creating a project
+## About
 
-If you're seeing this, you've probably already done this step. Congrats!
+Color Blaze is a vibrant and user-friendly application designed for creating and modifying color palettes. With its intuitive interface and powerful features, Color Blaze empowers users to unleash their creativity and craft visually stunning color schemes for various projects.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Key Features
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- **Color Conversion:** Effortlessly convert colors between different color systems such as HEX, RGB, HSL, and more, providing versatility and flexibility in your color selection process.
 
-## Developing
+- **Palette Creation:** Dive into the world of color harmony and expression by creating custom color palettes tailored to your project's needs. With intuitive tools and features, crafting visually stunning palettes has never been easier.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- **Real-life Previews:** Visualize your created palettes in real-life examples, whether it's on a website, in a presentation, or within abstract graphics. Experience the true essence of your color choices before finalizing your designs.
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- **Export Functionality:** Seamlessly export your generated color palettes to share them with others or integrate them into your preferred design tools. Collaborate and communicate effortlessly with colleagues and clients using your meticulously crafted color schemes.
 
 ## Building
 
