@@ -150,10 +150,10 @@
             <div class="flex items-start">
               <Checkbox><span style={`color: ${accent2Color};`}>Remember me</span></Checkbox>
             </div>
-            <a href="/" class="ms-auto text-sm lg:text-center ml-0" style={`color: ${accent3Color};`}> Lost password? </a>
+            <a href="" class="ms-auto text-sm lg:text-center ml-0" style={`color: ${accent3Color};`}> Lost password? </a>
             <Button type="submit" class="w-full" style={`background-color: ${mainColor};`}>Login to your account</Button>
             <div class="text-sm font-medium text-gray-500 dark:text-gray-300" style={`color: ${accentColor};`}>
-              Not registered? <a href="/" class="hover:underline" style={`color: ${accent3Color};`}> Create account </a>
+              Not registered? <a href="" class="hover:underline" style={`color: ${accent3Color};`}> Create account </a>
             </div>
           </form>
         </Card>

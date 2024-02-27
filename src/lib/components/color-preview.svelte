@@ -64,7 +64,9 @@
 
 
 <div class="flex flex-row mt-2 ml-3">
-    <ColorField hex={$hex1}></ColorField>
+    <div class="mr-[0.5rem]">
+        <ColorField hex={$hex1} ></ColorField>
+    </div>
 
     {#if $harmony == "cont"}
         <ColorField hex={$hex2}></ColorField>
@@ -72,12 +74,12 @@
         <ColorField hex={$hex2}></ColorField>
         <ColorField hex={$hex3}></ColorField>
     {:else if $harmony == "dbct"}
-        <ColorField hex={$hex2}></ColorField>
-        <ColorField hex={$hex3}></ColorField>
+        <div class="mr-[0.5rem]"> <ColorField hex={$hex2}></ColorField> </div> 
+        <div class="mr-[0.5rem]"><ColorField hex={$hex3}></ColorField></div>    
         <ColorField hex={$hex4}></ColorField>
     {:else if $harmony == "anlg"}
-        <ColorField hex={$hex2}></ColorField>
-        <ColorField hex={$hex3}></ColorField>
+        <div class="mr-[0.5rem]"><ColorField hex={$hex2}></ColorField></div>
+        <div class="mr-[0.5rem]"><ColorField hex={$hex3}></ColorField></div>
         {#if $complement}
             <ColorField hex={$hex4}></ColorField>
         {/if}

@@ -88,7 +88,7 @@ const slides3 = [
     <ColorPicker></ColorPicker>
   </div>
 
-  <!-- prawa strona -->
+  <!-- srodek -->
   <div class="flex flex-col items-center">
     <div>
 
@@ -115,6 +115,7 @@ const slides3 = [
 
   {#if !isMobile}
 
+  <!-- prawa strona-->
   <div class="right-0 grid grid-cols-1 ml-5">
 
     <Label for="countries" class="w-96">Examples</Label>
