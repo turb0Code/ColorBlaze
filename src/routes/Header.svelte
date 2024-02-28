@@ -72,11 +72,13 @@
     <span class="self-center whitespace-nowrap text-[1.7rem] font-bold bg-gradient-to-r from-accent/100 via-main to-accent4 inline-block text-transparent bg-clip-text">ColorBlaze</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
-  <NavUl {hidden}>
-    <NavLi href="/" class="text-[0.9rem]">Home</NavLi>
-    <NavLi href="/example" class="text-[0.9rem]">Website</NavLi>
-    <NavLi href="/presentation" class="text-[0.9rem]">Presentation</NavLi>
-    <NavLi href="/images" class="text-[0.9rem]">Images</NavLi>
+  <NavUl {hidden} class="flex items-center h-16 mb-0" style="align-items:center margin-bottom:0px">
+    <div class="flex flex-row w-64 justify-evenly items-center mr-10 space-x-5">
+    <NavLi href="/" class="text-[1.05rem] mb-0" style="margin-bottom:0px"><p>Home</p></NavLi>
+    <NavLi href="/example" class="text-[1.05rem]"><p>Website</p></NavLi>
+    <NavLi href="/presentation" class="text-[1.05rem]"><p>Presentations</p></NavLi>
+    <NavLi href="/images" class="text-[1.05rem]"><p>Images</p></NavLi>
+    </div>
     <div class="flex flex-row w-[20.5rem] lg:w-[14.5rem] justify-between opacity-100">
         {#if !isMobile}
         <PalletePreview class="opacity-100"></PalletePreview>
