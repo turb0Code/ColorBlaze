@@ -71,7 +71,7 @@
     {#if $harmony == "cont"}
         <ColorField hex={$hex2}></ColorField>
     {:else if $harmony == "soft"}
-        <ColorField hex={$hex2}></ColorField>
+        <div class="mr-[0.5rem]"> <ColorField hex={$hex2}></ColorField> </div>
         <ColorField hex={$hex3}></ColorField>
     {:else if $harmony == "dbct"}
         <div class="mr-[0.5rem]"> <ColorField hex={$hex2}></ColorField> </div> 
