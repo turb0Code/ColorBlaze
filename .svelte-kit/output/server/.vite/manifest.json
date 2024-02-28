@@ -1,0 +1,243 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "imports": [
+      "_internal.js"
+    ],
+    "isEntry": true,
+    "src": ".svelte-kit/generated/server/internal.js"
+  },
+  "_Button.js": {
+    "file": "chunks/Button.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_ChevronDownSolid.js": {
+    "file": "chunks/ChevronDownSolid.js",
+    "imports": [
+      "_ssr.js",
+      "_index.js",
+      "_Button.js"
+    ]
+  },
+  "_ToolbarButton.js": {
+    "file": "chunks/ToolbarButton.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_color-conversion.js": {
+    "file": "chunks/color-conversion.js"
+  },
+  "_color-stores.js": {
+    "file": "chunks/color-stores.js",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "_food.js": {
+    "file": "chunks/food.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_ssr.js": {
+    "file": "chunks/ssr.js"
+  },
+  "_stores.js": {
+    "file": "chunks/stores.js",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "_stores2.js": {
+    "file": "chunks/stores2.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_version3-title.js": {
+    "css": [
+      "_app/immutable/assets/version3-title.79427b00.css"
+    ],
+    "file": "chunks/version3-title.js",
+    "imports": [
+      "_ssr.js",
+      "_color-stores.js"
+    ]
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-all-400-normal.woff": {
+    "file": "_app/immutable/assets/fira-mono-all-400-normal.1e3b098c.woff",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-all-400-normal.woff"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-400-normal.woff2": {
+    "file": "_app/immutable/assets/fira-mono-cyrillic-400-normal.c7d433fd.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-400-normal.woff2"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-ext-400-normal.woff2": {
+    "file": "_app/immutable/assets/fira-mono-cyrillic-ext-400-normal.3df7909e.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-greek-400-normal.woff2": {
+    "file": "_app/immutable/assets/fira-mono-greek-400-normal.a8be01ce.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-greek-400-normal.woff2"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-greek-ext-400-normal.woff2": {
+    "file": "_app/immutable/assets/fira-mono-greek-ext-400-normal.9e2fe623.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-greek-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-latin-400-normal.woff2": {
+    "file": "_app/immutable/assets/fira-mono-latin-400-normal.e43b3538.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-latin-400-normal.woff2"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-latin-ext-400-normal.woff2": {
+    "file": "_app/immutable/assets/fira-mono-latin-ext-400-normal.6bfabd30.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-latin-ext-400-normal.woff2"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_stores2.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "imports": [
+      "_internal.js",
+      "_index.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js"
+  },
+  "src/lib/images/wiggle.svg": {
+    "file": "_app/immutable/assets/wiggle.cbfb510c.svg",
+    "src": "src/lib/images/wiggle.svg"
+  },
+  "src/routes/+layout.css": {
+    "file": "_app/immutable/assets/_layout.e6e09f41.css",
+    "src": "src/routes/+layout.css"
+  },
+  "src/routes/+layout.svelte": {
+    "assets": [
+      "_app/immutable/assets/fira-mono-cyrillic-ext-400-normal.3df7909e.woff2",
+      "_app/immutable/assets/fira-mono-all-400-normal.1e3b098c.woff",
+      "_app/immutable/assets/fira-mono-cyrillic-400-normal.c7d433fd.woff2",
+      "_app/immutable/assets/fira-mono-greek-ext-400-normal.9e2fe623.woff2",
+      "_app/immutable/assets/fira-mono-greek-400-normal.a8be01ce.woff2",
+      "_app/immutable/assets/fira-mono-latin-ext-400-normal.6bfabd30.woff2",
+      "_app/immutable/assets/fira-mono-latin-400-normal.e43b3538.woff2",
+      "_app/immutable/assets/wiggle.cbfb510c.svg"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.e6e09f41.css"
+    ],
+    "file": "entries/pages/_layout.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_Button.js",
+      "_index.js",
+      "_ToolbarButton.js",
+      "_color-stores.js",
+      "_stores.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/+layout.svelte"
+  },
+  "src/routes/+page.css": {
+    "file": "_app/immutable/assets/_page.e75bd0db.css",
+    "src": "src/routes/+page.css"
+  },
+  "src/routes/+page.js": {
+    "file": "entries/pages/_page.js",
+    "isEntry": true,
+    "src": "src/routes/+page.js"
+  },
+  "src/routes/+page.svelte": {
+    "css": [
+      "_app/immutable/assets/_page.e75bd0db.css"
+    ],
+    "file": "entries/pages/_page.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_index.js",
+      "_Button.js",
+      "_ChevronDownSolid.js",
+      "_color-conversion.js",
+      "_stores.js",
+      "_color-stores.js",
+      "_food.js",
+      "_version3-title.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/+page.svelte"
+  },
+  "src/routes/api/ncs/+server.js": {
+    "file": "entries/endpoints/api/ncs/_server.js",
+    "imports": [
+      "_color-conversion.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/api/ncs/+server.js"
+  },
+  "src/routes/example/+page.svelte": {
+    "file": "entries/pages/example/_page.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_ToolbarButton.js",
+      "_Button.js",
+      "_ChevronDownSolid.js",
+      "_index.js",
+      "_color-stores.js",
+      "_stores2.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/example/+page.svelte"
+  },
+  "src/routes/images/+page.svelte": {
+    "file": "entries/pages/images/_page.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_food.js",
+      "_color-stores.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/images/+page.svelte"
+  },
+  "src/routes/presentation/+page.css": {
+    "file": "_app/immutable/assets/_page.dcebcb25.css",
+    "src": "src/routes/presentation/+page.css"
+  },
+  "src/routes/presentation/+page.svelte": {
+    "css": [
+      "_app/immutable/assets/_page.dcebcb25.css"
+    ],
+    "file": "entries/pages/presentation/_page.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_color-stores.js",
+      "_version3-title.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/presentation/+page.svelte"
+  },
+  "version3-title.css": {
+    "file": "_app/immutable/assets/version3-title.79427b00.css",
+    "src": "version3-title.css"
+  }
+}
