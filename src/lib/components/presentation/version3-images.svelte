@@ -36,7 +36,7 @@
   <div class="absolute w-56 ml-16 lg:ml-20 text-center text-3xl mt-2 bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3" style={`border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color}; color: ${mainColor};`}>TITLE</div>
 
   <div class="h-56 w-96 ml-2 mt-20 ">
-      <img src="src/lib/images/phone1.jpg" alt="" class=" bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3" style={`border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color};`}>
+      <img src="/phone1.jpg" alt="" class=" bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3" style={`border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color};`}>
   </div>
 
   <div class="text-xs text-center mx-2 mt-14 mb-12   bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3" style={`border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color}; color: ${accentColor};`}>
@@ -44,8 +44,8 @@
   </div>
 
   <div class="h-56 w-96 mr-2 lg:mt-8 mt-12 ">
-      <img src="src/lib/images/image2.jpg" alt="" class="mb-4  bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3" style={`border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color};`}>
-      <img src="src/lib/images/phone3.jpg" alt="" class=" bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3" style={`border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color};`}>
+      <img src="/image2.jpg" alt="" class="mb-4  bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3" style={`border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color};`}>
+      <img src="/phone3.jpg" alt="" class=" bg-white border-l-4 border-b-4 border-b-pres4 border-l-pres3" style={`border-bottom: solid 4px ${accentColor}; border-left: solid 4px ${accent2Color};`}>
   </div>
 
 </div>

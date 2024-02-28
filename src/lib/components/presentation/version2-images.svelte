@@ -36,7 +36,7 @@
     <div class="absolute w-56 ml-16 lg:ml-20 text-center text-3xl mt-2 px-1 rounded-lg border-2" style={`color: ${mainColor}; border-color: ${accentColor};`}>TITLE</div>
 
     <div class="h-56 w-96 ml-2 mt-20">
-        <img src="src/lib/images/phone1.jpg" alt="" class="border-2 rounded-lg" style={`border-color: ${accentColor};`}>
+        <img src="/phone1.jpg" alt="" class="border-2 rounded-lg" style={`border-color: ${accentColor};`}>
     </div>
 
     <div class="text-xs text-center mx-2 mt-14  bg-white px-1 rounded-lg mb-8 lg:mb-12 border-2 border-accent"  style={`color: ${accentColor}; border-color: ${accentColor};`}>
@@ -44,8 +44,8 @@
     </div>
 
     <div class="h-56 w-96 mr-2 lg:mt-8 mt-12 ">
-        <img src="src/lib/images/image2.jpg" alt="" class="mb-4 border-2 rounded-lg" style={`border-color: ${accentColor}`}>
-        <img src="src/lib/images/phone3.jpg" alt="" class="border-2 rounded-lg" style={`border-color: ${accentColor}`}>
+        <img src="/image2.jpg" alt="" class="mb-4 border-2 rounded-lg" style={`border-color: ${accentColor}`}>
+        <img src="/phone3.jpg" alt="" class="border-2 rounded-lg" style={`border-color: ${accentColor}`}>
     </div>
 
 </div>

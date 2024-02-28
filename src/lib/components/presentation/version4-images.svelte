@@ -37,7 +37,7 @@
     <div class="absolute w-28 ml-[7rem] lg:ml-32 text-center text-3xl mt-2" style={`border: solid 4px ${mainColor}; color: ${mainColor};`}>TITLE</div>
 
     <div class="h-56 w-96 ml-2 mt-20 ">
-        <img src="src/lib/images/phone1.jpg" alt="" class="border-2" style={`border: solid 4px ${mainColor};`}>
+        <img src="/phone1.jpg" alt="" class="border-2" style={`border: solid 4px ${mainColor};`}>
     </div>
 
     <div class="text-xs text-center mx-2 mt-14 " style={`border: solid 4px ${mainColor}; color: ${accent3Color};`}>
@@ -45,8 +45,8 @@
     </div>
 
     <div class="h-56 w-96 mr-2 lg:mt-8 mt-12 ">
-        <img src="src/lib/images/image2.jpg" alt="" class="mb-4 border-4" style={`border: solid 4px ${mainColor};`}>
-        <img src="src/lib/images/phone3.jpg" alt="" class="border-4" style={`border: solid 4px ${mainColor};`}>
+        <img src="/image2.jpg" alt="" class="mb-4 border-4" style={`border: solid 4px ${mainColor};`}>
+        <img src="/phone3.jpg" alt="" class="border-4" style={`border: solid 4px ${mainColor};`}>
     </div>
 
 </div>
