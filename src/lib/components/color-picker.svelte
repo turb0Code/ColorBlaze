@@ -1,6 +1,10 @@
+<!--
+  @component
+
+  This component allows to pick color.
+ -->
+
 <script lang="js">
-  import autoAnimate from '@formkit/auto-animate';
-  import { writable } from "svelte/store";
   import { onMount } from "svelte";
   import ColorSpace from "$lib/components/color-space.svelte";
   import { RgbToHsl } from "$lib/scripts/color-conversion.js";
@@ -11,10 +15,8 @@
 
   const randomHsl = () => {
     const hue = Math.floor(Math.random() *  360);
-
-    const saturation = Math.floor(Math.random() *  70) + 31;
-
-    const lightness = Math.floor(Math.random() *  101);
+    const saturation = Math.floor(Math.random() *  30) + 41;
+    const lightness = Math.floor(Math.random() *  80) + 21;
 
     $h = hue;
     $s = saturation;
@@ -27,14 +29,6 @@
 
   onMount(() => {
     picker1 = document.getElementById("color-picker-1");
-
-    picker1.color = "rgb(20, 15, 43)";
-    picker1.opened = true;
-
-    console.log(picker1);                 // I HAVE NO IDEA HOW TO DO THIS... (refering to position changing)
-                                          // ALL MY IDEAS ARE BAD OR FUCKING HARD
-    picker1.color = "hsl(40, 42, 10)";    // NOW I HAVE IDEA
-    picker1.opened = true;                // STUPID BUT WORKS... (YEYYY) [ACUTALLY 4 HOURS FOR 2 LINES OF CODE - FUCK ME!!!]
 
     if ($firstVisit) {
       picker1.color = randomHsl();
@@ -55,9 +49,9 @@
     });
 
     callUpdatePosition.subscribe(() => {
-        picker1.color = `hsl(${$h}, ${$s}, ${$l})`;
-        picker1.opened = true;
-      })
+      picker1.color = `hsl(${$h}, ${$s}, ${$l})`;
+      picker1.opened = true;
+    })
   });
 </script>
 

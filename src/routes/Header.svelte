@@ -73,11 +73,11 @@
   </NavBrand>
   <NavHamburger on:click={toggle} />
   <NavUl {hidden} class="flex items-center h-16 mb-0" style="align-items:center margin-bottom:0px">
-    <div class="flex flex-row w-64 justify-evenly items-center mr-10 space-x-5">
-    <NavLi href="/" class="text-[1.05rem] mb-0" style="margin-bottom:0px"><p>Home</p></NavLi>
-    <NavLi href="/example" class="text-[1.05rem]"><p>Website</p></NavLi>
-    <NavLi href="/presentation" class="text-[1.05rem]"><p>Presentations</p></NavLi>
-    <NavLi href="/images" class="text-[1.05rem]"><p>Images</p></NavLi>
+    <div class="flex flex-row w-64 justify-evenly items-center mr-8 space-x-5">
+    <NavLi href="/" class="text-[0.96rem] mb-0" style="margin-bottom:0px"><p>Home</p></NavLi>
+    <NavLi href="/example" class="text-[0.96rem]"><p>Website</p></NavLi>
+    <NavLi href="/presentation" class="text-[0.96rem]"><p>Presentations</p></NavLi>
+    <NavLi href="/images" class="text-[0.96rem]"><p>Images</p></NavLi>
     </div>
     <div class="flex flex-row w-[20.5rem] lg:w-[14.5rem] justify-between opacity-100">
         {#if !isMobile}

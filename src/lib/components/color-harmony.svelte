@@ -1,3 +1,9 @@
+<!--
+  @component
+
+  Component which allows to select haromny of color palette.
+ -->
+
 <script>
   import autoAnimate from '@formkit/auto-animate';
   import { Select, Label, Input, Checkbox } from "flowbite-svelte";
@@ -57,10 +63,9 @@
 </script>
 
 <div class="flex felx-row float-left ml-3">
-  <div class="mr-1" use:autoAnimate>
+  <div class="mr-0" use:autoAnimate>
     <Label for="countries" class="w-[12rem] lg:w-[11.75rem]">Select color harmony</Label>
     <Select
-      id="countries"
       class="w-[12rem] lg:w-[11rem] glass"
       bind:value={$harmony}
       placeholder=""
@@ -75,7 +80,7 @@
   </div>
 
   {#if opened}
-    <div class="ml-1" use:autoAnimate>
+    <div class="ml-0" use:autoAnimate>
       <Label class="space-y-2 w-24">
         <span>Distance</span>
       </Label>
@@ -90,7 +95,7 @@
       />
     </div>
   {:else}
-    <div class="ml-1">
+    <div class="ml-0">
       <Label class="space-y-2 w-24 text-slate-500">
         <span>Distance</span>
       </Label>

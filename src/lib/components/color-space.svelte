@@ -1,5 +1,10 @@
+<!--
+  @component
+
+  It calls calculations for each color space and displays values in different formats.
+-->
+
 <script>
-  import autoAnimate from '@formkit/auto-animate';
   import { Button } from "flowbite-svelte";
   import { HslToRgb, HslToCmy, HslToYuv, HslToYiq, HslToXyz, HslToLab, HslToLuv, RgbToHsl } from "$lib/scripts/color-conversion.js";
   import { writable, derived } from "svelte/store";
@@ -8,9 +13,16 @@
   import ColorConverter from 'simple-color-converter';
   import { onMount } from "svelte";
   import { callHslToNcs } from "$lib/scripts/ncs.js";
-  import ColorHarmony from "./color-harmony.svelte";
 
   let isMobile = false;
+  let rgb = writable({});
+  let cmy = writable({});
+  let yuv = writable({});
+  let result = writable({ A: 0, B: 0, C: 0 });
+  let ral, ralCode, ralName, tmp;
+  let ncs = "NCS COLOR"
+  let currentDate = new Date();
+  let time = currentDate.getTime();
   let options = [
     { value: "yuv", name: "YUV" },
     { value: "yiq", name: "YIQ" },
@@ -20,15 +32,6 @@
     { value: "ral", name: "RAL" },
     { value: "ncs", name: "NCS" },
   ];
-
-  let rgb = writable({});
-  let cmy = writable({});
-  let yuv = writable({});
-  let result = writable({ A: 0, B: 0, C: 0 });
-  let ral, ralCode, ralName, tmp;
-  let ncs = "NCS COLOR"
-  let currentDate = new Date();
-  let time = currentDate.getTime();
 
   let hsl = derived([h, s, l], ([$h, $s, $l]) => {
     return { h: $h, s: $s, l: $l };

@@ -1,3 +1,9 @@
+<!--
+  @component
+
+  Small palette preview displayed on Header.
+-->
+
 <script>
 import { colors } from "$lib/scripts/color-stores.js";
 

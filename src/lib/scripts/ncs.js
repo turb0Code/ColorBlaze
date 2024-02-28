@@ -1,3 +1,4 @@
+// this function calls backend to retrieve NCS color
 export const callHslToNcs = async (h, s, l) => {
     const response = await fetch('/api/ncs', {
         method: 'POST',

@@ -1,5 +1,8 @@
-<script>
+<!--
+  This page is used to show preview of colors.
+-->
 
+<script>
   import { Alert, Button, Breadcrumb, BreadcrumbItem, Spinner, Card, Toggle, Label, Input, Checkbox, Drawer, CloseButton, Sidebar, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper, Dropdown, DropdownItem, Popover, Radio, Range } from 'flowbite-svelte';
   import { InfoCircleSolid, HomeOutline, ChevronDoubleRightOutline, ArrowRightOutline, CheckCircleSolid, ChartPieSolid, ShoppingCartSolid, GridSolid, MailBoxSolid, UsersSolid, BagSolid, ArrowRightToBracketSolid, FileEditSolid, ChevronDownSolid, ChevronRightSolid, DatabaseSolid, ChevronRightOutline } from 'flowbite-svelte-icons';
   import { colors } from "$lib/scripts/color-stores.js";
@@ -350,18 +353,11 @@
         <Checkbox checked style={`background-color: ${accentColor};`}>Checked state</Checkbox>
       </div>
 
-      <!-- toggles -->
       <div class="flex-1">
-        <Toggle style={`background-color: ${accent3Color};`} class="mb-4">Default toggle</Toggle>
-        <Toggle style={`background-color: ${accent3Color};`} checked>Toggled toggle</Toggle>
+        <Checkbox style={`background-color: ${accent2Color};`} class="mb-4">Default checkbox</Checkbox>
+        <Checkbox checked style={`background-color: ${accent3Color};`}>Checked state</Checkbox>
       </div>
 
-    </div>
-
-    <!-- radios -->
-    <div class="flex flex-row mt-4">
-      <Radio class="flex-1 mr-2">Default radio</Radio>
-      <Radio class="flex-1" disabled>Disabled radio</Radio>
     </div>
 
   </div>

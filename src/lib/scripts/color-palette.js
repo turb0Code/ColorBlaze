@@ -1,3 +1,4 @@
+// function to generate contrast color to provided color
 export const HslContrast = (h, s, l) => {
     let hue = (h + 180) % 360;
     return {"H": hue, "S": s, "L": l}
@@ -5,6 +6,7 @@ export const HslContrast = (h, s, l) => {
 
 //--------------
 
+// fuction to generate two colors evenly distant from contrast
 export const HslSoftContrast = (h, s, l, distance) => {
     let contrast = HslContrast(h, s, l);
     let hue1 = (contrast["H"] + distance/2) % 360;
@@ -14,6 +16,7 @@ export const HslSoftContrast = (h, s, l, distance) => {
 
 //--------------
 
+// generates two colors evenly distant from contrast and color in same distance from provided
 export const HslDoubleContrast = (h, s, l, distance) => {
     let mainColor = {"H": h, "S": s, "L": l};
     let hue1 = (h + distance) % 360;
@@ -25,6 +28,7 @@ export const HslDoubleContrast = (h, s, l, distance) => {
 
 //--------------
 
+// generates two color evelny distant from provided color and optionally contrast to provided
 export const HslAnalogous = (h, s, l, distance, contrast) => {
     let mainColor = {"H": h, "S": s, "L": l};
     let hue1 = (h + distance) % 360;

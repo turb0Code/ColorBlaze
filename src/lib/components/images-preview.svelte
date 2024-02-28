@@ -1,3 +1,9 @@
+<!--
+  @component
+
+  Shows graphics to show generated colors.
+-->
+
 <script>
 import Abstract from "./editable-svg/abstract.svelte";
 import MilkSmile from "./editable-svg/smile1.svelte";
@@ -50,7 +56,7 @@ colors.subscribe(() => {
   </div>
 
   <div class="w-[12rem] flex justify-center h-[12rem] border-2 rounded-md border-gray-300 dark:border-gray-600 glass justify-self-end">
-    <Food mainColor={mainColor} class=""></Food>
+    <Food mainColor={mainColor}></Food>
   </div>
 
 </div>

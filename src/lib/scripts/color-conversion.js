@@ -23,7 +23,9 @@ export const RgbToHsl = (r, g, b) => {
     return {"H": Math.round(h * 360), "S": Math.round(s * 100), "L": Math.round(l * 100)};
 }
 
-//this function converts HSL to RGB
+//---------------------------------
+
+// this function converts HSL to RGB
 export let HslToRgb = (h, s, l) => {
     h /= 360;
     s /= 100;
@@ -52,6 +54,7 @@ export let HslToRgb = (h, s, l) => {
     return {"R": Math.round(r * 255), "G": Math.round(g * 255), "B": Math.round(b * 255)}
 }
 
+//---------------------------------
 
 // this function converts HSL to CMY
 export const HslToCmy = (h, s, l) => {
@@ -66,6 +69,8 @@ export const HslToCmy = (h, s, l) => {
 
     return {"C": Math.round(c * 100), "M": Math.round(m * 100), "Y": Math.round(y * 100)}
 }
+
+//---------------------------------
 
 // this function converts HSL to CMYK
 export const HslToCmyk = (h, s, l) => {
@@ -87,6 +92,8 @@ export const HslToCmyk = (h, s, l) => {
     return {"C": Math.round(c), "M": Math.round(m), "Y": Math.round(y), "K": Math.round(k)};
 }
 
+//---------------------------------
+
 // this function converts HSL to YUV
 export const HslToYuv = (h, s, l) => {
     const rgb = HslToRgb(h, s, l);
@@ -101,7 +108,9 @@ export const HslToYuv = (h, s, l) => {
     return {"Y" : Math.round(y), "U" : Math.round(u), "V" : Math.round(v)};
 }
 
-//this function converts HSL to YIQ
+//---------------------------------
+
+// this function converts HSL to YIQ
 export const HslToYiq = (h, s, l) => {
     let rgb = HslToRgb(h, s, l)
     let r = rgb["R"];
@@ -114,6 +123,8 @@ export const HslToYiq = (h, s, l) => {
 
     return {"Y" : Math.round(y), "I" : Math.round(i), "Q" : Math.round(q)};
 }
+
+//---------------------------------
 
 // this function converts HSL to CIEXYZ
 export const HslToXyz = (h, s, l) => {
@@ -147,6 +158,8 @@ export const HslToXyz = (h, s, l) => {
     return {"X": Math.round(r * 0.4124 + g * 0.3576 + b * 0.1805), "Y" : Math.round(r * 0.2126 + g * 0.7152 + b * 0.0722), "Z": Math.round(r * 0.0193 + g * 0.1192 + b * 0.9505)};
 }
 
+//---------------------------------
+
 // this function converts HSL to CIELab
 export const HslToLab = (h, s, l) => {
     let xyz = HslToXyz(h, s, l)
@@ -164,6 +177,8 @@ export const HslToLab = (h, s, l) => {
     const B = 200 * (y - z);
     return {"L": Math.round(L), "A" : Math.round(a), "B": Math.round(B)};
 }
+
+//---------------------------------
 
 // this function converts HSL to CIELUV
 export const HslToLuv = (h, s, l) => {
@@ -196,6 +211,8 @@ export const HslToLuv = (h, s, l) => {
 
     return {"L": Math.round(L), "U": Math.round(U), "V": Math.round(V)};
 }
+
+//---------------------------------
 
 // this function converts HSL to HEX
 export const HslToHex = (h, s, l) => {

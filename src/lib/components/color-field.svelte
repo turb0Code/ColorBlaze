@@ -1,13 +1,20 @@
+<!--
+    @component
+
+    Field which displays color and allows to copy hex value of it.
+ -->
+
 <script>
     import autoAnimate from '@formkit/auto-animate';
 
     import { l } from "$lib/scripts/stores.js";
 
-    export let hex = "#0e483c";
+    export let hex = "#000000";
 
     let textColor = "#efefef";
 
     l.subscribe(() => { textColor = $l >= 50 ? "#0e0e0f" : "#efefef"; });
+
 
     const copyColor = () => {
         navigator.clipboard.writeText(hex);
